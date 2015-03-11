@@ -1,0 +1,68 @@
+body {
+    padding: 10px;
+    margin: 0px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+div {
+    background-color: white;
+}
+
+div.menu-items a {
+    text-decoration: none;
+}
+
+div.menu-items .menu-entry{
+    color: #8b8e93;
+    background-color: #e6e6e6;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    padding: 10px 10px 10px 20px;
+    margin: 2px 2px 2px 2px;
+}
+
+div.menu-items .menu-entry:hover {
+    color: #ffffff;
+    background-color: #6e757f;
+}
+
+div.menu-items .active .menu-entry{
+    color: #ffffff;
+    background-color: #4b4f55;
+}
+
+div.listitem {
+    display: block;
+}
+
+
+
+a {
+    outline: none;
+}
+
+#app-header {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    padding: 0px;
+    margin: 0px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+#nav-menu {
+    float: left;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+#main-view {
+    padding: 25px 25px 25px 215px;
+}
+

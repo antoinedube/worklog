@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="TasksManager" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="TasksManager" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="TasksManager" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="TasksManager" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tasks Manager</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/bower_components/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="static/app.css">
+</head>
+<body>
+  <div id="app-header">Tasks Manager</div>
+
+  <div id="nav-menu" class="tm-leftmenu" ng-controller="LeftMenuCtrl"></div>
+
+  <div id="main-view" ng-view></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="static/bower_components/angular/angular.js"></script>
+  <script src="static/bower_components/angular-route/angular-route.js"></script>
+  <script src="static/app.js"></script>
+  <script src="static/left-menu/controller.js"></script>
+  <script src="static/home/controller.js"></script>
+  <script src="static/tasks-list/controller.js"></script>
+</body>
+</html>

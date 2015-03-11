@@ -1,0 +1,15 @@
+{
+  "name": "tasks-manager",
+  "description": "Simple tasks manager",
+  "version": "0.0.1",
+  "homepage": "",
+  "license": "GPLv3",
+  "private": true,
+  "dependencies": {
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-loader": "latest",
+    "angular-mocks": "latest",
+    "fontawesome": "latest"
+  }
+}
