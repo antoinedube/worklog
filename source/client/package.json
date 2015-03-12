@@ -7,11 +7,14 @@
   "license": "GPLv3",
   "devDependencies": {
     "karma": "latest",
+    "karma-firefox-launcher": "latest",
+    "karma-jasmine": "latest",
     "protractor": "latest",
     "http-server": "latest",
     "bower": "latest",
     "shelljs": "latest",
-    "karma-junit-reporter": "latest"
+    "karma-junit-reporter": "latest",
+    "angular-mocks": "latest"
   },
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower install",
