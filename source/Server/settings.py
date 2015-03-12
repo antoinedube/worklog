@@ -85,4 +85,4 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = (
     'client/app',
 )
-STATICFILES_DIRS = ('client/app',)
+STATICFILES_DIRS = ('client/app','client/app/bower_components')
