@@ -1,5 +1,5 @@
 <div class="menu-items">
-    <div ng-repeat="item in menuitems" ng-class="{active: isActive('{{item.route}}')}">
+    <div ng-repeat="item in items" ng-class="{active: isActive('{{item.route}}')}">
         <a href="{{item.route}}">
             <div class="menu-entry">
                 <i class="fa {{item.icon}}"></i> &nbsp; {{item.name}}

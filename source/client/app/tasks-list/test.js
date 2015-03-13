@@ -1,16 +1,19 @@
 'use strict';
 
-describe('TasksManager.view1 module', function() {
+describe('TasksManager.tasks-list module', function() {
+    var scope;
+    var TasksListCtrl;
 
-  beforeEach(module('TasksManager.view1'));
+    beforeEach(function() {
+        module('TasksManager.tasks-list');
+        inject(function($controller,$rootScope) {
+            scope = $rootScope.$new();
+            TasksListCtrl = $controller('TasksListCtrl',{$scope:'scope'});
+        });
+    });
 
-  describe('view1 controller', function(){
-
-    it('should ....', inject(function($controller) {
-      //spec body
-      var view1Ctrl = $controller('View1Ctrl');
-      expect(view1Ctrl).toBeDefined();
-    }));
-
-  });
+    it('should be defined on creation', function() {
+        expect(TasksListCtrl).toBeDefined();
+    });
 });
+

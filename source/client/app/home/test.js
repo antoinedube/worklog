@@ -1,15 +1,15 @@
 'use strict';
 
-describe('TasksManager.view1 module', function() {
+describe('TasksManager.home module', function() {
 
-  beforeEach(module('TasksManager.view1'));
+  beforeEach(module('TasksManager.home'));
 
-  describe('view1 controller', function(){
+  describe('home controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body
-      var view1Ctrl = $controller('View1Ctrl');
-      expect(view1Ctrl).toBeDefined();
+      var homeCtrl = $controller('HomeCtrl');
+      expect(homeCtrl).toBeDefined();
     }));
 
   });

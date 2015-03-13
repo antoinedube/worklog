@@ -1,16 +1,19 @@
 'use strict';
 
-describe('TasksManager.view1 module', function() {
+describe('TasksManager.left-menu module', function() {
+    var scope;
+    var LeftMenuCtrl;
 
-  beforeEach(module('TasksManager.view1'));
+    beforeEach(function() {
+        module('TasksManager.left-menu');
+        inject(function($controller,$rootScope) {
+            scope = $rootScope.$new();
+            LeftMenuCtrl = $controller('LeftMenuCtrl',{$scope:'scope'});
+        });
+    });
 
-  describe('view1 controller', function(){
+    it('should be defined on creation', function() {
+        expect(LeftMenuCtrl).toBeDefined();
+    });
 
-    it('should ....', inject(function($controller) {
-      //spec body
-      var view1Ctrl = $controller('View1Ctrl');
-      expect(view1Ctrl).toBeDefined();
-    }));
-
-  });
 });

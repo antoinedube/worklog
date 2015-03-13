@@ -9,7 +9,7 @@ angular.module('TasksManager.left-menu', [])
         {'name': 'Tâches', 'route': '#/tasks-list', 'icon': 'fa-tasks'}
     ];
 
-    $scope.menuitems = items;
+    $scope.items = items;
 
     $scope.isActive = function(viewLocation) {
         return (viewLocation === '#'+$location.path());
