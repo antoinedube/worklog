@@ -7,8 +7,8 @@ module.exports = function(config){
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-route/angular-route.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/bower_components/angular-resource/angular-resource.js',
-      'app/*/**/*.js'
+      'app/**/controller.js',
+      'app/**/test.js'
     ],
 
     autoWatch : true,
@@ -20,7 +20,7 @@ module.exports = function(config){
     plugins : [
             'karma-phantomjs-launcher',
             'karma-firefox-launcher',
-            'karma-jasmine',
+            'karma-jasmine'
             ],
 
   });
