@@ -16,7 +16,7 @@ div.menu-items .menu-entry{
     color: #8b8e93;
     background-color: #e6e6e6;
     width: 150px;
-    height: 30px;
+    /* height: 30px;*/
     line-height: 30px;
     vertical-align: middle;
     padding: 10px 10px 10px 20px;
@@ -37,7 +37,20 @@ div.listitem {
     display: block;
 }
 
+div.tasks-list-header {
+    height: 90px;
+}
 
+div.tasks-list-header > h3 {
+    float: left;
+    padding: 10px;
+    margin: 20px;
+}
+
+div.tasks-list-header > button {
+    float: right;
+    margin: 5px;
+}
 
 a {
     outline: none;
@@ -63,6 +76,6 @@ a {
 }
 
 #main-view {
-    padding: 25px 25px 25px 215px;
+    padding: 25px 25px 25px 175px;
 }
 
