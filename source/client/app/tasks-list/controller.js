@@ -17,4 +17,8 @@ angular.module('TasksManager.tasks-list', ['ngRoute'])
         .error(function(data,status,headers,config) {
             $scope.message;
         });
+
+    $scope.createNew = function() {
+        console.log('Creating new task!!');
+    };
 }]);

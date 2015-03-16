@@ -1,6 +1,6 @@
 body {
-    padding: 10px;
-    margin: 0px;
+    padding: 0px;
+    margin: 1px;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
@@ -37,21 +37,6 @@ div.listitem {
     display: block;
 }
 
-div.tasks-list-header {
-    height: 90px;
-}
-
-div.tasks-list-header > h3 {
-    float: left;
-    padding: 10px;
-    margin: 20px;
-}
-
-div.tasks-list-header > button {
-    float: right;
-    margin: 5px;
-}
-
 a {
     outline: none;
 }
@@ -66,6 +51,8 @@ a {
     margin: 0px;
     font-size: 24px;
     font-weight: 400;
+    color: #F0F0F0;
+    background: linear-gradient(#0E0E0E,#888888);
 }
 
 #nav-menu {
@@ -76,6 +63,20 @@ a {
 }
 
 #main-view {
-    padding: 25px 25px 25px 175px;
+    padding: 10px 10px 10px 165px;
 }
 
+#main-view > .header {
+    height: 90px;
+}
+
+#main-view > .header > h3 {
+    float: left;
+    padding: 10px;
+    margin: 20px;
+}
+
+#main-view > .header > button {
+    float: right;
+    margin: 5px;
+}
