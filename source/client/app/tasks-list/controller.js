@@ -18,7 +18,13 @@ angular.module('TasksManager.tasks-list', ['ngRoute'])
             $scope.message;
         });
 
+    $scope.visible = false;
+
     $scope.createNew = function() {
-        console.log('Creating new task!!');
+        $scope.visible = true;
+    };
+
+    $scope.confirm = function() {
+        $scope.visible = false;
     };
 }]);

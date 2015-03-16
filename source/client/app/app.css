@@ -37,6 +37,21 @@ div.listitem {
     display: block;
 }
 
+div.new-task-form {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 2px solid #6e757F;
+    border-radius: 5px;
+    text-align: center;
+    width: 250px;
+    height: 150px;
+    line-height: 150px;
+    vertical-align: middle;
+    z-index: 99;
+}
+
 a {
     outline: none;
 }
@@ -51,8 +66,8 @@ a {
     margin: 0px;
     font-size: 24px;
     font-weight: 400;
-    color: #F0F0F0;
-    background: linear-gradient(#0E0E0E,#888888);
+    color: #F5F5F5;
+    background: linear-gradient(#4b4f55,#6e757f, #4b4f55);
 }
 
 #nav-menu {

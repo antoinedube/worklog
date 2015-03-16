@@ -1,8 +1,13 @@
-<div class="tasks-list-header header">
+<div class="header">
     <h3>Tâches</h3><br>
     <button class="btn btn-primary" ng-click="createNew()">Créer une tâche</button>
 </div>
 
+<div class="new-task-form" ng-show="visible">
+    I will be used to create a new task.
+    <button class="btn btn-primary" ng-click="confirm()">Créer</button>
+</div>
+
 <div class="container">
     <div class="listitem" ng-repeat="task in taskslist">{{task.name}}</div>
-</div>
+    </div>
