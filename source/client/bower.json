@@ -12,8 +12,5 @@
     "angular-mocks": "latest",
     "bootstrap-css-only": "latest",
     "fontawesome": "latest"
-  },
-  "resolutions": {
-    "angular": "1.3.14"
   }
 }
