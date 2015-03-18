@@ -10,15 +10,16 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-service
 }])
 
 .controller('TasksListCtrl', ['$scope', 'Task', function($scope,Task) {
-    $scope.taskslist = Task.query();
-
     $scope.visible = false;
+    $scope.taskslist = Task.query();
 
     $scope.createNew = function() {
         $scope.visible = true;
     };
 
-    $scope.confirm = function() {
+    $scope.create = function() {
+        var task = new Task({name: $scope.task.name});
+        task.$save();
         $scope.visible = false;
     };
 }]);

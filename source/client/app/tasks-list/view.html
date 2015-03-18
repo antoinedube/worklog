@@ -4,8 +4,10 @@
 </div>
 
 <div class="new-task-form" ng-show="visible">
-    <p>I will be used to create a new task.</p>
-    <button class="btn btn-primary" ng-click="confirm()">Créer</button>
+    <form class="task-creation">
+        Nom de la tache: <input type="text" ng-model="task.name"><br />
+        <button class="btn btn-primary" ng-click="create()">Créer</button>
+    </form>
 </div>
 
 <div class="container">

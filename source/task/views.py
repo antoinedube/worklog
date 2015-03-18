@@ -26,3 +26,6 @@ class TaskView(View):
             json_item = json.dumps(item_set)
             return HttpResponse(json_item)
 
+    def post(self,request,task_id):
+        print(request.POST)
+        return HttpResponse('All Good')

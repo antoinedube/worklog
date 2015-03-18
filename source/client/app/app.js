@@ -8,5 +8,9 @@ angular.module('TasksManager', [
   'TasksManager.tasks-list',
 ])
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/home'});
+    $routeProvider.otherwise({redirectTo: '/home'});
+}])
+.config(['$httpProvider', function($httpProvider) {
+    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
 }]);

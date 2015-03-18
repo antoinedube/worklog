@@ -46,17 +46,18 @@ div.new-task-form {
     padding: 20px 20px 0px 20px;
     border: 2px solid #6e757F;
     border-radius: 5px;
-    text-align: center;
+    text-align: left;
     width: 250px;
     height: 150px;
     box-shadow: 5px 5px 2px #BBBBBB;
 }
 
-div.new-task-form > .btn {
+div.new-task-form .btn {
     position: absolute;
     bottom: 0px;
     right: 0px;
-    margin: 0px 10px 10px 0px;
+    margin: 10px 10px 10px 0px;
+    text-align: right;
 }
 
 a {
