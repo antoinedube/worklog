@@ -4,7 +4,7 @@ from django.views.generic import View
 
 import json
 
-from application.models import Task
+from task.models import Task
 
 class TaskView(View):
     def get(self,request,task_id):

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.tasks-list', ['ngRoute'])
+angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-service'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/tasks-list', {
@@ -9,14 +9,8 @@ angular.module('TasksManager.tasks-list', ['ngRoute'])
   });
 }])
 
-.controller('TasksListCtrl', ['$scope','$http',function($scope,$http) {
-    $http.get('/task/')
-        .success(function(data,status,headers,config) {
-            $scope.taskslist = data;
-        })
-        .error(function(data,status,headers,config) {
-            $scope.message;
-        });
+.controller('TasksListCtrl', ['$scope', 'Task', function($scope,Task) {
+    $scope.taskslist = Task.query();
 
     $scope.visible = false;
 

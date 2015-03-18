@@ -1,8 +1,8 @@
 [
     {
         "pk": 1,
-        "model": "application.task",
-        "fields": 
+        "model": "task.task",
+        "fields":
             {
                 "name": "Create website",
                 "datetime": "2015-01-24 01:19:36.285249+00:00"
@@ -10,8 +10,8 @@
     },
     {
         "pk": 2,
-        "model": "application.task",
-        "fields": 
+        "model": "task.task",
+        "fields":
             {
                 "name": "Clean up",
                 "datetime": "2015-01-24T01:56:59.916Z"
@@ -19,7 +19,7 @@
     },
     {
         "pk": 3,
-        "model": "application.task",
+        "model": "task.task",
         "fields":
             {
                 "name": "Laundry",
@@ -28,7 +28,7 @@
     },
     {
         "pk": 4,
-        "model": "application.task",
+        "model": "task.task",
         "fields":
             {
                 "name": "Clear the driveway",
@@ -37,7 +37,7 @@
     },
     {
         "pk": 5,
-        "model": "application.task",
+        "model": "task.task",
         "fields":
             {
                 "name": "Grocery shopping",
@@ -46,7 +46,7 @@
     },
     {
         "pk": 6,
-        "model": "application.task",
+        "model": "task.task",
         "fields":
             {
                 "name": "Vacuum",

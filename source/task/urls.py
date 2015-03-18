@@ -6,8 +6,8 @@
 # DELETE /task/task_id
 
 from django.conf.urls import patterns, url
-from application.views import TaskView
+from task.views import TaskView
 
 urlpatterns = patterns('',
-    url(r'(?P<task_id>\d*)$',TaskView.as_view()),
+    url(r'/*(?P<task_id>\d*)$',TaskView.as_view()),
 )

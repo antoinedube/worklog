@@ -10,6 +10,7 @@
     "angular-route": "latest",
     "angular-loader": "latest",
     "angular-mocks": "latest",
+    "angular-resource": "latest",
     "bootstrap-css-only": "latest",
     "fontawesome": "latest"
   }
