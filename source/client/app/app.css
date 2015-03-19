@@ -33,7 +33,17 @@ div.menu-items .active .menu-entry{
     background-color: #4b4f55;
 }
 
-div.listitem {
+div.container {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+div.container > ul {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+li.listitem {
     display: block;
 }
 

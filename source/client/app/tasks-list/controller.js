@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-service'])
+angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/tasks-list', {
@@ -24,7 +24,6 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-service
             $scope.taskslist.push(data);
         });
 
-        $scope.taskslist = Task.query();
         $scope.visible = false;
     };
 }]);
