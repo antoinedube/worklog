@@ -18,8 +18,13 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-service
     };
 
     $scope.create = function() {
-        var task = new Task({name: $scope.task.name});
-        task.$save();
+        var task = new Task();
+        task.name = $scope.task.name;
+        task.$save(function(data) {
+            $scope.taskslist.push(data);
+        });
+
+        $scope.taskslist = Task.query();
         $scope.visible = false;
     };
 }]);
