@@ -45,6 +45,18 @@ div.container > ul {
 
 li.listitem {
     display: block;
+    padding: 10px 10px 10px 10px;
+    height: 50px;
+    list-style-type: None;
+    border-bottom: 1px solid #ccc;
+}
+
+li.listitem:nth-child(odd) {
+    background-color: #DFDFDF;
+}
+
+li.listitem:last-child {
+    border-bottom: 0px;
 }
 
 div.new-task-form {
