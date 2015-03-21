@@ -35,6 +35,7 @@ div.menu-items .active .menu-entry{
 
 div.tasks {
     display: inline-block;
+    vertical-align: top;
     width: 20%;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;

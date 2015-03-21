@@ -12,8 +12,9 @@ class TaskView(View):
         if task_id == '':
             task_query = Task.objects.all()
             item_set = [{
-                'name':item.name,
-                'datetime':str(item.datetime)}
+                'name': item.name,
+                'datetime': str(item.datetime),
+                'type': item.type}
                     for item in task_query
             ]
             json_item_set = json.dumps(item_set)
@@ -21,25 +22,29 @@ class TaskView(View):
         else:
             item_query = Task.objects.get(id=task_id)
             item_set = {
-                'name':item_query.name,
-                'datetime':str(item_query.datetime)
+                'name': item_query.name,
+                'type': item_query.type,
+                'datetime': str(item_query.datetime)
             }
             json_item = json.dumps(item_set)
             return HttpResponse(json_item)
 
     def post(self,request,task_id):
         data = json.loads(request.body.decode('utf-8'))
-        print(data['name'])
+        print(data['name'],data['type'])
         new_task = Task(
                 name = data['name'],
-                datetime = timezone.now()
+                datetime = timezone.now(),
+                type = data['type']
                 )
         new_task.save()
 
         saved_item = {
                 'id': new_task.id,
                 'name': new_task.name,
+                'type': new_task.type,
                 'datetime': str(new_task.datetime)
                 }
 
         return HttpResponse(json.dumps(saved_item))
+

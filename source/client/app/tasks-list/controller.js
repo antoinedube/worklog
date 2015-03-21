@@ -20,6 +20,7 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model']
     $scope.create = function() {
         var task = new Task();
         task.name = $scope.task.name;
+        task.type = $scope.task_type.name;
         task.$save(function(data) {
             $scope.taskslist.push(data);
         });
@@ -27,6 +28,6 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model']
         $scope.visible = false;
     };
 
-    // $scope.types = [{name:'Fixe'},{name:'Assignée'}];
-    // $scope.task_type = $scope.types[0];
+    $scope.types = [{name:'Fixe'},{name:'Assignée'}];
+    $scope.task_type = $scope.types[0];
 }]);

@@ -6,21 +6,21 @@
 <div class="new-task-form" ng-show="visible">
     <form class="task-creation">
         Nom de la tâche: <input type="text" ng-model="task.name"><br />
-        <!-- Type de la tâche: <select ng-model=task_type" ng-options="type.name for type in types"> -->
+        Type de la tâche: <select ng-model="task_type" ng-options="type.name for type in types"></select>
         <button class="btn btn-primary" ng-click="create()">Créer</button>
     </form>
 </div>
 
 <div class="fixed-tasks tasks">
-    <h4>Tâches fixes</h4>
+    <h4>Fixes</h4>
     <ul>
-        <li class="listitem" ng-repeat="task in taskslist">{{task.name}}</li>
+        <li class="listitem" ng-repeat="task in taskslist | filter:{type:'Fixe'}">{{task.name}}</li>
     </ul>
 </div>
 
 <div class="assigned-tasks tasks">
-    <h4>Tâches assignées</h4>
+    <h4>Assignées</h4>
     <ul>
-        <li class="listitem" ng-repeat="task in taskslist">{{task.name}}</li>
+        <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Assignée'}">{{task.name}}</li>
     </ul>
 </div>

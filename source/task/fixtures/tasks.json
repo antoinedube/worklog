@@ -5,6 +5,7 @@
         "fields":
             {
                 "name": "Create website",
+                "type": "Fixed",
                 "datetime": "2015-01-24 01:19:36.285249+00:00"
             }
     },
@@ -14,6 +15,7 @@
         "fields":
             {
                 "name": "Clean up",
+                "type": "Fixed",
                 "datetime": "2015-01-24T01:56:59.916Z"
             }
     },
@@ -23,6 +25,7 @@
         "fields":
             {
                 "name": "Laundry",
+                "type": "Fixed",
                 "datetime": "2015-01-24T01:57:08.693Z"
             }
     },
@@ -32,6 +35,7 @@
         "fields":
             {
                 "name": "Clear the driveway",
+                "type": "Assigned",
                 "datetime": "2015-01-24T01:57:27.266Z"
             }
     },
@@ -41,6 +45,7 @@
         "fields":
             {
                 "name": "Grocery shopping",
+                "type": "Assigned",
                 "datetime": "2015-01-24T01:58:56.374Z"
             }
     },
@@ -50,8 +55,8 @@
         "fields":
             {
                 "name": "Vacuum",
-                "datetime":
-                "2015-01-24T01:59:10.959Z"
+                "type": "Assigned",
+                "datetime": "2015-01-24T01:59:10.959Z"
             }
     }
 ]
