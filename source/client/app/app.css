@@ -33,12 +33,15 @@ div.menu-items .active .menu-entry{
     background-color: #4b4f55;
 }
 
-div.container {
+div.tasks {
+    display: inline-block;
+    width: 20%;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
+    border: 1px solid #CCC;
 }
 
-div.container > ul {
+div.tasks > ul {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
 }
@@ -48,15 +51,31 @@ li.listitem {
     padding: 10px 10px 10px 10px;
     height: 50px;
     list-style-type: None;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #CCC;
 }
 
-li.listitem:nth-child(odd) {
+div.tasks li.listitem:nth-child(odd) {
     background-color: #DFDFDF;
 }
 
-li.listitem:last-child {
+div.tasks li.listitem:last-child {
     border-bottom: 0px;
+}
+
+div.fixed-tasks > h4 {
+    text-align: center;
+    margin: 0px 0px 5px 0px;
+    height: 55px;
+    padding: 15px 40px 20px 40px;
+    background-color: #FFCCAA;
+}
+
+div.assigned-tasks > h4 {
+    text-align: center;
+    margin: 0px 0px 5px 0px;
+    height: 55px;
+    padding: 15px 40px 20px 40px;
+    background-color: #D7E3F4;
 }
 
 div.new-task-form {

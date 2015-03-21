@@ -26,4 +26,7 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model']
 
         $scope.visible = false;
     };
+
+    // $scope.types = [{name:'Fixe'},{name:'Assignée'}];
+    // $scope.task_type = $scope.types[0];
 }]);
