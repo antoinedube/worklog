@@ -18,10 +18,11 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model']
     };
 
     $scope.create = function() {
-        var task = new Task();
-        task.name = $scope.task.name;
-        task.type = $scope.task_type.name;
-        task.$save(function(data) {
+        var task = {
+            name:$scope.task_name,
+            type:$scope.task_type.name
+        };
+        Task.save(task,function(data) {
             $scope.taskslist.push(data);
         });
 

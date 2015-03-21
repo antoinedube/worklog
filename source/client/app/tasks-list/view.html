@@ -5,7 +5,7 @@
 
 <div class="new-task-form" ng-show="visible">
     <form class="task-creation">
-        Nom de la tâche: <input type="text" ng-model="task.name"><br />
+        Nom de la tâche: <input type="text" ng-model="task_name"><br />
         Type de la tâche: <select ng-model="task_type" ng-options="type.name for type in types"></select>
         <button class="btn btn-primary" ng-click="create()">Créer</button>
     </form>
