@@ -6,12 +6,12 @@
   "repository": "",
   "license": "GPLv3",
   "devDependencies": {
-       "karma": "latest",
-       "bower": "latest",
-       "jasmine-core": "latest",
-       "karma-jasmine": "latest",
-       "karma-firefox-launcher": "latest",
-       "karma-phantomjs-launcher": "latest"
+        "karma": "latest",
+        "bower": "latest",
+        "jasmine-core": "latest",
+        "karma-jasmine": "latest",
+        "karma-firefox-launcher": "latest",
+        "karma-phantomjs-launcher": "latest"
   },
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower install",
