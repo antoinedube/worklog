@@ -11,6 +11,8 @@
     </form>
 </div>
 
+<!--ng-repeat using $scope.types[]-->
+
 <div class="fixed-tasks tasks">
     <h4>Fixes</h4>
     <ul>
@@ -24,3 +26,4 @@
         <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Assignée'}">{{task.name}}</li>
     </ul>
 </div>
+
