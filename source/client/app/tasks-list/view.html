@@ -11,8 +11,6 @@
     </form>
 </div>
 
-<!--ng-repeat using $scope.types[]-->
-
 <div class="fixed-tasks tasks">
     <h4>Fixes</h4>
     <ul>
@@ -24,6 +22,22 @@
     <h4>Assignées</h4>
     <ul>
         <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Assignée'}">{{task.name}}</li>
+    </ul>
+</div>
+
+<div class="unassigned-tasks tasks">
+    <h4>Non-assignées</h4>
+    <h5>avec date limite</h5>
+    <ul>
+        <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Non-assignée'}">{{task.name}}</li>
+    </ul>
+</div>
+
+<div class="unassigned-nodate-tasks tasks">
+    <h4>Non-assignées</h4>
+    <h5>sans date limite</h5>
+    <ul>
+        <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Non-assignée sans date'}">{{task.name}}</li>
     </ul>
 </div>
 

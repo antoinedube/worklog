@@ -36,7 +36,7 @@ div.menu-items .active .menu-entry{
 div.tasks {
     display: inline-block;
     vertical-align: top;
-    width: 20%;
+    width: 24%;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     border: 1px solid #CCC;
@@ -72,6 +72,22 @@ div.fixed-tasks > h4 {
 }
 
 div.assigned-tasks > h4 {
+    text-align: center;
+    margin: 0px 0px 5px 0px;
+    height: 55px;
+    padding: 15px 40px 20px 40px;
+    background-color: #D7E3F4;
+}
+
+div.unassigned-tasks > h4 {
+    text-align: center;
+    margin: 0px 0px 5px 0px;
+    height: 55px;
+    padding: 15px 40px 20px 40px;
+    background-color: #FFCCAA;
+}
+
+div.unassigned-nodate-tasks > h4 {
     text-align: center;
     margin: 0px 0px 5px 0px;
     height: 55px;
@@ -128,6 +144,7 @@ a {
 }
 
 #main-view {
+    width: 100%;
     padding: 10px 10px 10px 165px;
 }
 
