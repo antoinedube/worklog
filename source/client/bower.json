@@ -12,6 +12,7 @@
     "angular-mocks": "latest",
     "angular-resource": "latest",
     "bootstrap-css-only": "latest",
-    "fontawesome": "latest"
+    "fontawesome": "latest",
+    "ui.bootstrap": "latest"
   }
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model'])
+angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'TasksManager.task-model'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/tasks-list', {
@@ -9,7 +9,7 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model']
   });
 }])
 
-.controller('TasksListCtrl', ['$scope', 'Task', function($scope,Task) {
+.controller('TasksListCtrl', ['$scope', '$modal', 'Task', function($scope,$modal,Task) {
     $scope.visible = false;
     $scope.types = ['Fixe','Assignée'];
     $scope.task = {
