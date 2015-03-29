@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'TasksManager.task-model'])
+angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/tasks-list', {
@@ -9,7 +9,7 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'Tas
   });
 }])
 
-.controller('TasksListCtrl', ['$scope', '$modal', 'Task', function($scope,$modal,Task) {
+.controller('TasksListCtrl', ['$scope', 'Task', function($scope,Task) {
     $scope.visible = false;
     $scope.types = ['Fixe','Assignée'];
     $scope.task = {
@@ -29,4 +29,11 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'Tas
         });
         $scope.visible = false;
     };
+
+    $scope.cancel = function() {
+        $scope.visible = false;
+    };
+
+    // Add $watch to field : task name must be filled.
 }]);
+

@@ -3,12 +3,13 @@
     <button class="btn btn-primary" ng-click="createNew()">Créer une tâche</button>
 </div>
 
-<!-- https://angular-ui.github.io/bootstrap/ ui.bootstrap.modal -->
 <div class="new-task-form" ng-show="visible">
+    <h4>Création de tâche</h4>
     <form class="task-creation">
         Nom de la tâche: <input type="text" class="form-control" ng-model="task.name"><br />
         Type de la tâche: <select class="form-control" ng-model="task.type" ng-options="type for type in types"></select>
         <button class="btn btn-primary" ng-click="create()">Créer</button>
+        <button class="btn btn-warning" ng-click="cancel()">Annuler</button>
     </form>
 </div>
 
