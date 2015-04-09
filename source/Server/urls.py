@@ -11,5 +11,6 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^static/(?P<path>.*)$', serve, {'document_root': 'client/app',}),
+    url(r'^task_manager/(?P<path>.*)$', serve, {'document_root': 'client/app',}),
+    url(r'^bower_modules/(?P<path>.*)$', serve, {'document_root': 'client/app/bower_components',}),
 )

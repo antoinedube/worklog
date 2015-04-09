@@ -4,7 +4,7 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model']
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/tasks-list', {
-    templateUrl: '/static/tasks-list/view.html',
+    templateUrl: 'task_manager/tasks-list/view.html',
     controller: 'TasksListCtrl'
   });
 }])
@@ -37,4 +37,3 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model']
     // Add $watch to field : task name must be filled.
 }]);
 
-// https://stackoverflow.com/questions/10639744/in-django-can-i-have-multiple-instances-of-static-app

@@ -9,10 +9,10 @@
   <title>Organisateur de tâches</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="static/bootstrap-css-only/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/bootstrap-css-only/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="static/fontawesome/css/font-awesome.css">
-    <link rel="stylesheet" href="static/app.css">
+    <link rel="stylesheet" href="bower_modules/bootstrap-css-only/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_modules/bootstrap-css-only/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_modules/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="task_manager/app.css">
 {% csrf_token %}
 </head>
 <body>
@@ -22,15 +22,15 @@
 
   <div id="main-view" ng-view></div>
 
-  <script src="static/angular/angular.js"></script>
-  <script src="static/angular-route/angular-route.js"></script>
-  <script src="static/angular-resource/angular-resource.js"></script>
-  <script src="static/ui.bootstrap/src/transition/transition.js"></script>
-  <script src="static/ui.bootstrap/src/modal/modal.js"></script>
-  <script src="static/app.js"></script>
-  <script src="static/left-menu/controller.js"></script>
-  <script src="static/home/controller.js"></script>
-  <script src="static/tasks-list/controller.js"></script>
-  <script src="static/task/model.js"></script>
+  <script src="bower_modules/angular/angular.js"></script>
+  <script src="bower_modules/angular-route/angular-route.js"></script>
+  <script src="bower_modules/angular-resource/angular-resource.js"></script>
+  <script src="bower_modules/ui.bootstrap/src/transition/transition.js"></script>
+  <script src="bower_modules/ui.bootstrap/src/modal/modal.js"></script>
+  <script src="task_manager/app.js"></script>
+  <script src="task_manager/left-menu/controller.js"></script>
+  <script src="task_manager/home/controller.js"></script>
+  <script src="task_manager/tasks-list/controller.js"></script>
+  <script src="task_manager/task/model.js"></script>
 </body>
 </html>

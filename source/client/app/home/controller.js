@@ -4,7 +4,7 @@ angular.module('TasksManager.home', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {
-    templateUrl: '/static/home/view.html',
+    templateUrl: 'task_manager/home/view.html',
     controller: 'HomeCtrl'
   });
 }])
