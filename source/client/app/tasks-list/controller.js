@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model'])
+angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'TasksManager.task-model'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/tasks-list', {
@@ -9,7 +9,7 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model']
   });
 }])
 
-.controller('TasksListCtrl', ['$scope', 'Task', function($scope,Task) {
+.controller('TasksListCtrl', ['$scope', '$modal', 'Task', function($scope,$modal,Task) {
     $scope.visible = false;
     $scope.types = ['Fixe','Assignée'];
     $scope.task = {
@@ -19,7 +19,20 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model']
 
     $scope.taskslist = Task.query();
 
+
     $scope.createNew = function() {
+        $modal.open({
+            templateUrl: 'task_manager/task/NewTaskTemplate.html',
+            controller: 'NewTaskCtrl',
+            resolve: {
+                tasks: function() {
+                    return $scope.tasks;
+                }
+            }
+        });
+    };
+
+/*    $scope.createNew = function() {
         $scope.visible = true;
     };
 
@@ -33,7 +46,18 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model']
     $scope.cancel = function() {
         $scope.visible = false;
     };
+*/
 
     // Add $watch to field : task name must be filled.
+}])
+
+.controller('NewTaskCtrl', ['$scope', '$modalInstance', function($scope, $modalInstance) {
+    $scope.create = function() {
+        $modalInstance.close();
+    };
+
+    $scope.cancel = function() {
+        $modalInstance.dismiss();
+    };
 }]);
 
