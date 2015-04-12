@@ -32,22 +32,6 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'Tas
         });
     };
 
-/*    $scope.createNew = function() {
-        $scope.visible = true;
-    };
-
-    $scope.create = function() {
-        Task.save($scope.task,function(data) {
-            $scope.taskslist.push(data);
-        });
-        $scope.visible = false;
-    };
-
-    $scope.cancel = function() {
-        $scope.visible = false;
-    };
-*/
-
     // Add $watch to field : task name must be filled.
 }])
 
