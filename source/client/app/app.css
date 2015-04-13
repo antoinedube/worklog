@@ -10,10 +10,6 @@ select {
     appearance: None;
 }
 
-div {
-    background-color: white;
-}
-
 div.menu-items a {
     text-decoration: none;
 }
@@ -58,6 +54,7 @@ li.listitem {
     min-height: 50px;
     list-style-type: None;
     border-bottom: 1px solid #CCC;
+    overflow: hidden;
 }
 
 div.tasks li.listitem:nth-child(odd) {
