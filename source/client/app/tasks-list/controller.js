@@ -24,6 +24,7 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'Tas
         $modal.open({
             templateUrl: 'task_manager/task/NewTaskTemplate.html',
             controller: 'NewTaskCtrl',
+            backdrop: 'static',
             resolve: {
                 tasks: function() {
                     return $scope.tasks;
