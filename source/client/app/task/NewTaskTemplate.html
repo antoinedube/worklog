@@ -3,9 +3,13 @@
 </div>
 
 <div class="modal-body">
+    <form class="task-creation">
+        Nom de la tâche: <input type="text" class="form-control" ng-model="task.name"><br />
+        Type de la tâche: <select class="form-control" ng-model="task.type" ng-options="type for type in types"></select>
+    </form>
 </div>
 
 <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="create()">Create</button>
+    <button class="btn btn-primary" ng-click="create()" ng-disabled="!is_form_complete">Create</button>
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
 </div>
