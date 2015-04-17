@@ -2,42 +2,40 @@
     <h3>Tâches</h3>
     <button class="btn btn-primary" ng-click="createNew()">Créer une tâche</button>
 </div>
-<!--
-<div class="new-task-form" ng-show="visible">
-    <h4>Création de tâche</h4>
-    <form class="task-creation">
-        Nom de la tâche: <input type="text" class="form-control" ng-model="task.name"><br />
-        Type de la tâche: <select class="form-control" ng-model="task.type" ng-options="type for type in types"></select>
-        <button class="btn btn-primary" ng-click="create()">Créer</button>
-        <button class="btn btn-warning" ng-click="cancel()">Annuler</button>
-    </form>
-</div>
--->
+
 <div class="fixed-tasks tasks">
-    <h4>Fixes</h4>
+    <div class="tasks-list-header">
+        <h4>Fixes</h4>
+    </div>
     <ul>
         <li class="listitem" ng-repeat="task in taskslist | filter:{type:'Fixe'}">{{task.name}}</li>
     </ul>
 </div>
 
 <div class="assigned-tasks tasks">
-    <h4>Assignées</h4>
+    <div class="tasks-list-header">
+        <h4>Assignées</h4>
+    </div>
     <ul>
         <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Assignée'}">{{task.name}}</li>
     </ul>
 </div>
 
 <div class="unassigned-tasks tasks">
-    <h4>Non-assignées</h4>
-    <h5>avec date limite</h5>
+    <div class="tasks-list-header">
+        <h4>Non-assignées</h4>
+        <h5>avec date limite</h5>
+    </div>
     <ul>
         <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Non-assignée'}">{{task.name}}</li>
     </ul>
 </div>
 
 <div class="unassigned-nodate-tasks tasks">
-    <h4>Non-assignées</h4>
-    <h5>sans date limite</h5>
+    <div class="tasks-list-header">
+        <h4>Non-assignées</h4>
+        <h5>sans date limite</h5>
+    </div>
     <ul>
         <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Non-assignée sans date'}">{{task.name}}</li>
     </ul>

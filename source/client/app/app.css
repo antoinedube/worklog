@@ -65,67 +65,27 @@ div.tasks li.listitem:last-child {
     border-bottom: 0px;
 }
 
-div.fixed-tasks > h4 {
+div.tasks-list-header > h4, h5 {
     text-align: center;
     margin: 0px 0px 5px 0px;
     height: 55px;
     padding: 15px 40px 20px 40px;
+}
+
+div.fixed-tasks > h4 {
     background-color: #FFCCAA;
 }
 
 div.assigned-tasks > h4 {
-    text-align: center;
-    margin: 0px 0px 5px 0px;
-    height: 55px;
-    padding: 15px 40px 20px 40px;
     background-color: #D7E3F4;
 }
 
 div.unassigned-tasks > h4 {
-    text-align: center;
-    margin: 0px 0px 5px 0px;
-    height: 55px;
-    padding: 15px 40px 20px 40px;
     background-color: #FFCCAA;
 }
 
 div.unassigned-nodate-tasks > h4 {
-    text-align: center;
-    margin: 0px 0px 5px 0px;
-    height: 55px;
-    padding: 15px 40px 20px 40px;
     background-color: #D7E3F4;
-}
-
-div.new-task-form {
-    position: absolute;
-    z-index: 99;
-    left: 0;
-    right: 0;
-    margin: auto;
-    padding: 20px 20px 0px 20px;
-    border: 2px solid #6e757F;
-    border-radius: 5px;
-    text-align: left;
-    width: 250px;
-    height: 260px;
-    box-shadow: 5px 5px 2px #BBBBBB;
-}
-
-div.new-task-form .btn-primary {
-    position: absolute;
-    bottom: 0px;
-    right: 80px;
-    margin: 10px 10px 10px 0px;
-    text-align: right;
-}
-
-div.new-task-form .btn-warning {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    margin: 10px 10px 10px 0px;
-    text-align: right;
 }
 
 a {
