@@ -25,8 +25,6 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'Tas
             })
         });
     };
-
-    // Add $watch to field : task name must be filled.
 }])
 
 .controller('NewTaskCtrl', ['$scope', '$modalInstance', function($scope,$modalInstance) {
