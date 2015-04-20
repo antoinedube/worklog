@@ -6,7 +6,19 @@
     <form class="task-creation">
         Nom de la tâche: <input type="text" class="form-control" ng-model="task.name"><br />
         Type de la tâche: <select class="form-control" ng-model="task.type" ng-options="type for type in types"></select>
-        Date de fin:
+        Date de fin: <div class="row">
+                         <p class="input-group">
+                             <input type="text" class="form-control"
+                                 datepicker-popup="yyyy/MM/dd" ng-model="dt"
+                                 is-open="opened"
+                                 datepicker-options="dateOptions"
+                                 date-disabled="disabled(date,mode)" ng-required="true" close-text="Close" />
+                             <span class="input-group-btn">
+                                 <button type="button" class="btn btn-default"
+                                     ng-click="open($event)"><i class="fa fa-calendar"></i></button>
+                             </span>
+                             </p>
+                         </div>
     </form>
 </div>
 
