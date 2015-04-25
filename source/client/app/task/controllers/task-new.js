@@ -27,7 +27,6 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
     $scope.open = function($event) {
         $event.preventDefault();
         $event.stopPropagation();
-        console.log('Calendar is opened');
         $scope.opened = true;
     }
 }]);

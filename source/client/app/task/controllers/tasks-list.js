@@ -18,6 +18,7 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'Tas
             controller: 'NewTaskCtrl',
             backdrop: 'static',
             backdropClass: 'fade in',
+            windowClass: 'dropdown-menu-right',
         })
         .result.then(function(task) {
             Task.save(task,function(data) {
