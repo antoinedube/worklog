@@ -1,8 +1,8 @@
 {
   "name": "tasks-manager",
   "private": true,
-  "version": "0.0.0",
-  "description": "Tasks Manager",
+  "version": "0.0.1",
+  "description": "Simple tasks manager",
   "repository": "",
   "license": "GPLv3",
   "devDependencies": {
@@ -10,7 +10,6 @@
         "bower": "latest",
         "jasmine-core": "latest",
         "karma-jasmine": "latest",
-        "karma-firefox-launcher": "latest",
         "karma-phantomjs-launcher": "latest"
   },
   "scripts": {

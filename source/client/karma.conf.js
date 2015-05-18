@@ -18,13 +18,11 @@ module.exports = function(config){
 
     frameworks: ['jasmine'],
 
-    browsers : ['PhantomJS', 'Firefox'],
+    browsers : ['PhantomJS'],
 
     plugins : [
             'karma-phantomjs-launcher',
-            'karma-firefox-launcher',
             'karma-jasmine'
             ],
-
   });
 };
