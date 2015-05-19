@@ -4,7 +4,7 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'Tas
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/tasks-list', {
-    templateUrl: 'task_manager/task/views/tasks-list.html',
+    templateUrl: 'task_manager/components/tasks-list/tasks-list_view.html',
     controller: 'TasksListCtrl'
   });
 }])
@@ -14,7 +14,7 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'Tas
 
     $scope.createNew = function() {
         $modal.open({
-            templateUrl: 'task_manager/task/views/NewTaskTemplate.html',
+            templateUrl: 'task_manager/shared/task/create/create_view.html',
             controller: 'NewTaskCtrl',
             backdrop: 'static',
             backdropClass: 'fade in',
