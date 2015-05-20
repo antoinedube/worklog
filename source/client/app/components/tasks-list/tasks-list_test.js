@@ -30,12 +30,8 @@ describe('TasksManager.tasks-list module', function() {
     });
 
     /*
-     * Refactor test to take into account the modal
-     * create a 'fake' modal :
-     * https://stackoverflow.com/questions/21214868/angularjs-ui-bootstrap-mocking-modal-in-unit-test
+     * "CreateNew" calls modal
      */
-    it('should save object on task creation', function() {
-    });
 
 });
 

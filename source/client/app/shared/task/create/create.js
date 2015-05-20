@@ -23,7 +23,6 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         $modalInstance.dismiss();
     };
 
-
     $scope.open = function($event) {
         $event.preventDefault();
         $event.stopPropagation();
