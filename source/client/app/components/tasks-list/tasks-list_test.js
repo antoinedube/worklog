@@ -16,8 +16,15 @@ describe('TasksManager.tasks-list module', function() {
         $provide.value('Task',mock_task_factory);
 
         mock_modal = {
-            open: jasmine.createSpy() 
+            open: function() {
+                return {
+                    result: {
+                        then: function() {}
+                    }
+                };
+            }
         };
+        spyOn(mock_modal,'open').and.callThrough();
         $provide.value('$modal',mock_modal);
     }));
 
@@ -30,12 +37,11 @@ describe('TasksManager.tasks-list module', function() {
         expect(tasks_list_ctrl).toBeDefined();
     });
 
-    xit('should query all tasks on controller creation', function() {
+    it('should query all tasks on controller creation', function() {
         expect(mock_task_factory.query).toHaveBeenCalled();
     });
 
-    xit('should open a modal upon task creation', function() {
-        // Must mock modal as a promise
+    it('should open a modal upon task creation', function() {
         $scope.createNew();
         expect(mock_modal.open).toHaveBeenCalled();
     });
