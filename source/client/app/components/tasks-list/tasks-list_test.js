@@ -2,36 +2,43 @@
 
 describe('TasksManager.tasks-list module', function() {
     var $scope;
-    var TasksListCtrl;
+    var tasks_list_ctrl;
+    var mock_modal;
     var mock_task_factory;
 
-    beforeEach(module('TasksManager.task-model', function($provide) {
+    beforeEach(module('TasksManager.tasks-list'));
+
+    beforeEach(module(function($provide) {
         mock_task_factory = {
             save: jasmine.createSpy(),
             query: jasmine.createSpy()
         };
+        $provide.value('Task',mock_task_factory);
 
-        $provide.value('Task', mock_task_factory);
+        mock_modal = {
+            open: jasmine.createSpy() 
+        };
+        $provide.value('$modal',mock_modal);
     }));
 
-    beforeEach(module('TasksManager.tasks-list'));
-
-    beforeEach(inject(function($controller) {
-        $scope = {};
-        TasksListCtrl = $controller('TasksListCtrl', {$scope: $scope});
+    beforeEach(inject(function($rootScope,$controller) {
+        $scope = $rootScope.$new();
+        tasks_list_ctrl = $controller('TasksListCtrl',{$scope: $scope});
     }));
 
     it('should be defined on controller creation', function() {
-        expect(TasksListCtrl).toBeDefined();
+        expect(tasks_list_ctrl).toBeDefined();
     });
 
-    it('should query all tasks on controller creation', function() {
+    xit('should query all tasks on controller creation', function() {
         expect(mock_task_factory.query).toHaveBeenCalled();
     });
 
-    /*
-     * "CreateNew" calls modal
-     */
+    xit('should open a modal upon task creation', function() {
+        // Must mock modal as a promise
+        $scope.createNew();
+        expect(mock_modal.open).toHaveBeenCalled();
+    });
 
 });
 
