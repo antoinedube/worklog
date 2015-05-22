@@ -8,7 +8,8 @@
         Type de la tâche: <select class="form-control" ng-model="task.type" ng-options="type for type in types"></select><br />
         Date de fin:
             <p class="input-group">
-                <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" show-button-bar=true ng-model="dt" is-open="opened" ng-required="true" close-text="Close" \>
+                <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" show-button-bar=true
+                ng-model="task.end_date" is-open="opened" ng-required="true" close-text="Close" \>
                 <span class="input-group-btn">
                     <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
                 </span>

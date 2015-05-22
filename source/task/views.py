@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import View
-from django.utils import timezone
+from django.utils import timezone, dateparse
 
 import json
 
@@ -31,20 +31,21 @@ class TaskView(View):
 
     def post(self,request,task_id):
         data = json.loads(request.body.decode('utf-8'))
-        print(data['name'],data['type'])
         new_task = Task(
                 name = data['name'],
                 datetime = timezone.now(),
+                end_date = dateparse.parse_datetime(data['end_date']),
                 type = data['type']
                 )
         new_task.save()
 
         saved_item = {
-                'id': new_task.id,
-                'name': new_task.name,
-                'type': new_task.type,
-                'datetime': str(new_task.datetime)
-                }
+            'id': new_task.id,
+            'name': new_task.name,
+            'type': new_task.type,
+            'datetime': str(new_task.datetime),
+            'end_date': str(new_task.end_date)
+        }
 
         return HttpResponse(json.dumps(saved_item))
 
