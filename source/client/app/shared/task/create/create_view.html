@@ -4,8 +4,12 @@
 
 <div class="modal-body">
     <form class="task-creation">
-        Nom de la tâche: <input type="text" class="form-control" ng-model="task.name"><br />
+        <div class="container-fluid">
+            <div class="col-md-6">
+        Nom de la tâche: <input type="text" class="form-control" ng-model="task.name">
         Type de la tâche: <select class="form-control" ng-model="task.type" ng-options="type for type in types"></select><br />
+            </div>
+            <div class="col-md-6">
         Date de fin:
             <p class="input-group">
                 <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" show-button-bar=true
@@ -14,6 +18,8 @@
                     <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
                 </span>
             </p>
+            </div>
+        </div>
     </form>
 </div>
 

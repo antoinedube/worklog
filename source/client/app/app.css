@@ -34,7 +34,7 @@ div.menu-items .active .menu-entry{
     background-color: #4b4f55;
 }
 
-div.container {
+div.container-fluid {
     margin: 0px 0px 0px 160px;
     padding: 0px 0px 0px 0px;
 }

@@ -13,7 +13,7 @@ class TaskView(View):
             task_query = Task.objects.all()
             item_set = [{
                 'name': item.name,
-                'datetime': str(item.datetime),
+                'created_at': str(item.created_at),
                 'type': item.type}
                     for item in task_query
             ]
@@ -24,7 +24,7 @@ class TaskView(View):
             item_set = {
                 'name': item_query.name,
                 'type': item_query.type,
-                'datetime': str(item_query.datetime)
+                'created_at': str(item_query.created_at)
             }
             json_item = json.dumps(item_set)
             return HttpResponse(json_item)
@@ -33,7 +33,7 @@ class TaskView(View):
         data = json.loads(request.body.decode('utf-8'))
         new_task = Task(
                 name = data['name'],
-                datetime = timezone.now(),
+                created_at = timezone.now(),
                 end_date = dateparse.parse_datetime(data['end_date']),
                 type = data['type']
                 )
@@ -43,7 +43,7 @@ class TaskView(View):
             'id': new_task.id,
             'name': new_task.name,
             'type': new_task.type,
-            'datetime': str(new_task.datetime),
+            'created_at': str(new_task.created_at),
             'end_date': str(new_task.end_date)
         }
 
