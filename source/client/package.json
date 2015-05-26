@@ -8,6 +8,8 @@
   "devDependencies": {
         "karma": "latest",
         "bower": "latest",
+        "http-server": "latest",
+        "protractor": "latest",
         "jasmine-core": "latest",
         "karma-jasmine": "latest",
         "karma-phantomjs-launcher": "latest"
@@ -15,6 +17,11 @@
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower install",
 
-    "test": "./node_modules/karma/bin/karma start karma.conf.js --single-run"
+    "test": "./node_modules/karma/bin/karma start karma.conf.js --single-run",
+
+    "update-webdriver": "./node_modules/protractor/bin/webdriver-manager update",
+
+    "start-webserver": "http-server -a localhost -p 8000 -c-1",
+    "protractor": "./node_modules/protractor/bin/protractor e2e-tests/protractor.conf.js"
   }
 }

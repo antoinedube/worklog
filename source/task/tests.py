@@ -1,6 +1,11 @@
 from django.test import TestCase
+from django.test import LiveServerTestCase
 from django.test.client import Client
 from django.utils import timezone
+
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+
 import json
 
 class CRUDTestCase(TestCase):
@@ -21,3 +26,15 @@ class CRUDTestCase(TestCase):
             })
         response = client.post('/api/task/',post_data,content_type='application/json')
         self.assertEqual(response.status_code,200)
+
+class SomeClassWithTestUsingLiveServer(LiveServerTestCase):
+    def setUp(self):
+        self.browser = webdriver.Chrome()
+
+    def tearDown(self):
+        self.browser.quit()
+
+    def test_something_something(self):
+        self.browser.get('http://localhost:8081')
+        print(self.browser.title)
+        self.assertTrue(True)
