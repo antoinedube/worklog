@@ -2,14 +2,16 @@ exports.config = {
     allScriptsTimeout: 11000,
 
     specs: [
-        'base_specs.js'
+        'base_specs.js',
+        'tasks-list_specs.js'
     ],
 
-    capabilities: {
-        'browserName': 'chrome',
-    },
+    multiCapabilities: [
+        {'browserName': 'chrome'},
+        {'browserName': 'firefox'},
+    ],
 
-    baseUrl: 'http://localhost:8000/app',
+    baseUrl: 'http://localhost:8000',
 
     framework: 'jasmine2',
 
