@@ -34,11 +34,15 @@ div.menu-items .active .menu-entry{
     background-color: #4b4f55;
 }
 
-div.container-fluid {
+div#main-view > .container-fluid {
     margin: 0px 0px 0px 160px;
     padding: 0px 0px 0px 0px;
 }
 
+form.task-creation > .container-fluid {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
 div.row {
     margin: 0px 0px 0px 0px;
 }
