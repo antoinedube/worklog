@@ -11,6 +11,7 @@
         "http-server": "latest",
         "protractor": "latest",
         "jasmine-core": "latest",
+        "phantomjs": "latest",
         "karma-jasmine": "latest",
         "karma-phantomjs-launcher": "latest"
   },
