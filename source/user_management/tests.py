@@ -15,4 +15,5 @@ class LoginTestCase(TestCase):
         self.assertEqual(response.status_code,200)
         deserialized_content = json.loads(response.content.decode('utf-8'))
         self.assertEqual('Login successful',deserialized_content['message'])
+        self.assertIsNotNone(client.cookies['sessionid'].key)
 

@@ -15,11 +15,9 @@ class UserLogin(View):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                # Redirect to a success page.
                 return HttpResponse('{"message": "Login successful"}')
             else:
-                # Return a 'disabled account' error message
                 return HttpResponse('{"message": "Disabled account"}')
         else:
-            # Return an 'invalid login' error message.))
             return HttpResponse('{"message": "Invalid login"}')
+
