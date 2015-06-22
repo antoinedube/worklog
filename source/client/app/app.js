@@ -6,6 +6,7 @@ angular.module('TasksManager', [
   'TasksManager.left-menu',
   'TasksManager.home',
   'TasksManager.tasks-list',
+  'TasksManager.task-view'
 ])
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/home'});

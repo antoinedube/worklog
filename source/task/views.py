@@ -22,6 +22,7 @@ class TaskView(View):
         else:
             item_query = Task.objects.get(id=task_id)
             item_set = {
+                'id': task_id,
                 'name': item_query.name,
                 'type': item_query.type,
                 'created_at': str(item_query.created_at)

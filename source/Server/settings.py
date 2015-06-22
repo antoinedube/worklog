@@ -37,6 +37,12 @@ MIDDLEWARE_CLASSES = (
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 
+CACHE = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+
 ROOT_URLCONF = 'Server.urls'
 
 WSGI_APPLICATION = 'Server.wsgi.application'

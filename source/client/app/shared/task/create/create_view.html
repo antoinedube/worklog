@@ -5,9 +5,11 @@
 <div class="modal-body">
     <form class="task-creation">
         <div class="container-fluid">
+            <div class="col-md-12">
+                Nom de la tâche: <input type="text" class="form-control" ng-model="task.name">
+            </div>
             <div class="col-md-6">
-        Nom de la tâche: <input type="text" class="form-control" ng-model="task.name">
-        Type de la tâche: <select class="form-control" ng-model="task.type" ng-options="type for type in types"></select><br />
+        Type de la tâche: <select class="form-control" ng-model="task.type" ng-options="type for type in types"></select>
             </div>
             <div class="col-md-6">
         Date de fin:
