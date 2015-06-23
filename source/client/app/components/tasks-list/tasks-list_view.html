@@ -11,7 +11,7 @@
             </div>
             <ul>
                 <li class="listitem" ng-repeat="task in taskslist | filter:{type:'Fixe'}">
-                    <a href="/#/task-view/{{task.id}}">{{task}}</a>
+                    <a href="/#/task-view/{{task.id}}">{{task.name}}</a>
                 </li>
             </ul>
         </div>
@@ -22,7 +22,7 @@
             </div>
             <ul>
                 <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Assignée'}">
-                    <a href="/#/task-view/{{task.id}}">{{task}}</a>
+                    <a href="/#/task-view/{{task.id}}">{{task.name}}</a>
                 </li>
             </ul>
         </div>
@@ -33,7 +33,9 @@
                 <h5>avec date limite</h5>
             </div>
             <ul>
-                <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Non-assignée'}">{{task.name}}</li>
+                <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Non-assignée'}">
+                    <a href="/#/task-view/{{task.id}}">{{task.name}}</a>
+                </li>
             </ul>
         </div>
 
@@ -43,7 +45,9 @@
                 <h5>sans date limite</h5>
             </div>
             <ul>
-                <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Non-assignée sans date'}">{{task.name}}</li>
+                <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Non-assignée sans date'}">
+                    <a href="/#/task-view/{{task.id}}">{{task.name}}</a>
+                </li>
             </ul>
         </div>
 
