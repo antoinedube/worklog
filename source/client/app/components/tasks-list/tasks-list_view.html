@@ -10,7 +10,9 @@
                 <h4>Fixes</h4>
             </div>
             <ul>
-                <li class="listitem" ng-repeat="task in taskslist | filter:{type:'Fixe'}">{{task.name}}</li>
+                <li class="listitem" ng-repeat="task in taskslist | filter:{type:'Fixe'}">
+                    <a href="/#/task-view/{{task.id}}">{{task}}</a>
+                </li>
             </ul>
         </div>
 
@@ -19,7 +21,9 @@
                 <h4>Assignées</h4>
             </div>
             <ul>
-                <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Assignée'}">{{task.name}}</li>
+                <li class="listitem" ng-repeat="task in taskslist | filter:{type: 'Assignée'}">
+                    <a href="/#/task-view/{{task.id}}">{{task}}</a>
+                </li>
             </ul>
         </div>
 
