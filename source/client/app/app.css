@@ -80,6 +80,11 @@ div.tasks li.listitem:nth-child(odd) {
 div.tasks li.listitem:last-child {
     border-bottom: 0px;
 }
+
+div.tasks-list-header {
+    text-align: center;
+    min-height: 50px;
+}
 /*
 div.tasks-list-header > h4, h5 {
     text-align: center;
