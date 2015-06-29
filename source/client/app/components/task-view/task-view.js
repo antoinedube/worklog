@@ -9,6 +9,10 @@ angular.module('TasksManager.task-view', ['ngRoute', 'TasksManager.task-model'])
   });
 }])
 
-.controller('TaskViewCtrl', ['$scope', '$routeParams', 'Task', function($scope,$routeParams,Task) {
+.controller('TaskViewCtrl', function($scope,$location,$routeParams,Task) {
     $scope.task = Task.get({task_id: $routeParams.task_id});
-}]);
+
+    $scope.close = function() {
+        $location.path('/tasks-list');
+    }
+});

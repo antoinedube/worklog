@@ -15,6 +15,7 @@ class TaskView(View):
                 'id': item.id,
                 'name': item.name,
                 'created_at': str(item.created_at),
+                'end_date': str(item.end_date),
                 'type': item.type}
                     for item in task_query
             ]
@@ -26,7 +27,8 @@ class TaskView(View):
                 'id': item_query.id,
                 'name': item_query.name,
                 'type': item_query.type,
-                'created_at': str(item_query.created_at)
+                'created_at': str(item_query.created_at),
+                'end_date': str(item_query.end_date)
             }
             json_item = json.dumps(item_set)
             return HttpResponse(json_item)

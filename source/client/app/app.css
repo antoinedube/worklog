@@ -39,17 +39,18 @@ div#main-view > .container-fluid {
     padding: 0px 0px 0px 0px;
 }
 
+div#main-view a {
+    text-decoration: none;
+}
+
 form.task-creation > .container-fluid {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
 }
 
-.container-fluid > div {
-    margin: 0px 0px 10px 0px;
-}
-
 div.row {
     margin: 0px 0px 0px 0px;
+    max-width: 1500px
 }
 
 div.tasks {
@@ -84,45 +85,6 @@ div.tasks li.listitem:last-child {
 div.tasks-list-header {
     text-align: center;
     min-height: 50px;
-}
-/*
-div.tasks-list-header > h4, h5 {
-    text-align: center;
-    margin: 0px 0px 0px 0px;
-}
-
-div.tasks-list-header > h4 {
-    height: 50px;
-    padding: 15px 40px 15px 40px;
-}
-
-div.tasks-list-header > h5 {
-    height: 15px;
-    padding: 0px 40px 30px 40px;
-}
-
-div.fixed-tasks > h4 {
-    background-color: #FFCCAA;
-}
-
-div.assigned-tasks > h4 {
-    background-color: #D7E3F4;
-}
-
-div.unassigned-tasks > h4 {
-    background-color: #FFCCAA;
-}
-
-div.unassigned-nodate-tasks > h4 {
-    background-color: #D7E3F4;
-}
-*/
-/*
-p.input-group > ul.dropdown-menu {
-}
-*/
-a {
-    outline: none;
 }
 
 #app-header {
