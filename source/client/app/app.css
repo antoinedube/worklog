@@ -12,12 +12,12 @@ select {
 
 div.menu-items a {
     text-decoration: none;
+    width: 150px;
 }
 
 div.menu-items .menu-entry{
     color: #8b8e93;
     background-color: #e6e6e6;
-    width: 150px;
     line-height: 30px;
     vertical-align: middle;
     padding: 10px 10px 10px 20px;
@@ -32,15 +32,6 @@ div.menu-items .menu-entry:hover {
 div.menu-items .active .menu-entry{
     color: #ffffff;
     background-color: #4b4f55;
-}
-
-div#main-view > .container-fluid {
-    margin: 0px 0px 0px 160px;
-    padding: 0px 0px 0px 0px;
-}
-
-div#main-view a {
-    text-decoration: none;
 }
 
 form.task-creation > .container-fluid {
@@ -108,8 +99,13 @@ div.tasks-list-header {
     -ms-user-select: none;
 }
 
-#main-view {
-    width: 100%;
+div#main-view {
+    margin: 0px 0px 0px 160px;
+    padding: 0px 0px 0px 0px;
+}
+
+div#main-view a {
+    text-decoration: none;
 }
 
 #main-view > .header {
