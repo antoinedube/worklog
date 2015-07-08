@@ -122,3 +122,8 @@ div#main-view a {
     float: right;
     margin: 5px;
 }
+
+tr.single-event > td {
+    padding: 25px 25px 25px 25px;
+}
+
