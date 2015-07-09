@@ -3,8 +3,8 @@
 <div id="day-planner">
     <table>
         <tr ng-repeat="hour in working_hours" class="single-event">
-            <td>{{hour}}</td>
-            <td>Event at {{hour}}</td>
+            <td class="time-of-day" valign="top" align="right">{{hour}}</td>
+            <td class="event">Event at {{hour}}</td>
         </tr>
     </table>
 </div>
