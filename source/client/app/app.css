@@ -81,15 +81,15 @@ div.tasks-list-header {
 #app-header {
     width: 100%;
     text-align: center;
-    height: 50px;
-    line-height: 50px;
+    height: 60px;
+    line-height: 60px;
     vertical-align: middle;
     padding: 0px;
     margin: 0px;
     font-size: 24px;
     font-weight: 400;
     color: #F5F5F5;
-    background: linear-gradient(#4b4f55,#6e757f, #4b4f55);
+    background: #4b4f55;
 }
 
 #nav-menu {
