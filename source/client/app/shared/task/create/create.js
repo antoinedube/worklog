@@ -11,6 +11,9 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
     };
     $scope.is_form_complete = false;
 
+    $scope.task.end_time = new Date();
+    $scope.task.end_time.setMinutes(0);
+
     $scope.$watch('task.name', function(newValue,oldValue) {
         $scope.is_form_complete = (newValue!=='') ? true:false;
     });
@@ -27,5 +30,5 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         $event.preventDefault();
         $event.stopPropagation();
         $scope.opened = true;
-    }
+    };
 }]);
