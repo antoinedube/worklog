@@ -42,7 +42,7 @@ describe('TasksManager.tasks-list module', function() {
     });
 
     it('should open a modal upon task creation', function() {
-        $scope.createNew();
+        $scope.create_new();
         expect(mock_modal.open).toHaveBeenCalled();
     });
 

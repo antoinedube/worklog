@@ -11,8 +11,8 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'Tas
 
 .controller('TasksListCtrl', ['$scope', '$modal', 'Task', function($scope,$modal,Task) {
     $scope.taskslist = Task.query();
-
-    $scope.createNew = function() {
+    /*
+    $scope.create_new = function() {
         $modal.open({
             templateUrl: 'task_manager/shared/task/create/create_view.html',
             controller: 'NewTaskCtrl',
@@ -26,4 +26,5 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'Tas
             })
         });
     };
+    */
 }]);
