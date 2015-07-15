@@ -2,7 +2,6 @@
 
 angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManager.task-model'])
 
-// Should be a factory instead of a controller
 .controller('NewTaskCtrl', ['$scope', '$modalInstance', function($scope,$modalInstance) {
     $scope.types = ['Fixe','Assignée'];
 
@@ -33,20 +32,14 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         $scope.opened = true;
     };
 }])
-.factory('TaskCreator',['$modal', function($modal) {
-    return function() {
-        $modal.open({
+.service('TaskCreationService',['$modal', function($modal) {
+    this.create = function() {
+        return $modal.open({
             templateUrl: 'task_manager/shared/task/create/create_view.html',
             controller: 'NewTaskCtrl',
             backdrop: 'static',
             backdropClass: 'fade in',
             windowClass: 'dropdown-menu-right'
-        })
-        .result.then(function(task) {
-            Task.save(task,function(data) {
-                $scope.taskslist.push(data);
-            })
-        });
+        }).result
     };
-    // Should return whatever so that TaskCreator.then(...)
 }]);

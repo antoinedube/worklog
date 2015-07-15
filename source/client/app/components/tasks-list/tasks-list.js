@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'TasksManager.task-model', 'TasksManager.task-new'])
+angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model', 'TasksManager.task-new'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/tasks-list', {
@@ -9,8 +9,17 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'ui.bootstrap.modal', 'Tas
   });
 }])
 
-.controller('TasksListCtrl', ['$scope', '$modal', 'Task', function($scope,$modal,Task) {
+.controller('TasksListCtrl', ['$scope', 'Task', 'TaskCreationService', function($scope,Task,TaskCreationService) {
     $scope.taskslist = Task.query();
+
+    $scope.create_new = function() {
+        TaskCreationService.create().then(function(task) {
+                Task.save(task,function(data) {
+                    $scope.taskslist.push(data);
+            })
+        });
+    };
+
     /*
     $scope.create_new = function() {
         $modal.open({
