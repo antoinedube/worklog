@@ -34,14 +34,9 @@ div.menu-items .active .menu-entry{
     background-color: #4b4f55;
 }
 
-form.task-creation > .container-fluid {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-}
-
 div.row {
-    margin: 0px 0px 0px 0px;
-    max-width: 1500px
+    margin: 15px 0px 15px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 div.tasks {

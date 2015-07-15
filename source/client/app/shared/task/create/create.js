@@ -14,11 +14,13 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
     $scope.task.end_time = new Date();
     $scope.task.end_time.setMinutes(0);
 
+
     $scope.$watch('task.name', function(newValue,oldValue) {
         $scope.is_form_complete = (newValue!=='') ? true:false;
     });
 
     $scope.create = function() {
+        console.log($scope.task);
         $modalInstance.close($scope.task);
     };
 
@@ -32,14 +34,16 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         $scope.opened = true;
     };
 }])
-.service('TaskCreationService',['$modal', function($modal) {
-    this.create = function() {
+.factory('TaskCreationFactory',['$modal', function($modal) {
+    return {
+        create: function() {
         return $modal.open({
-            templateUrl: 'task_manager/shared/task/create/create_view.html',
-            controller: 'NewTaskCtrl',
-            backdrop: 'static',
-            backdropClass: 'fade in',
-            windowClass: 'dropdown-menu-right'
-        }).result
-    };
+                templateUrl: 'task_manager/shared/task/create/create_view.html',
+                controller: 'NewTaskCtrl',
+                backdrop: 'static',
+                backdropClass: 'fade in',
+                windowClass: 'dropdown-menu-right'
+            }).result
+        }
+    }
 }]);

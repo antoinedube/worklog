@@ -9,31 +9,14 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model',
   });
 }])
 
-.controller('TasksListCtrl', ['$scope', 'Task', 'TaskCreationService', function($scope,Task,TaskCreationService) {
+.controller('TasksListCtrl', ['$scope', 'Task', 'TaskCreationFactory', function($scope,Task,TaskCreationFactory) {
     $scope.taskslist = Task.query();
 
     $scope.create_new = function() {
-        TaskCreationService.create().then(function(task) {
+        TaskCreationFactory.create().then(function(task) {
                 Task.save(task,function(data) {
                     $scope.taskslist.push(data);
             })
         });
     };
-
-    /*
-    $scope.create_new = function() {
-        $modal.open({
-            templateUrl: 'task_manager/shared/task/create/create_view.html',
-            controller: 'NewTaskCtrl',
-            backdrop: 'static',
-            backdropClass: 'fade in',
-            windowClass: 'dropdown-menu-right'
-        })
-        .result.then(function(task) {
-            Task.save(task,function(data) {
-                $scope.taskslist.push(data);
-            })
-        });
-    };
-    */
 }]);
