@@ -4,6 +4,15 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+a {
+    text-decoration: none !important;
+    color: #4b4f55 !important;
+}
+
+a:hover {
+    color: #6e757f !important;
+}
+
 select {
     -webkit-appearance: None;
     -moz-appearance: None;
@@ -11,7 +20,6 @@ select {
 }
 
 div.menu-items a {
-    text-decoration: none;
     width: 150px;
 }
 
@@ -34,34 +42,26 @@ div.menu-items .active .menu-entry{
     background-color: #4b4f55;
 }
 
-div.row {
-    margin: 15px 0px 15px 0px;
-    padding: 0px 0px 0px 0px;
-}
-
 div.tasks {
     margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-}
-
-div.tasks > ul {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
 }
 
 li.listitem {
     display: block;
     margin: 0px 2px 0px 2px;
-    padding: 5px 5px 5px 5px;
+    padding: 10px 10px 10px 10px;
     min-height: 50px;
     list-style-type: None;
     border-bottom: 1px solid #CCC;
     overflow: hidden;
-    border-radius: 5px;
 }
 
 div.tasks li.listitem:nth-child(odd) {
     background-color: #DFDFDF;
+}
+
+div.tasks li.listitem:hover {
+    background-color: #F0F0F0;
 }
 
 div.tasks li.listitem:last-child {
@@ -98,9 +98,7 @@ div#main-view {
     margin: 0px 0px 0px 160px;
 }
 
-div#main-view a {
-    text-decoration: none;
-}
+
 
 #main-view > .header {
     height: 90px;

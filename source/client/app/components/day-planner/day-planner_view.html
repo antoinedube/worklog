@@ -1,10 +1,14 @@
-<h4>Day planner should display here</h4>
+<div class="header">
+    <h3>Day planner should display here</h3>
+</div>
 
-<div id="day-planner">
-    <table>
-        <tr ng-repeat="hour in working_hours" class="single-event">
-            <td class="time-of-day" valign="top" align="right">{{hour}}</td>
-            <td class="event">Event at {{hour}}</td>
-        </tr>
-    </table>
+<div id="day-planner" class="container-fluid">
+    <div class="row">
+        <table>
+            <tr ng-repeat="hour in working_hours" class="single-event">
+                <td class="time-of-day" valign="top" align="right">{{hour}}</td>
+                <td class="event">Event at {{hour}}</td>
+            </tr>
+        </table>
+    </div>
 </div>
