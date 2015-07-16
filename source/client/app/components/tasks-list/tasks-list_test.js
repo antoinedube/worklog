@@ -4,28 +4,23 @@ describe('TasksManager.tasks-list module', function() {
     var $scope;
     var tasks_list_ctrl;
     var mock_modal;
+    var mock_task;
     var mock_task_factory;
 
     beforeEach(module('TasksManager.tasks-list'));
 
     beforeEach(module(function($provide) {
-        mock_task_factory = {
+        mock_task = {
             save: jasmine.createSpy(),
             query: jasmine.createSpy()
         };
-        $provide.value('Task',mock_task_factory);
+        $provide.value('Task',mock_task);
 
-        mock_modal = {
-            open: function() {
-                return {
-                    result: {
-                        then: function() {}
-                    }
-                };
-            }
+        mock_task_factory = {
+            // Requires an "and return ..."
+            create: jasmine.createSpy()
         };
-        spyOn(mock_modal,'open').and.callThrough();
-        $provide.value('$modal',mock_modal);
+        $provide.value('TaskFactory',mock_task_factory);
     }));
 
     beforeEach(inject(function($rootScope,$controller) {
@@ -38,13 +33,11 @@ describe('TasksManager.tasks-list module', function() {
     });
 
     it('should query all tasks on controller creation', function() {
-        expect(mock_task_factory.query).toHaveBeenCalled();
+        expect(mock_task.query).toHaveBeenCalled();
     });
 
-    it('should open a modal upon task creation', function() {
+    xit('should call TaskFactory when creating a new task', function() {
         $scope.create_new();
-        expect(mock_modal.open).toHaveBeenCalled();
     });
-
 });
 

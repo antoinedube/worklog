@@ -9,13 +9,13 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model',
   });
 }])
 
-.controller('TasksListCtrl', ['$scope', 'Task', 'TaskCreationFactory', function($scope,Task,TaskCreationFactory) {
+.controller('TasksListCtrl', ['$scope', 'Task', 'TaskFactory', function($scope,Task,TaskFactory) {
     $scope.taskslist = Task.query();
 
     $scope.create_new = function() {
-        TaskCreationFactory.create().then(function(task) {
-                Task.save(task,function(data) {
-                    $scope.taskslist.push(data);
+        TaskFactory.create().then(function(task) {
+            Task.save(task,function(data) {
+                $scope.taskslist.push(data);
             })
         });
     };
