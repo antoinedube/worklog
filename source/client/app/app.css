@@ -9,10 +9,6 @@ a {
     color: #4b4f55 !important;
 }
 
-a:hover {
-    color: #6e757f !important;
-}
-
 select {
     -webkit-appearance: None;
     -moz-appearance: None;
@@ -44,6 +40,10 @@ div.menu-items .active .menu-entry{
 
 div.tasks {
     margin: 0px 0px 0px 0px;
+}
+
+ul {
+    -webkit-padding-start: 0px;
 }
 
 li.listitem {
@@ -96,9 +96,8 @@ div.tasks-list-header {
 
 div#main-view {
     margin: 0px 0px 0px 160px;
+    padding: 10px 10px 10px 10px;
 }
-
-
 
 #main-view > .header {
     height: 90px;
@@ -117,6 +116,7 @@ div#main-view {
 
 tr.single-event > td {
     border-top: 1px solid #DDDDDD;
+    width: 1500px;
 }
 
 tr.single-event > td.time-of-day {

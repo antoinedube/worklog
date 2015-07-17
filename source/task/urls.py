@@ -10,4 +10,5 @@ from task.views import TaskView
 
 urlpatterns = patterns('',
     url(r'/*(?P<task_id>\d*)$',TaskView.as_view()),
+    url(r'/*(?P<task_filter>\w)$',FilteredTask.as_view())
 )
