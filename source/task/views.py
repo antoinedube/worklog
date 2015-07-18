@@ -53,3 +53,11 @@ class TaskView(View):
 
         return HttpResponse(json.dumps(saved_item))
 
+
+class FilteredTaskView(View):
+    def get(self,request,task_filter):
+        task_query = Task.objects.filter(end_date.date()=timezone.now().date())
+        print(task_query)
+        return HttpResponse('I hold the data!')
+
+
