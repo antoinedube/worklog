@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.day-planner', ['ngRoute'])
+angular.module('TasksManager.day-planner', ['ngRoute', 'TasksManager.task-model'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/today', {
@@ -9,7 +9,8 @@ angular.module('TasksManager.day-planner', ['ngRoute'])
   });
 }])
 
-.controller('DayPlannerCtrl', ['$scope', function($scope) {
+.controller('DayPlannerCtrl', ['$scope', 'FilteredTask', function($scope,FilteredTask) {
+    console.log(FilteredTask.today.query());
     var working_hours = [];
     for (var hour = 5 ; hour<23 ; hour++) working_hours.push(String(hour) + 'h');
 
