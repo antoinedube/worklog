@@ -33,7 +33,7 @@ class TaskView(View):
             json_item = json.dumps(item_set)
             return HttpResponse(json_item)
 
-    def post(self,request,task_id):
+    def post(self,request,task_id): # task_id should not be required here. urls.py as it is now needs it.
         data = json.loads(request.body.decode('utf-8'))
         new_task = Task(
                 name = data['name'],
@@ -56,8 +56,19 @@ class TaskView(View):
 
 class FilteredTaskView(View):
     def get(self,request,task_filter):
-        task_query = Task.objects.filter(end_date.date()=timezone.now().date())
-        print(task_query)
-        return HttpResponse('I hold the data!')
+        if task_filter == 'today':
+            task_query = Task.objects.filter(pk=1)
+            item_set = [{
+                'id': item.id,
+                'name': item.name,
+                'created_at': str(item.created_at),
+                'end_date': str(item.end_date),
+                'type': item.type}
+                    for item in task_query
+            ]
+            json_item_set = json.dumps(item_set)
 
-
+            return HttpResponse(json_item_set)
+        else:
+            print('not today query')
+            return HttpResponse(json.dumps(''))
