@@ -24,9 +24,9 @@ class CRUDTestCase(TestCase):
         deserialized_content = json.loads(response.content.decode('utf-8'))
         self.assertEqual(deserialized_content['name'],'Create website')
 
-    @skip
     def test_get_todays_tasks(self):
-        test_task = Task.objects.get(pk=2)
+        test_task_id = 3
+        test_task = Task.objects.get(pk=test_task_id)
         test_task.end_date = timezone.now()
         test_task.save()
 
@@ -35,7 +35,7 @@ class CRUDTestCase(TestCase):
         self.assertEqual(response.status_code,200)
 
         deserialized_content = json.loads(response.content.decode('utf-8'))
-        print('content:', deserialized_content)
+        self.assertEqual(deserialized_content[0]['id'],test_task_id)
 
     def test_task_creation_through_post(self):
         client = Client()
@@ -46,4 +46,6 @@ class CRUDTestCase(TestCase):
             })
         response = client.post('/api/task/',post_data,content_type='application/json')
         self.assertEqual(response.status_code,200)
+        deserialized_content = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(deserialized_content['id'],7)
 
