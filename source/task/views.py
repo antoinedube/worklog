@@ -61,6 +61,7 @@ class FilteredTaskView(View):
         after = timezone.now().replace(hour=23,minute=59,second=59,microsecond=999)
 
         if task_filter == 'today':
+            # Include timezone consideration
             task_query = Task.objects.exclude(end_date__lt=before).exclude(end_date__gt=after)
 
             item_set = [self.task_serializer.query_to_json(item) for item in task_query]

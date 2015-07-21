@@ -20,7 +20,6 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
     });
 
     $scope.create = function() {
-        console.log($scope.task);
         $modalInstance.close($scope.task);
     };
 
