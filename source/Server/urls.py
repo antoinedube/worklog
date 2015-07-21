@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^$',TemplateView.as_view(template_name="index.html")),
 
     url(r'^api/task',include('task.urls')),
-    url(r'^login/',include('user_management.urls')),
+    url(r'^login/',include('profile.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
 
