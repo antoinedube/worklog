@@ -8,6 +8,7 @@ import json
 from task.models import Task
 
 class TaskSerializer:
+
     def query_to_json(self,item):
         json_set = {
                 'id': item.id,
@@ -24,6 +25,9 @@ class TaskView(View):
         self.task_serializer = TaskSerializer()
 
     def get(self,request,task_id):
+        if not request.user.is_authenticated():
+            return HttpResponse('Unauthorized',status=401)
+
         if task_id == '':
             task_query = Task.objects.all()
             item_set = [self.task_serializer.query_to_json(item) for item in task_query]
@@ -37,6 +41,9 @@ class TaskView(View):
             return HttpResponse(json_item)
 
     def post(self,request,task_id):
+        if not request.user.is_authenticated():
+            return HttpResponse('Unauthorized',status=401)
+
         data = json.loads(request.body.decode('utf-8'))
         new_task = Task(
                 name = data['name'],
@@ -57,6 +64,9 @@ class FilteredTaskView(View):
         self.task_serializer = TaskSerializer()
 
     def get(self,request,task_filter):
+        if not request.user.is_authenticated():
+            return HttpResponse('Unauthorized',status=401)
+
         before = timezone.now().replace(hour=0,minute=0,second=0,microsecond=0)
         after = timezone.now().replace(hour=23,minute=59,second=59,microsecond=999)
 
@@ -68,6 +78,5 @@ class FilteredTaskView(View):
 
             return HttpResponse(json.dumps(item_set))
         else:
-            print('not today query')
             return HttpResponse(json.dumps(''))
 

@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Tasks Manager - Login</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="static/login.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Organisateur de taches - Connexion</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="bower_modules/bootstrap-css-only/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_modules/bootstrap-css-only/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="task_manager/app.css">
+    {% csrf_token %}
 </head>
 <body>
-    <h1>Login page for Tasks Manager</h1> 
-    <a href="http://basicuse.net/articles/pl/textile/html_css/form_validation_in_html5">Form Validation</a>
+    <div id="app-header">Organisateur de tâches</div>
+    <h3 class="text-center">Connexion</h3>
+
+    <div id="login-form" class="center-block">
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Username">
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password">
+            </div>
+        </form>
+    </div>
+
+    <script src="bower_modules/angular/angular.js" defer></script>
+    <script src="bower_modules/angular-route/angular-route.js" defer></script>
+    <script src="bower_modules/angular-resource/angular-resource.js" defer></script>
+    <script src="bower_modules/angular-bootstrap/ui-bootstrap-tpls.js" defer></script>
+    <script src="task_manager/login.js" defer></script>
 </body>
 </html>

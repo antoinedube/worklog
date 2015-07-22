@@ -4,38 +4,39 @@
 <!--[if IE 8]>         <html lang="en" ng-app="TasksManager" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="TasksManager" class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Organisateur de tâches</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Organisateur de tâches</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="bower_modules/bootstrap-css-only/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_modules/bootstrap-css-only/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="bower_modules/fontawesome/css/font-awesome.css">
     <link rel="stylesheet" href="task_manager/app.css">
-{% csrf_token %}
+    {% csrf_token %}
 </head>
 <body>
-  <div id="app-header">Organisateur de tâches</div>
+    <div id="app-header">Organisateur de tâches</div>
 
-  <div id="nav-menu" class="tm-leftmenu" ng-controller="LeftMenuCtrl"></div>
+    <div id="nav-menu" class="tm-leftmenu" ng-controller="LeftMenuCtrl"></div>
 
-  <div id="main-view" ng-view></div>
+    <div id="main-view" ng-view></div>
 
-  <script src="bower_modules/angular/angular.js"></script>
-  <script src="bower_modules/angular-route/angular-route.js"></script>
-  <script src="bower_modules/angular-resource/angular-resource.js"></script>
-  <script src="bower_modules/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-  <script src="task_manager/app.js"></script>
+    <script src="bower_modules/angular/angular.js" defer></script>
+    <script src="bower_modules/angular-route/angular-route.js" defer></script>
+    <script src="bower_modules/angular-resource/angular-resource.js" defer></script>
+    <script src="bower_modules/angular-bootstrap/ui-bootstrap-tpls.js" defer></script>
+    <script src="task_manager/app.js" defer></script>
 
-  <script src="task_manager/components/left-menu/left-menu.js"></script>
-  <script src="task_manager/components/home/home.js"></script>
-  <script src="task_manager/components/tasks-list/tasks-list.js"></script>
-  <script src="task_manager/components/task-view/task-view.js"></script>
-  <script src="task_manager/components/day-planner/day-planner.js"></script>
-  <script src="task_manager/shared/task/create/create.js"></script>
-  <script src="task_manager/shared/task/model.js"></script>
-  <script src="task_manager/shared/task/factory.js"></script>
+    <script src="task_manager/components/left-menu/left-menu.js" defer></script>
+    <script src="task_manager/components/home/home.js" defer></script>
+    <script src="task_manager/components/tasks-list/tasks-list.js" defer></script>
+    <script src="task_manager/components/task-view/task-view.js" defer></script>
+    <script src="task_manager/components/day-planner/day-planner.js" defer></script>
+    <script src="task_manager/shared/task/create/create.js" defer></script>
+    <script src="task_manager/shared/task/model.js" defer></script>
+    <script src="task_manager/shared/task/factory.js" defer></script>
 
 </body>
 </html>

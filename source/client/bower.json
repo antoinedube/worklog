@@ -13,6 +13,7 @@
     "angular-resource": "latest",
     "bootstrap-css-only": "latest",
     "fontawesome": "latest",
-    "angular-bootstrap": "latest"
+    "angular-bootstrap": "latest",
+    "normalize.css": "latest"
   }
 }
