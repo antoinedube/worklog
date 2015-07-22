@@ -1,0 +1,10 @@
+[{
+    "model": "profile.profile",
+    "pk": 1,
+    "fields":
+        {
+            "language": "French",
+            "timezone": "America/Montreal",
+            "user": 1
+        }
+}]
