@@ -45,6 +45,7 @@ class TaskView(View):
             return HttpResponse('Unauthorized',status=401)
 
         data = json.loads(request.body.decode('utf-8'))
+        print(data)
         new_task = Task(
                 name = data['name'],
                 created_at = timezone.now(),

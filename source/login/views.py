@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
+from django.shortcuts import render
 from django.views.generic import View
 
 import json
@@ -9,20 +10,17 @@ class UserLogin(View):
         return HttpResponse('{"message": "You should not do a GET at /login"}')
 
     def post(self,request):
-        request_content = request.body.decode('utf-8')
-        print(request_content)
+        request_content = json.loads(request.body.decode('utf-8'))
         username = request_content['username']
         password = request_content['password']
-        print(username,password)
-
         user = authenticate(username=username, password=password)
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponse('{"message": "Login successful"}')
+                return HttpResponse(json.dumps({'message': 'Login successful'}))
             else:
-                return HttpResponse('{"message": "Disabled account"}')
+                return HttpResponse(json.dumps({'message': 'Disabled account'}))
         else:
-            return HttpResponse('{"message": "Invalid login"}')
+            return HttpResponse(json.dumps({'message': 'Invalid login'}))
 
 

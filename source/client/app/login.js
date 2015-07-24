@@ -13,14 +13,9 @@ angular.module('TasksManagerLogin', ['ngResource'])
 .controller('LoginCtrl',['$scope','LoginFactory',function ($scope,LoginFactory) {
     $scope.is_form_complete = false;
 
-    $scope.user = {
-        username: "",
-        password: ""
-    };
+    $scope.user = {};
 
     $scope.connect = function() {
-        console.log($scope.user);
-
         LoginFactory.save($scope.user, function(response) {
             console.log(response);
         }, function (response) {
