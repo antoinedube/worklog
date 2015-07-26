@@ -10,7 +10,7 @@ class LoginTestCase(TestCase):
             'username': 'antoine',
             'password': '123456'
         }
-        response = client.post('/login/',user)
+        response = client.post('/login',json.dumps(user),content_type='application/json')
         self.assertEqual(response.status_code,200)
 
     def test_login(self):
@@ -19,10 +19,9 @@ class LoginTestCase(TestCase):
             'username': 'antoine',
             'password': '123456'
         }
-        response = client.post('/login/',user)
+        response = client.post('/login',json.dumps(user),content_type='application/json')
         self.assertEqual(response.status_code,200)
         deserialized_content = json.loads(response.content.decode('utf-8'))
         self.assertEqual('Login successful',deserialized_content['message'])
         self.assertIsNotNone(client.cookies['sessionid'].key)
 
-# check encoding, www-form-data

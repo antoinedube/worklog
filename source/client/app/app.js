@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('TasksManager', [
   'ngRoute',
+  'TasksManager.unauthorized-interceptor',
   'TasksManager.left-menu',
   'TasksManager.home',
   'TasksManager.tasks-list',
@@ -17,4 +18,6 @@ angular.module('TasksManager', [
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
     $httpProvider.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded; charset=utf-8";
+
+    $httpProvider.interceptors.push('UnauthorizedInterceptor');
 }]);

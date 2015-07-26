@@ -11,7 +11,11 @@ class CRUDTestCase(TestCase):
 
     def setUp(self):
         self.client = Client()
-        response = self.client.post('/login/',{'username':'antoine', 'password':'123456'})
+        user = {
+            'username': 'antoine',
+            'password': '123456'
+        }
+        self.client.post('/login',json.dumps(user),content_type='application/json')
 
     def tearDown(self):
         del self.client

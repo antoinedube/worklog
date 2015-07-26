@@ -8,7 +8,7 @@ from Server.views import FaviconView
 from login.views import UserLogin
 
 urlpatterns = patterns('',
-    url(r'^$',TemplateView.as_view(template_name="login.html")),
+    url(r'^$',TemplateView.as_view(template_name="index.html")),
 
     url(r'^login',UserLogin.as_view()),
 
