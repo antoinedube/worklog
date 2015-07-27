@@ -4,6 +4,7 @@
 angular.module('TasksManager', [
   'ngRoute',
   'TasksManager.unauthorized-interceptor',
+  'TasksManager.header',
   'TasksManager.left-menu',
   'TasksManager.home',
   'TasksManager.tasks-list',

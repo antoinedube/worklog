@@ -9,7 +9,9 @@ angular.module('TasksManager.unauthorized-interceptor', [])
             return response;
         },
         responseError: function(response) {
-            console.log('Response status, error: ', response.status);
+            if (response.status === 401) {
+                console.log('Response status, error: ', response.status);
+            }
             return response;
         }
     }

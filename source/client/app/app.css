@@ -83,16 +83,30 @@ div.tasks-list-header {
 
 #app-header {
     width: 100%;
-    text-align: center;
-    height: 60px;
-    line-height: 60px;
-    vertical-align: middle;
-    padding: 0px;
-    margin: 0px;
-    font-size: 24px;
-    font-weight: 400;
+    height: 75px;
+    padding: 20px 20px 20px 20px;
     color: #F5F5F5;
     background: #4b4f55;
+}
+
+#app-header > div.app-title {
+    width: 90%;
+    height: 35px;
+    float: left;
+    text-align: center;
+}
+
+#app-header > div.app-title > h2 {
+    margin: auto;
+}
+
+#app-header > div.logout {
+    width: 10%;
+    height: 35px;
+    float: left;
+    border: 1px solid white;
+    text-align: center;
+    padding: 5px;
 }
 
 #nav-menu {
