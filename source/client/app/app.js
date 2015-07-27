@@ -8,7 +8,6 @@ angular.module('TasksManager', [
   'TasksManager.home',
   'TasksManager.tasks-list',
   'TasksManager.task-view',
-  'TasksManager.task-factory',
   'TasksManager.day-planner'
 ])
 .config(['$routeProvider', function($routeProvider) {

@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render
 from django.views.generic import View
 
@@ -24,3 +24,7 @@ class UserLogin(View):
             return JsonResponse({'message': 'Invalid login'})
 
 
+class UserLogout(View):
+    def get(self,request):
+        logout(request)
+        return JsonResponse({'message': 'Logout successful'})

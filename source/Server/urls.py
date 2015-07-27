@@ -5,12 +5,13 @@ from django.views.generic import TemplateView
 from django.views.static import serve
 
 from Server.views import FaviconView
-from login.views import UserLogin
+from login.views import UserLogin, UserLogout
 
 urlpatterns = patterns('',
     url(r'^$',TemplateView.as_view(template_name="index.html")),
 
     url(r'^login',UserLogin.as_view()),
+    url(r'^logout',UserLogout.as_view()),
 
     url(r'^api/task',include('task.urls')),
     url(r'^api/profile',include('profile.urls')),
