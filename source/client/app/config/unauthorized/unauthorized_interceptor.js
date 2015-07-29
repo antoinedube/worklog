@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('TasksManager.unauthorized-interceptor', [])
+angular.module('TasksManager.unauthorized', ['TasksManager.login'])
 
-.factory('UnauthorizedInterceptor',['$q', function($q) {
+.factory('UnauthorizedInterceptor',['$injector', function($injector) {
     return {
         response: function(response) {
             console.log('Response status, success: ', response.status);
@@ -10,6 +10,8 @@ angular.module('TasksManager.unauthorized-interceptor', [])
         },
         responseError: function(response) {
             if (response.status === 401) {
+                var LoginFactory = $injector.get('LoginFactory');
+                LoginFactory.login();
                 console.log('Response status, error: ', response.status);
             }
             return response;

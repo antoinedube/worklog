@@ -1,15 +1,15 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
 angular.module('TasksManager', [
-  'ngRoute',
-  'TasksManager.unauthorized-interceptor',
-  'TasksManager.header',
-  'TasksManager.left-menu',
-  'TasksManager.home',
-  'TasksManager.tasks-list',
-  'TasksManager.task-view',
-  'TasksManager.day-planner'
+    'ngRoute',
+    'TasksManager.unauthorized',
+    'TasksManager.login',
+    'TasksManager.header',
+    'TasksManager.left-menu',
+    'TasksManager.home',
+    'TasksManager.day-planner',
+    'TasksManager.tasks-list',
+    'TasksManager.task-view'
 ])
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/home'});
@@ -21,3 +21,4 @@ angular.module('TasksManager', [
 
     $httpProvider.interceptors.push('UnauthorizedInterceptor');
 }]);
+
