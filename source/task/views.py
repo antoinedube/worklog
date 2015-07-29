@@ -25,15 +25,18 @@ class TaskView(View):
         self.task_serializer = TaskSerializer()
 
     def get(self,request,task_id):
-        if not request.user.is_authenticated():
-            return JsonResponse({'message': 'Unauthorized'},status=401)
-
         if task_id == '':
+            if not request.user.is_authenticated():
+                return JsonResponse({'message': 'Unauthorized'},status=401)
+
             task_query = Task.objects.all()
             item_set = [self.task_serializer.query_to_json(item) for item in task_query]
 
             return JsonResponse(item_set,safe=False)
         else:
+            if not request.user.is_authenticated():
+                return JsonResponse({'message': 'Unauthorized'},status=401)
+
             item_query = Task.objects.get(id=task_id)
             item_set = self.task_serializer.query_to_json(item_query)
             return JsonResponse(item_set)

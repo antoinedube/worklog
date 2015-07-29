@@ -25,6 +25,9 @@ class UserLogin(View):
 
 
 class UserLogout(View):
-    def get(self,request):
+    def post(self,request):
         logout(request)
         return JsonResponse({'message': 'Logout successful'})
+
+    def get(self,request):
+        return JsonResponse({'message': 'Invalid action'})

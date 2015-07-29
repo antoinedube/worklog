@@ -5,24 +5,25 @@
 <div class="modal-body">
     <form class="login">
         <div class="container-fluid">
+
             <div class="row">
-                <div class="col-md-2">
-                    Nom:
+                <div class="col-md-4">
+                    <!-- <label> css bootstrap -->
+                    <label for="username">Nom d'utilisateur</label>
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <input type="text" class="form-control" ng-model="user.username">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2">
-                    Mot de passe:
+                <div class="col-md-4">
+                    <label for="password">Mot de passe</label>
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <input type="text" class="form-control" ng-model="user.password">
                 </div>
             </div>
-        </div>
- 
+
         </div>
     </form>
 </div>
@@ -31,3 +32,4 @@
     <button class="btn btn-primary" ng-click="submit()" ng-disabled="!is_form_complete">Connexion</button>
     <button class="btn btn-warning" ng-click="cancel()">Annuler</button>
 </div>
+

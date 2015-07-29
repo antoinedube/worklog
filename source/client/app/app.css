@@ -2,6 +2,12 @@ body {
     padding: 0px;
     margin: 0px;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 a {
@@ -13,6 +19,14 @@ select {
     -webkit-appearance: None;
     -moz-appearance: None;
     appearance: None;
+}
+
+form.login > div.container-fluid > div.row {
+    margin: 15px;
+}
+
+form.login > div.container-fluid > div.row > div > label {
+    margin: 5px;
 }
 
 div#login-form.center-block {
@@ -149,3 +163,4 @@ tr.single-event > td.time-of-day {
 tr.single-event > td.event {
     padding: 20px;
 }
+

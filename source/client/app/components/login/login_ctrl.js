@@ -2,6 +2,10 @@
 
 angular.module('TasksManager.login', ['ui.bootstrap'])
 
+.factory('LoginResource', ['$resource', function($resource) {
+    return $resource('/login',{});
+}])
+
 .factory('LoginFactory', ['$modal', function($modal) {
     return {
         login: function() {
@@ -11,14 +15,21 @@ angular.module('TasksManager.login', ['ui.bootstrap'])
                     backdrop: 'static',
                     backdropClass: 'fade in',
                     windowClass: 'dropdown-menu-right'
-                }).result;
+                });
             }
     };
 }])
 
 .controller('LoginCtrl', ['$scope', '$modalInstance', function($scope,$modalInstance) {
+    $scope.user = {
+        username: '',
+        password: ''
+    };
+
+    $scope.is_form_complete = false;
+
     $scope.submit = function() {
-        $modalInstance.close();
+        $modalInstance.close($scope.user);
     };
 
     $scope.cancel = function() {
@@ -30,4 +41,10 @@ angular.module('TasksManager.login', ['ui.bootstrap'])
         $event.stopPropagation();
         $scope.opened = true;
     };
+
+    $scope.$watch('user.username', function(newValue,oldValue) {
+        $scope.is_form_complete = (newValue!=='') ? true:false;
+    });
+
 }]);
+

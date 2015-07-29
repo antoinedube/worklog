@@ -1,7 +1,10 @@
 'use strict';
 
-angular.module('TasksManager.header', [])
-.controller('AppHeaderCtrl', ['$scope', function($scope) {
-
+angular.module('TasksManager.header', ['TasksManager.logout'])
+.controller('AppHeaderCtrl', ['$scope', 'LogoutResource', function($scope,LogoutResource) {
+    $scope.logout = function() {
+        console.log('Logging out');
+        LogoutResource.save();
+    };
 }]);
 

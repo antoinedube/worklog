@@ -2,19 +2,19 @@
 
 angular.module('TasksManager.unauthorized', ['TasksManager.login'])
 
-.factory('UnauthorizedInterceptor',['$injector', function($injector) {
+// Need to use $injector in order to avoid a circular dependency
+.factory('UnauthorizedInterceptor',['$q', '$injector', function($q,$injector) {
     return {
-        response: function(response) {
-            console.log('Response status, success: ', response.status);
-            return response;
-        },
         responseError: function(response) {
             if (response.status === 401) {
                 var LoginFactory = $injector.get('LoginFactory');
-                LoginFactory.login();
-                console.log('Response status, error: ', response.status);
+                var LoginResource = $injector.get('LoginResource');
+
+                LoginFactory.login().result.then(function(user) {
+                    LoginResource.save(user);
+                });
             }
-            return response;
+            return $q.reject(response);
         }
     }
 }]);
