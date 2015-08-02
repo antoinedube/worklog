@@ -36,7 +36,7 @@ class LogoutTestCase(TestCase):
         response = client.post('/login',json.dumps(user),content_type='application/json')
         self.assertEqual(response.status_code,200)
 
-        response = client.get('/logout')
+        response = client.post('/logout',json.dumps(''),content_type='application/json')
         self.assertEqual(response.status_code,200)
         deserialized_content = json.loads(response.content.decode('utf-8'))
         self.assertEqual('Logout successful',deserialized_content['message'])

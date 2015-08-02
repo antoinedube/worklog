@@ -12,8 +12,6 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap'])
     $scope.is_form_complete = false;
 
     $scope.task.end_time = new Date();
-    $scope.task.end_time.setMinutes(0);
-
 
     $scope.$watch('task.name', function(newValue,oldValue) {
         $scope.is_form_complete = (newValue!=='') ? true:false;

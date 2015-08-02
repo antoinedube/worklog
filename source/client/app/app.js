@@ -5,6 +5,8 @@ angular.module('TasksManager', [
     'TasksManager.unauthorized',
     'TasksManager.login',
     'TasksManager.logout',
+    'TasksManager.profile-resource',
+    'TasksManager.profile-factory',
     'TasksManager.header',
     'TasksManager.left-menu',
     'TasksManager.home',

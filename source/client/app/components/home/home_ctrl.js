@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.home', ['ngRoute'])
+angular.module('TasksManager.home', ['ngRoute', 'TasksManager.profile-factory'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {
@@ -9,6 +9,6 @@ angular.module('TasksManager.home', ['ngRoute'])
   });
 }])
 
-.controller('HomeCtrl', [function() {
+.controller('HomeCtrl', ['$scope', 'ProfileFactory', function($scope,ProfileFactory) {
 }]);
 

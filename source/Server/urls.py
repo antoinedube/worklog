@@ -12,9 +12,9 @@ urlpatterns = patterns('',
 
     url(r'^login',UserLogin.as_view()),
     url(r'^logout',UserLogout.as_view()),
+    url(r'^profile',include('profile.urls')),
 
     url(r'^api/task',include('task.urls')),
-    url(r'^api/profile',include('profile.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
 
