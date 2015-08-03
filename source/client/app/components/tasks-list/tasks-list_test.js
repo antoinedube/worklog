@@ -17,9 +17,10 @@ describe('TasksManager.tasks-list module', function() {
         $provide.value('Task',mock_task);
 
         mock_task_factory = {
-            // Requires an "and return ..."
-            create: jasmine.createSpy()
+            create: function() {}
         };
+        spyOn(mock_task_factory,'create').and.returnValue({then: function() {}});
+
         $provide.value('TaskFactory',mock_task_factory);
     }));
 
@@ -36,8 +37,9 @@ describe('TasksManager.tasks-list module', function() {
         expect(mock_task.query).toHaveBeenCalled();
     });
 
-    xit('should call TaskFactory when creating a new task', function() {
+    it('should call TaskFactory when creating a new task', function() {
         $scope.create_new();
+        expect(mock_task_factory.create).toHaveBeenCalled();
     });
 });
 
