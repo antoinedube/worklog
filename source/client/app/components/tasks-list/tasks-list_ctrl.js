@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model', 'TasksManager.task-factory'])
+angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-factory'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/tasks-list', {
@@ -9,14 +9,12 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model',
   });
 }])
 
-.controller('TasksListCtrl', ['$scope', 'Task', 'TaskFactory', function($scope,Task,TaskFactory) {
-    $scope.taskslist = Task.query();
+.controller('TasksListCtrl', ['$scope', 'TaskFactory', function($scope,TaskFactory) {
+    $scope.taskslist = TaskFactory.get_all_tasks();
 
     $scope.create_new = function() {
         TaskFactory.create().then(function(task) {
-            Task.save(task,function(data) {
-                $scope.taskslist.push(data);
-            })
+            $scope.taskslist.push(task);
         });
     };
 }]);

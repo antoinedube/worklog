@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManager.task-model'])
+angular.module('TasksManager.task-creation', [])
 
-.controller('NewTaskCtrl', ['$scope', '$modalInstance', 'Task', function($scope,$modalInstance,Task) {
+.controller('TaskCreationCtrl', ['$scope', '$modalInstance', 'Task', function($scope,$modalInstance,Task) {
     $scope.types = ['Fixe','Assignée'];
 
     $scope.task = {
@@ -32,4 +32,6 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         $event.stopPropagation();
         $scope.opened = true;
     };
-}]);
+}])
+
+.directive();

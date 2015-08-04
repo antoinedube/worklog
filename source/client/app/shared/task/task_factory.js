@@ -5,7 +5,7 @@ angular.module('TasksManager.task-factory', ['ui.bootstrap', 'TasksManager.task-
 .factory('TaskFactory',['$modal', 'Task', function($modal,Task) {
     return {
         create: function() {
-        return $modal.open({
+            return $modal.open({
                 templateUrl: 'task_manager/shared/task/create/create_view.html',
                 controller: 'NewTaskCtrl',
                 backdrop: 'static',
@@ -15,6 +15,9 @@ angular.module('TasksManager.task-factory', ['ui.bootstrap', 'TasksManager.task-
         },
         get_todays_tasks: function() {
             return null;
+        },
+        get_all_tasks: function() {
+            return Task.query();
         }
     }
 }]);

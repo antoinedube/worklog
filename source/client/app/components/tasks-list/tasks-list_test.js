@@ -10,16 +10,12 @@ describe('TasksManager.tasks-list module', function() {
     beforeEach(module('TasksManager.tasks-list'));
 
     beforeEach(module(function($provide) {
-        mock_task = {
-            save: jasmine.createSpy(),
-            query: jasmine.createSpy()
-        };
-        $provide.value('Task',mock_task);
-
         mock_task_factory = {
-            create: function() {}
+            create: function() {},
+            get_all_tasks: function() {}
         };
         spyOn(mock_task_factory,'create').and.returnValue({then: function() {}});
+        spyOn(mock_task_factory, 'get_all_tasks').and.returnValue(['']);
 
         $provide.value('TaskFactory',mock_task_factory);
     }));
@@ -34,7 +30,7 @@ describe('TasksManager.tasks-list module', function() {
     });
 
     it('should query all tasks on controller creation', function() {
-        expect(mock_task.query).toHaveBeenCalled();
+        expect(mock_task_factory.get_all_tasks).toHaveBeenCalled();
     });
 
     it('should call TaskFactory when creating a new task', function() {
