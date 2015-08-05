@@ -17,6 +17,7 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
     });
 
     $scope.create = function() {
+        // Transform datetime to a valid object with timezone
         Task.save($scope.task,function(task) {
             $modalInstance.close(task);
         });

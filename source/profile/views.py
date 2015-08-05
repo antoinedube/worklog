@@ -14,7 +14,6 @@ class ProfileView(View):
             return JsonResponse({'message': 'Unauthorized'},status=401)
 
         user = User.objects.get(username=request.user)
-        print(user)
         item_set = {
             'language': user.profile.language,
             'timezone': user.profile.timezone,
