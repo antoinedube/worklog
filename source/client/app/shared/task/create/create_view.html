@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h3 class="modal-title">New Task</h3>
+    <h3 class="modal-title">Nouvelle tâche</h3>
 </div>
 
 <div class="modal-body">
@@ -22,7 +22,7 @@
             Date de fin:
                 <p class="input-group">
                     <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" show-button-bar=true
-                    ng-model="task.end_date" is-open="opened" ng-required="true" close-text="Close" \>
+                    ng-model="task.end_date" is-open="opened" ng-required="false" close-text="Close" \>
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
                     </span>
@@ -30,7 +30,8 @@
                 </div>
 
                 <div class="col-md-6">
-                    <input type="text" ng-model="task.end_time"></input>
+            Heure de fin:
+            <input type="text" class="form-control" ng-model="task.end_time" ng-pattern=time_pattern></input>
                 </div>
             </div>
         </div>

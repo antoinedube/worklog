@@ -15,8 +15,8 @@ select {
     appearance: None;
 }
 
-form.login > div.container-fluid > div.row {
-    margin: 15px;
+form > div.container-fluid > div.row {
+    margin: 10px 0px 15px 0px;
 }
 
 form.login > div.container-fluid > div.row > div > label {
@@ -29,6 +29,10 @@ div#login-form.center-block {
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
+}
+
+form.task-creation input.ng-invalid {
+    border: 2px solid red;
 }
 
 div.menu-items a {

@@ -10,8 +10,7 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         type: $scope.types[0]
     };
     $scope.is_form_complete = false;
-
-    $scope.task.end_time = new Date();
+    $scope.time_pattern = '[0-9]{1,2}:?h?[0-9]{2}';
 
     $scope.$watch('task.name', function(newValue,oldValue) {
         $scope.is_form_complete = (newValue!=='') ? true:false;
@@ -20,7 +19,7 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
     $scope.create = function() {
         Task.save($scope.task,function(task) {
             $modalInstance.close(task);
-        })
+        });
     };
 
     $scope.cancel = function() {
@@ -33,3 +32,6 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         $scope.opened = true;
     };
 }]);
+
+// new Date("Fri Jan 20 2012 11:51:36 GMT-0500")
+
