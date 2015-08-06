@@ -10,7 +10,7 @@ angular.module('TasksManager.login', ['ui.bootstrap'])
     return {
         login: function() {
             return $modal.open({
-                    templateUrl: 'task_manager/components/login/login_view.html',
+                    templateUrl: 'task_manager/shared/login/login_view.html',
                     controller: 'LoginCtrl',
                     backdrop: 'static',
                     backdropClass: 'fade in',
