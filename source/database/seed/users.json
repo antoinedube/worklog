@@ -1,0 +1,20 @@
+[{
+    "model": "auth.user",
+    "pk": 1,
+    "fields":
+        {
+            "email": "antoine@website.com",
+            "user_permissions": [],
+            "last_login": "2015-01-26T00:29:33.555Z",
+            "date_joined": "2015-01-26T00:29:33.555Z",
+            "last_name": "",
+            "groups": [],
+            "is_superuser": false,
+            "password": "pbkdf2_sha256$20000$5q3ZqSFD0jS8$b5EGR8AirEQQoUUvh8ARBo4arFTuC7QVZOIssk4/5Mo=",
+            "username": "antoine",
+            "is_staff": false,
+            "first_name": "",
+            "is_active": true
+        }
+}]
+

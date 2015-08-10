@@ -17,8 +17,13 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
     });
 
     $scope.create = function() {
-        // Transform datetime to a valid object with timezone
-        Task.save($scope.task,function(task) {
+        var new_task = {};
+        new_task.name = $scope.task.name;
+        new_task.type = $scope.task.type;
+        new_task.end_date = $scope.task.end_date;
+        new_task.end_date.setHours($scope.task.end_time.match(/^[0-9]{1,2}/),$scope.task.end_time.match(/[0-9]{2}$/));
+
+        Task.save(new_task,function(task) {
             $modalInstance.close(task);
         });
     };
@@ -33,6 +38,4 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         $scope.opened = true;
     };
 }]);
-
-// new Date("Fri Jan 20 2012 11:51:36 GMT-0500")
 

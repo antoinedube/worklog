@@ -10,7 +10,6 @@ angular.module('TasksManager.day-planner', ['ngRoute', 'TasksManager.task-model'
 }])
 
 .controller('DayPlannerCtrl', ['$scope', 'FilteredTask', function($scope,FilteredTask) {
-    console.log(FilteredTask.today.query());
     var working_hours = [];
     for (var hour = 5 ; hour<23 ; hour++) working_hours.push(String(hour) + 'h');
 

@@ -12,7 +12,8 @@ angular.module('TasksManager.unauthorized', ['ngRoute', 'TasksManager.login'])
                 var $route = $injector.get('$route');
 
                 LoginFactory.login().result.then(function(user) {
-                    LoginResource.save(user,function() {
+                    LoginResource.save(user,function(data) {
+                        console.log(data);
                         $route.reload();
                     });
                 });
