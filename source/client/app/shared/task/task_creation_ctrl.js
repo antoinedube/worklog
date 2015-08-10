@@ -21,7 +21,7 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         new_task.name = $scope.task.name;
         new_task.type = $scope.task.type;
         new_task.end_date = $scope.task.end_date;
-        new_task.end_date.setHours($scope.task.end_time.match(/^[0-9]{1,2}/),$scope.task.end_time.match(/[0-9]{2}$/));
+        new_task.end_date.setHours($scope.task.end_time.getHours(),$scope.task.end_time.getMinutes());
 
         Task.save(new_task,function(task) {
             $modalInstance.close(task);

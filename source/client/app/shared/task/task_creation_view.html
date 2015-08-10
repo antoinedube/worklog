@@ -31,8 +31,9 @@
 
                 <div class="col-md-6">
                     Heure de fin:
-                    <input type="text" class="form-control" ng-model="task.end_time" ng-pattern=time_pattern></input>
+                    <input type="time" class="form-control" ng-model="task.end_time" placeholder="hh:mm" min="05:00" max="22:00"></input>
                 </div>
+
             </div>
         </div>
     </form>
