@@ -13,8 +13,8 @@ class TaskSerializer:
         json_set = {
                 'id': item.id,
                 'name': item.name,
-                'created_at': str(item.created_at),
-                'end_date': str(item.end_date),
+                'created_at': item.created_at.isoformat(),
+                'end_date': item.end_date.isoformat(),
                 'type': item.type}
         return json_set
 
@@ -48,13 +48,13 @@ class TaskView(View):
         data = json.loads(request.body.decode('utf-8'))
         new_task = Task(
                 name = data['name'],
-                created_at = timezone.now(),
-                end_date = dateparse.parse_datetime(data['end_date']),
+                created_at = timezone.now().isoformat(),
+                end_date = dateparse.parse_datetime(data['end_date']).isoformat(),
                 type = data['type']
                 )
         new_task.save()
 
-        saved_item = self.task_serializer.query_to_json(new_task)
+        saved_item = self.task_serializer.query_to_json(Task.objects.get(pk=new_task.id))
 
         return JsonResponse(saved_item)
 

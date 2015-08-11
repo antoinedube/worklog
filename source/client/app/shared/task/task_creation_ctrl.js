@@ -10,7 +10,6 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         type: $scope.types[0]
     };
     $scope.is_form_complete = false;
-    $scope.time_pattern = '[0-9]{1,2}:?h?[0-9]{2}';
 
     $scope.$watch('task.name', function(newValue,oldValue) {
         $scope.is_form_complete = (newValue!=='') ? true:false;
