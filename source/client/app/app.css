@@ -59,6 +59,7 @@ div.menu-items .active .menu-entry{
 }
 
 ul {
+    padding: 0px;
     -webkit-padding-start: 0px;
 }
 

@@ -14,7 +14,7 @@ class TaskSerializer:
                 'id': item.id,
                 'name': item.name,
                 'created_at': item.created_at.isoformat(),
-                'end_date': item.end_date.isoformat(),
+                'end_at': item.end_at.isoformat(),
                 'type': item.type}
         return json_set
 
@@ -48,8 +48,8 @@ class TaskView(View):
         data = json.loads(request.body.decode('utf-8'))
         new_task = Task(
                 name = data['name'],
-                created_at = timezone.now().isoformat(),
-                end_date = dateparse.parse_datetime(data['end_date']).isoformat(),
+                created_at = timezone.now(),
+                end_at = dateparse.parse_datetime(data['end_date']),
                 type = data['type']
                 )
         new_task.save()
@@ -72,8 +72,7 @@ class FilteredTaskView(View):
         after = timezone.now().replace(hour=23,minute=59,second=59,microsecond=999)
 
         if task_filter == 'today':
-            # Include timezone consideration
-            task_query = Task.objects.exclude(end_date__lt=before).exclude(end_date__gt=after)
+            task_query = Task.objects.exclude(end_at__lt=before).exclude(end_at__gt=after)
 
             item_set = [self.task_serializer.query_to_json(item) for item in task_query]
 

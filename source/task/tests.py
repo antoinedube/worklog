@@ -35,7 +35,7 @@ class CRUDTestCase(TestCase):
     def test_get_todays_tasks(self):
         test_task_id = 3
         test_task = Task.objects.get(pk=test_task_id)
-        test_task.end_date = timezone.now()
+        test_task.end_at = timezone.now()
         test_task.save()
 
         response = self.client.get('/api/task/today')
