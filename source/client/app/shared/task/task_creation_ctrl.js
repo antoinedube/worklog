@@ -7,6 +7,8 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
 
     $scope.task = {
         name: '',
+        begin_date: new Date(),
+        end_date: new Date(),
         type: $scope.types[0]
     };
     $scope.is_form_complete = false;
@@ -35,10 +37,18 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         $modalInstance.dismiss();
     };
 
-    $scope.open = function($event) {
+    // https://stackoverflow.com/questions/19613510/how-to-have-at-least-two-datepickers-of-ui-bootstrap-on-a-single-page
+
+    $scope.begin_date_open = function($event) {
         $event.preventDefault();
         $event.stopPropagation();
-        $scope.opened = true;
+        $scope.begin_date_opened = true;
+    };
+
+    $scope.end_date_open = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.end_date_opened = true;
     };
 }]);
 
