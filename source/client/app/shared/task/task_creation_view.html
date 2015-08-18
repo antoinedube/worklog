@@ -24,7 +24,7 @@
                         <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" show-button-bar=false
                         ng-model="task.begin_date" is-open="begin_date_opened" ng-required="false" close-text="Close" \>
                         <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="begin_date_open($event)"><i class="fa fa-calendar"></i></button>
+                            <button type="button" class="btn btn-default" ng-click="open_begin_date($event)"><i class="fa fa-calendar"></i></button>
                         </span>
                     </p>
                 </div>
@@ -42,7 +42,7 @@
                         <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" show-button-bar=false
                         ng-model="task.end_date" is-open="end_date_opened" ng-required="false" close-text="Close" \>
                         <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
+                            <button type="button" class="btn btn-default" ng-click="open_end_date($event)"><i class="fa fa-calendar"></i></button>
                         </span>
                     </p>
                 </div>
