@@ -14,6 +14,7 @@ class TaskSerializer:
                 'id': item.id,
                 'name': item.name,
                 'created_at': item.created_at.isoformat(),
+                'begin_at': item.begin_at.isoformat(),
                 'end_at': item.end_at.isoformat(),
                 'type': item.type}
         return json_set
@@ -49,6 +50,7 @@ class TaskView(View):
         new_task = Task(
                 name = data['name'],
                 created_at = timezone.now(),
+                begin_at = dateparse.parse_datetime(data['begin_date']),
                 end_at = dateparse.parse_datetime(data['end_date']),
                 type = data['type']
                 )

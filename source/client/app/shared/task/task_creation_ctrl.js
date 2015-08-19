@@ -22,15 +22,13 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         new_task.name = $scope.task.name;
         new_task.type = $scope.task.type;
         new_task.end_date = $scope.task.end_date;
-        new_task.end_date.sethours($scope.task.end_time.gethours(),$scope.task.end_time.getminutes());
+        new_task.end_date.setHours($scope.task.end_time.getHours(),$scope.task.end_time.getMinutes());
         new_task.begin_date = $scope.task.begin_date;
-        new_task.begin_date.sethours($scope.task.begin_time.gethours(),$scope.task.begin_time.getminutes());
+        new_task.begin_date.setHours($scope.task.begin_time.getHours(),$scope.task.begin_time.getMinutes());
 
-        console.log('new_task is: ',new_task);
-
-        // Task.save(new_task,function(task) {
-        //     $modalInstance.close(task);
-        // });
+        Task.save(new_task,function(task) {
+            $modalInstance.close(task);
+        });
     };
 
     $scope.cancel = function() {
