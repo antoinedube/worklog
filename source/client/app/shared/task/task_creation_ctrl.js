@@ -12,9 +12,14 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         type: $scope.types[0]
     };
     $scope.is_form_complete = false;
-
     $scope.$watch('task.name', function(newValue,oldValue) {
         $scope.is_form_complete = (newValue!=='') ? true:false;
+    });
+
+    $scope.is_start_date_required = false;
+    $scope.$watch('task.type', function(newValue,oldValue) {
+        $scope.is_start_date_required = (newValue==='Fixe') ? true:false;
+        console.log($scope.is_start_date_required);
     });
 
     $scope.create = function() {
