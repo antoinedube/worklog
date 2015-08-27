@@ -3,7 +3,7 @@
 angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManager.task-model'])
 
 .controller('NewTaskCtrl', ['$scope', '$modalInstance', 'Task', function($scope,$modalInstance,Task) {
-    $scope.types = ['Fixe','Assignée'];
+    $scope.types = ['Fixe','Assignée','Non-assignée'];
 
     $scope.task = {
         name: '',
