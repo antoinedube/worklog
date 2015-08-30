@@ -23,14 +23,14 @@ class TaskSerializer:
                 'type': item.type
             }
 
-        elif item.type=='Non-assignée' and item.deadline:
+        elif item.type=='Non-assignée' and item.deadline is not None:
             json_set = {
                 'id': item.id,
                 'name': item.name,
                 'created_at': item.created_at.isoformat(),
                 'begin_at': None,
                 'end_at': None,
-                'deadline': item.deadline,
+                'deadline': item.deadline.isoformat(),
                 'type': item.type
             }
 

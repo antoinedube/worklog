@@ -11,7 +11,6 @@ angular.module('TasksManager.task-view', ['ngRoute', 'TasksManager.task-model'])
 
 .controller('TaskViewCtrl', function($scope,$location,$routeParams,Task) {
     Task.get({task_id: $routeParams.task_id},function(task) {
-        console.log('task: ', task);
         $scope.task = task;
     });
 

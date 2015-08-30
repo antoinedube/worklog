@@ -21,12 +21,12 @@ class TaskFactory:
                 deadline = dateparse.parse_datetime(data['deadline']),
                 type = type
             )
-        elif type=='Non-assignée' and data['deadline']:
+        elif type=='Non-assignée' and data['deadline'] is not None:
             new_task = Task(
                 name = data['name'],
                 created_at = timezone.now(),
-                begin_at = dateparse.parse_datetime(data['begin_date']),
-                end_at = dateparse.parse_datetime(data['end_date']),
+                begin_at = None,
+                end_at = None,
                 deadline = dateparse.parse_datetime(data['deadline']),
                 type = type
             )

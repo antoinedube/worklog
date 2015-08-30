@@ -61,7 +61,7 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
             new_task.deadline = $scope.task.deadline_date;
             new_task.deadline.setHours($scope.task.deadline_time.getHours(),$scope.task.deadline_time.getMinutes());
         }
-        else if (new_task.type===$scope.types[2] && $scope.deadline_time) {
+        else if (new_task.type===$scope.types[2] && typeof($scope.task.deadline_time)!='undefined') {
             new_task.begin_date = null;
             new_task.end_date = null;
             new_task.deadline = $scope.task.deadline_date;
@@ -72,8 +72,6 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
             new_task.end_date = null;
             new_task.deadline = null;
         }
-
-        console.log(new_task);
 
         Task.save(new_task,function(task) {
             $modalInstance.close(task);
@@ -102,7 +100,7 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         $event.preventDefault();
         $event.stopPropagation();
 
-        $scope.end_deadline_opened = true;
+        $scope.deadline_date_opened = true;
     };
 }]);
 
