@@ -5,13 +5,9 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6">
-            <h4>Nom de la tâche</h4>
-            {{task.name}}
-        </div>
-        <div class="col-md-6">
-            <h4>Type de la tâche</h4>
-            {{task.type}}
+        <div class="col-md-12">
+            <h4>Date limite</h4>
+            {{task.deadline | date: "EEEE d MMMM y, H:mm"}}
         </div>
     </div>
     <div class="row">
@@ -24,6 +20,5 @@
             {{task.end_at | date:"EEEE d MMMM y, H:mm"}}
         </div>
     </div>
-
 </div>
 

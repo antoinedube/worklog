@@ -44,14 +44,55 @@ class CRUDTestCase(TestCase):
         deserialized_content = json.loads(response.content.decode('utf-8'))
         self.assertEqual(deserialized_content[0]['id'],test_task_id)
 
-    def test_task_creation_through_post(self):
+    def test_fixed_task_creation_through_post(self):
         post_data = json.dumps({
                 'name': 'Test task for post request',
+                'created_at': '2015-08-29T19:21:04.000Z',
+                'begin_date': '2015-05-01T06:19:00.000Z',
                 'end_date': '2015-06-01T04:00:00.000Z',
+                'deadline': '2015-09-09T19:20:00.000Z',
                 'type': 'Assignée'
             })
         response = self.client.post('/api/task/',post_data,content_type='application/json')
         self.assertEqual(response.status_code,200)
         deserialized_content = json.loads(response.content.decode('utf-8'))
-        self.assertEqual(deserialized_content['id'],7)
+
+    def test_assigned_task_creation_through_post(self):
+        post_data = json.dumps({
+                'name': 'Test task for post request',
+                'created_at': '2015-08-29T19:21:04.000Z',
+                'begin_date': '2015-05-01T06:19:00.000Z',
+                'end_date': '2015-06-01T04:00:00.000Z',
+                'deadline': '',
+                'type': 'Fixe'
+            })
+        response = self.client.post('/api/task/',post_data,content_type='application/json')
+        self.assertEqual(response.status_code,200)
+        deserialized_content = json.loads(response.content.decode('utf-8'))
+
+    def test_unassigned_task_with_deadline_creation_through_post(self):
+        post_data = json.dumps({
+                'name': 'Test task for post request',
+                'created_at': '',
+                'begin_date': '',
+                'end_date': '',
+                'deadline': '2015-06-01T04:00:00.000Z',
+                'type': 'Non-assignée'
+            })
+        response = self.client.post('/api/task/',post_data,content_type='application/json')
+        self.assertEqual(response.status_code,200)
+        deserialized_content = json.loads(response.content.decode('utf-8'))
+
+    def test_unassigned_task_without_deadline_creation_through_post(self):
+        post_data = json.dumps({
+                'name': 'Test task for post request',
+                'created_at': '',
+                'begin_date': '',
+                'end_date': '',
+                'deadline': '',
+                'type': 'Non-assignée'
+            })
+        response = self.client.post('/api/task/',post_data,content_type='application/json')
+        self.assertEqual(response.status_code,200)
+        deserialized_content = json.loads(response.content.decode('utf-8'))
 

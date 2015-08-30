@@ -6,38 +6,25 @@ from django.utils import timezone, dateparse
 import json
 
 from task.models import Task
-
-class TaskSerializer:
-
-    def query_to_json(self,item):
-        json_set = {
-                'id': item.id,
-                'name': item.name,
-                'created_at': item.created_at.isoformat(),
-                'begin_at': item.begin_at.isoformat(),
-                'end_at': item.end_at.isoformat(),
-                'type': item.type}
-        return json_set
+from task.factory import TaskFactory
+from task.serializer import TaskSerializer
 
 
 class TaskView(View):
 
     def __init__(self):
         self.task_serializer = TaskSerializer()
+        self.task_factory = TaskFactory()
 
     def get(self,request,task_id):
-        if task_id == '':
-            if not request.user.is_authenticated():
-                return JsonResponse({'message': 'Unauthorized'},status=401)
+        if not request.user.is_authenticated():
+            return JsonResponse({'message': 'Unauthorized'},status=401)
 
+        if task_id == '':
             task_query = Task.objects.all()
             item_set = [self.task_serializer.query_to_json(item) for item in task_query]
-
             return JsonResponse(item_set,safe=False)
         else:
-            if not request.user.is_authenticated():
-                return JsonResponse({'message': 'Unauthorized'},status=401)
-
             item_query = Task.objects.get(id=task_id)
             item_set = self.task_serializer.query_to_json(item_query)
             return JsonResponse(item_set)
@@ -47,13 +34,7 @@ class TaskView(View):
             return JsonResponse({'message': 'Unauthorized'},status=401)
 
         data = json.loads(request.body.decode('utf-8'))
-        new_task = Task(
-                name = data['name'],
-                created_at = timezone.now(),
-                begin_at = dateparse.parse_datetime(data['begin_date']),
-                end_at = dateparse.parse_datetime(data['end_date']),
-                type = data['type']
-                )
+        new_task = self.task_factory.create(data['type'],data)
         new_task.save()
 
         saved_item = self.task_serializer.query_to_json(Task.objects.get(pk=new_task.id))

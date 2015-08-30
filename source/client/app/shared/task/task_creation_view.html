@@ -31,11 +31,11 @@
 
                 <div class="col-md-6">
                     Heure de début:
-                    <input type="time" class="form-control" ng-model="task.begin_time" placeholder="hh:mm" min="05:00" max="22:00"></input>
+                    <input type="time" class="form-control" ng-model="task.begin_time" placeholder="hh:mm" min="00:00" max="23:59"></input>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" ng-if="is_end_date_required">
                 <div class="col-md-6">
                     Date de fin:
                     <p class="input-group">
@@ -49,7 +49,25 @@
 
                 <div class="col-md-6">
                     Heure de fin:
-                    <input type="time" class="form-control" ng-model="task.end_time" placeholder="hh:mm" min="05:00" max="22:00"></input>
+                    <input type="time" class="form-control" ng-model="task.end_time" placeholder="hh:mm" min="00:00" max="23:59"></input>
+                </div>
+            </div>
+
+            <div class="row" ng-if="is_deadline_required">
+                <div class="col-md-6">
+                    Date limite:
+                    <p class="input-group">
+                        <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" show-button-bar=false
+                        ng-model="task.deadline_date" is-open="deadline_date_opened" ng-required="false" close-text="Close" \>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open_deadline_date($event)"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    Heure limite:
+                    <input type="time" class="form-control" ng-model="task.deadline_time" placeholder="hh:mm" min="05:00" max="23:59"></input>
                 </div>
             </div>
 
