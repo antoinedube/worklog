@@ -13,10 +13,7 @@ angular.module('TasksManager.task-factory', ['ui.bootstrap', 'TasksManager.task-
                 windowClass: 'dropdown-menu-right'
             }).result
         },
-        get_todays_tasks: function() {
-            return null;
-        },
-        get_all_tasks: function() {
+        all: function() {
             return Task.query();
         }
     }

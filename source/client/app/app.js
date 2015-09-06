@@ -5,6 +5,7 @@ angular.module('TasksManager', [
     'TasksManager.unauthorized',
     'TasksManager.login',
     'TasksManager.logout',
+    // Why both profile-*?
     'TasksManager.profile-resource',
     'TasksManager.profile-factory',
     'TasksManager.header',

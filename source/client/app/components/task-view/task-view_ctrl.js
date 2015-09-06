@@ -10,6 +10,7 @@ angular.module('TasksManager.task-view', ['ngRoute', 'TasksManager.task-model'])
 }])
 
 .controller('TaskViewCtrl', function($scope,$location,$routeParams,Task) {
+    // Use factory instead of direct model access
     Task.get({task_id: $routeParams.task_id},function(task) {
         $scope.task = task;
     });
