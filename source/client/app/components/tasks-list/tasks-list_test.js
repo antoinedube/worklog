@@ -5,19 +5,18 @@ describe('TasksManager.tasks-list module', function() {
     var tasks_list_ctrl;
     var mock_modal;
     var mock_task;
-    var mock_task_factory;
 
     beforeEach(module('TasksManager.tasks-list'));
 
     beforeEach(module(function($provide) {
-        mock_task_factory = {
+        mock_task = {
             create: function() {},
-            get_all_tasks: function() {}
+            all: function() {}
         };
-        spyOn(mock_task_factory,'create').and.returnValue({then: function() {}});
-        spyOn(mock_task_factory, 'get_all_tasks').and.returnValue(['']);
+        spyOn(mock_task,'create').and.returnValue({then: function() {}});
+        spyOn(mock_task, 'all').and.returnValue(['']);
 
-        $provide.value('TaskFactory',mock_task_factory);
+        $provide.value('Task',mock_task);
     }));
 
     beforeEach(inject(function($rootScope,$controller) {
@@ -30,12 +29,12 @@ describe('TasksManager.tasks-list module', function() {
     });
 
     it('should query all tasks on controller creation', function() {
-        expect(mock_task_factory.get_all_tasks).toHaveBeenCalled();
+        expect(mock_task.all).toHaveBeenCalled();
     });
 
-    it('should call TaskFactory when creating a new task', function() {
+    it('should call Task.create when creating a new task', function() {
         $scope.create_new();
-        expect(mock_task_factory.create).toHaveBeenCalled();
+        expect(mock_task.create).toHaveBeenCalled();
     });
 });
 
