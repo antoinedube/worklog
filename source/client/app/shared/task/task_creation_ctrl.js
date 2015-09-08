@@ -2,7 +2,7 @@
 
 angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManager.task-model'])
 
-.controller('NewTaskCtrl', ['$scope', '$modalInstance', 'Task', function($scope,$modalInstance,Task) {
+.controller('NewTaskCtrl', ['$scope', '$modalInstance', function($scope,$modalInstance) {
     $scope.types = ['Fixe','Assignée','Non-assignée'];
 
     $scope.task = {
@@ -73,9 +73,9 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
             new_task.deadline = null;
         }
 
-        Task.save(new_task,function(task) {
-            $modalInstance.close(task);
-        });
+        // Task.save(new_task,function(task) {
+        $modalInstance.close(new_task);
+        // });
     };
 
     $scope.cancel = function() {
