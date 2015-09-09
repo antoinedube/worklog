@@ -71,5 +71,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 TEMPLATE_DIRS = (
-    'client/app',
+    'client',
 )

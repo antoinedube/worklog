@@ -2,7 +2,7 @@
 
 angular.module('TasksManager.task-model', ['ui.bootstrap', 'TasksManager.task-new', 'TasksManager.base-model'])
 
-.factory('Task', ['$q', '$modal', 'BaseModel', function($q,$modal,BaseModel) {
+.factory('Task', ['$modal', 'BaseModel', function($modal,BaseModel) {
     var task_resource = BaseModel('/task/:task_id');
     var Task = {
         all: function() {

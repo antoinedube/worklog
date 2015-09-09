@@ -121,6 +121,14 @@ div.tasks-list-header {
     cursor: pointer;
 }
 
+#app-header > div.logout:hover > span {
+    display: none;
+}
+
+#app-header > div.logout:hover:after {
+    content: 'Logout';
+}
+
 #nav-menu {
     float: left;
     padding: 75px 0px 0px 0px;
