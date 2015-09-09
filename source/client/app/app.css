@@ -118,6 +118,7 @@ div.tasks-list-header {
     border: 1px solid white;
     text-align: center;
     padding: 5px;
+    cursor: pointer;
 }
 
 #nav-menu {

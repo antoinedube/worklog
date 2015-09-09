@@ -12,19 +12,15 @@ angular.module('TasksManager.task-model', ['ui.bootstrap', 'TasksManager.task-ne
             return task_resource.get(task_id).$promise;
         },
         create: function() {
-            // Task.save(task) apres la fermeture de la modale, et retourner la promesse pour avoir le meme comportement que les autres methodes
-            return $q(function(resolve,reject) {
-                        $modal.open({
+            return $modal.open({
                         templateUrl: 'task_manager/shared/task/task_creation_view.html',
                         controller: 'NewTaskCtrl',
                         backdrop: 'static',
                         backdropClass: 'fade in',
                         windowClass: 'dropdown-menu-right'
                     }).result.then(function(task) {
-                        // Must call resource and save(), and return appropriate item
-                        resolve(task);
+                        return task_resource.save(task).$promise;
                     })
-                })
         }
     };
 
