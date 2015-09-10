@@ -42,6 +42,8 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         var new_task = {};
         new_task.name = $scope.task.name;
         new_task.type = $scope.task.type;
+        // Create some function/module/factory to transform $scope.task to a Task object new_task of correct type (fixed, assigned, ...)
+        // new_task = TaskHelpers.create($scope.task)
         if (new_task.type===$scope.types[0]) {
             new_task.begin_date = $scope.task.begin_date;
             new_task.begin_date.setHours($scope.task.begin_time.getHours(),$scope.task.begin_time.getMinutes());
@@ -73,9 +75,7 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
             new_task.deadline = null;
         }
 
-        // Task.save(new_task,function(task) {
         $modalInstance.close(new_task);
-        // });
     };
 
     $scope.cancel = function() {
