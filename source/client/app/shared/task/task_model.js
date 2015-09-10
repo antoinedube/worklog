@@ -25,5 +25,5 @@ angular.module('TasksManager.task-model', ['ui.bootstrap', 'TasksManager.task-ne
     };
 
     return Task;
-}])
+}]);
 
