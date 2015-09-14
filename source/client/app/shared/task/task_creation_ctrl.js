@@ -13,6 +13,9 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         type: $scope.types[0]
     };
     $scope.is_form_complete = false;
+
+
+    // Instead of $watch, there is most likely something to do with ngModelController
     $scope.$watch('task.name', function(newValue,oldValue) {
         $scope.is_form_complete = (newValue!=='') ? true:false;
     });
