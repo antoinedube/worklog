@@ -20,6 +20,8 @@ angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManage
         $scope.is_form_complete = (newValue!=='') ? true:false;
     });
 
+    // $scope.form_date_fields.{start_date_required,end_date_required,deadline_required}
+    // TaskUtils.update_required_fields($scope);
     $scope.is_start_date_required = false;
     $scope.is_end_date_required = false;
     $scope.is_deadline_required = false;
