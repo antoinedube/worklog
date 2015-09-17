@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import dateparse
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 
 from datetime import timedelta
 
@@ -21,3 +23,11 @@ class Task(models.Model):
     # status: personal/professional
     #   professional: Service a la collectivite, Recherche, Enseignement
     # requirement_level
+
+@receiver(pre_save,sender=Task)
+def print_model_begin_saved(sender,instance,**kwargs):
+    print('pre_save signal')
+    print(instance.__dict__)
+
+#class TaskVersion(models.Model):
+
