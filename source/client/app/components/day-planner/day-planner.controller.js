@@ -4,7 +4,7 @@ angular.module('TasksManager.day-planner', ['ngRoute', 'TasksManager.task-model'
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/today', {
-    templateUrl: 'task_manager/components/day-planner/day-planner_view.html',
+    templateUrl: 'task_manager/components/day-planner/day-planner.view.html',
     controller: 'DayPlannerCtrl'
   });
 }])

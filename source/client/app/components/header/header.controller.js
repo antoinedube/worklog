@@ -12,7 +12,7 @@
 
         function logout() {
             LogoutResource.save();
-        };
+        }
     }
 })();
 

@@ -4,7 +4,7 @@ angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task-model']
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/tasks-list', {
-    templateUrl: 'task_manager/components/tasks-list/tasks-list_view.html',
+    templateUrl: 'task_manager/components/tasks-list/tasks-list.view.html',
     controller: 'TasksListCtrl'
   });
 }])

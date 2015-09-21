@@ -1,6 +1,6 @@
 'use strict';
 
-describe('TasksManager.tasks-model module', function() {
+describe('TasksManager.task-model module', function() {
     beforeEach(module('TasksManager.task-model'));
 
     it('should be valid', inject(function(Task) {

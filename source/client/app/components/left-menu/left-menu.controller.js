@@ -18,7 +18,7 @@ angular.module('TasksManager.left-menu', [])
 .directive('tmLeftmenu', function() {
     return {
         restrict: 'C',
-        templateUrl: 'task_manager/components/left-menu/left-menu_view.html'
+        templateUrl: 'task_manager/components/left-menu/left-menu.view.html'
     }
 });
 
