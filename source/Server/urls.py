@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^task_manager/(?P<path>.*)$', serve, {'document_root': 'client/app',}),
-    url(r'^bower_modules/(?P<path>.*)$', serve, {'document_root': 'client/app/bower_components',}),
+    url(r'^bower_modules/(?P<path>.*)$', serve, {'document_root': 'client/public/bower_components',}),
     url(r'^favicon.ico',FaviconView.as_view()),
 )
 

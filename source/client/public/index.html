@@ -17,13 +17,15 @@
     {% csrf_token %}
 </head>
 <body>
-    <div id="app-header" ng-controller="AppHeaderCtrl">
+    <!-- Move to a directive -->
+    <div id="app-header" ng-controller="HeaderCtrl as vm">
         <div class="app-title">
             <h2>Organisateur de tâches</h2>
         </div>
-        <div class="logout" ng-click="logout()"><span>Menu</span></div>
+        <div class="logout" ng-click="vm.logout()"><span>Menu</span></div>
     </div>
 
+    <!-- Move to a directive -->
     <div id="nav-menu" class="tm-leftmenu" ng-controller="LeftMenuCtrl"></div>
 
     <div id="main-view" ng-view></div>
@@ -35,7 +37,6 @@
     <script src="bower_modules/angular-i18n/angular-locale_fr-ca.js" defer></script>
 
     <script src="task_manager/app.js" defer></script>
-    <script src="task_manager/config/unauthorized/unauthorized_interceptor.js" defer></script>
     <script src="task_manager/components/header/header_ctrl.js" defer></script>
     <script src="task_manager/components/left-menu/left-menu_ctrl.js" defer></script>
     <script src="task_manager/components/home/home_ctrl.js" defer></script>
@@ -49,6 +50,6 @@
     <script src="task_manager/shared/profile/profile_resource.js" defer></script>
     <script src="task_manager/shared/task/task_creation_ctrl.js" defer></script>
     <script src="task_manager/shared/task/task_model.js" defer></script>
-
+    <script src="task_manager/shared/unauthorized.interceptor.js" defer></script>
 </body>
 </html>

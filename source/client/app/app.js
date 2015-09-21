@@ -12,7 +12,10 @@ angular.module('TasksManager', [
     'TasksManager.day-planner',
     'TasksManager.tasks-list',
     'TasksManager.task-view'
-])
+]);
+
+
+angular.module('TasksManager')
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/home'});
 }])
