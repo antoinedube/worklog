@@ -3,15 +3,13 @@
 angular.module('TasksManager', [
     'ngRoute',
     'TasksManager.unauthorized',
-    'TasksManager.login',
-    'TasksManager.logout',
-    'TasksManager.profile-resource',
     'TasksManager.header',
     'TasksManager.left-menu',
     'TasksManager.home',
     'TasksManager.day-planner',
     'TasksManager.tasks-list',
-    'TasksManager.task-view'
+    'TasksManager.task-view',
+    'TasksManager.user'
 ]);
 
 

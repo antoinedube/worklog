@@ -1,17 +1,17 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.header', ['TasksManager.logout'])
+    angular.module('TasksManager.header', ['TasksManager.user'])
         .controller('HeaderCtrl', HeaderCtrl);
 
-    HeaderCtrl.$inject = ['LogoutResource'];
+    HeaderCtrl.$inject = ['User'];
 
-    function HeaderCtrl(LogoutResource) {
+    function HeaderCtrl(User) {
         var vm = this;
         vm.logout = logout;
 
         function logout() {
-            LogoutResource.save();
+            User.logout();
         }
     }
 })();

@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('TasksManager.task-model', ['ui.bootstrap', 'TasksManager.task-new', 'TasksManager.base-model'])
+angular.module('TasksManager.task-model', ['ui.bootstrap', 'TasksManager.task-new', 'TasksManager.base-resource'])
 
 .factory('Task', ['$modal', 'BaseResource', function($modal,BaseResource) {
-    var task_resource = BaseResource('/task/:task_id');
+    var task_resource = BaseResource('/api/task/:task_id');
     var Task = {
         all: function() {
             return task_resource.query().$promise;
