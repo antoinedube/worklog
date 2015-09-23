@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.task-new', ['ngRoute', 'ui.bootstrap', 'TasksManager.task-model'])
+angular.module('TasksManager.task')
 
 .controller('NewTaskCtrl', ['$scope', '$modalInstance', function($scope,$modalInstance) {
     $scope.types = ['Fixe','Assignée','Non-assignée'];

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.task-view', ['ngRoute', 'TasksManager.task-model'])
+angular.module('TasksManager.task-view', ['ngRoute', 'TasksManager.task'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/task-view/:task_id', {

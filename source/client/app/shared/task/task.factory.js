@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.task-model', ['ui.bootstrap', 'TasksManager.task-new', 'TasksManager.base-resource'])
+angular.module('TasksManager.task', ['ui.bootstrap', 'ngRoute', 'TasksManager.base-resource'])
 
 .factory('Task', ['$modal', 'BaseResource', function($modal,BaseResource) {
     var task_resource = BaseResource('/api/task/:task_id');

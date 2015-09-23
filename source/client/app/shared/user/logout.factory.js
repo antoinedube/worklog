@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('TasksManager.logout', ['TasksManager.base-resource'])
+angular.module('TasksManager.user')
 
 .factory('Logout', ['BaseResource', function(BaseResource) {
     return {
