@@ -1,0 +1,4 @@
+{
+    "predef": ["angular", "module", "inject"],
+    "jasmine": true
+}

@@ -1,10 +1,16 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('TasksManager.base-resource', ['ngResource'])
+    angular.module('TasksManager.base-resource', ['ngResource'])
 
-.factory('BaseResource', ['$resource', function($resource) {
-    return function(model_url) {
-        return $resource(model_url,{});
-    };
-}]);
+    .factory('BaseResource', BaseResource);
 
+    BaseResource.$inject = ['$resource'];
+
+    function BaseResource($resource) {
+        return function(model_url) {
+            return $resource(model_url,{});
+        };
+    }
+
+})();

@@ -16,7 +16,6 @@
 
         return factory;
 
-
         function login() {
             return $modal.open({
                     templateUrl: 'task_manager/shared/user/login.view.html',
@@ -25,16 +24,16 @@
                     backdropClass: 'fade in',
                     windowClass: 'dropdown-menu-right'
                 }).result.then(function(user) {
-                   return BaseResource('/login',{}).save(user).$promise;
+                   return new BaseResource('/login',{}).save(user).$promise;
             });
         }
 
         function logout() {
-            return BaseResource('/logout',{}).save().$promise;
+            return new BaseResource('/logout',{}).save().$promise;
         }
 
         function get_profile() {
-            return BaseResource('/profile',{}).get().$promise;
+            return new BaseResource('/profile',{}).get().$promise;
         }
     }
 })();

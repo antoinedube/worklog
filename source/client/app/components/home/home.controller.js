@@ -1,14 +1,15 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('TasksManager.home', ['ngRoute'])
+    angular.module('TasksManager.home', ['ngRoute'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/home', {
-    templateUrl: 'task_manager/components/home/home.view.html',
-    controller: 'HomeCtrl'
-  });
-}])
+    .config(['$routeProvider', function($routeProvider) {
+      $routeProvider.when('/home', {
+        templateUrl: 'task_manager/components/home/home.view.html',
+        controller: 'HomeCtrl'
+      });
+    }])
 
-.controller('HomeCtrl', ['$scope', function($scope) {
-}]);
-
+    .controller('HomeCtrl', ['$scope', function($scope) {
+    }]);
+})();

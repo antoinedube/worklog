@@ -1,4 +1,4 @@
-'use strict';
+(function () {'use strict';
 
 angular.module('TasksManager.task')
 
@@ -108,4 +108,4 @@ angular.module('TasksManager.task')
         $scope.deadline_date_opened = true;
     };
 }]);
-
+})();
