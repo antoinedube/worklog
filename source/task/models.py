@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils import dateparse
+from django.utils import dateparse, timezone
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
@@ -24,10 +24,15 @@ class Task(models.Model):
     #   professional: Service a la collectivite, Recherche, Enseignement
     # requirement_level
 
+class TaskVersion(Task,models.Model):
+    updated_at = models.DateTimeField(default=dateparse.parse_datetime('2015-01-01T00:00:00.000Z'))
+
 @receiver(pre_save,sender=Task)
 def print_model_begin_saved(sender,instance,**kwargs):
     print('pre_save signal')
     print(instance.__dict__)
-
-#class TaskVersion(models.Model):
+    data = instance.__dict__
+    task_version = TaskVersion(**data)
+    task_version.updated_at = timezone.now()
+    task_version.save()
 

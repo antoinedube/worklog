@@ -41,3 +41,6 @@ class TaskFactory:
             )
 
         return new_task
+
+    def create_version(self,task):
+        pass

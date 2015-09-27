@@ -3,6 +3,7 @@ from django.test.client import Client
 from django.utils import timezone
 
 from task.models import Task
+from task.factory import TaskFactory
 
 import json
 
@@ -95,4 +96,15 @@ class CRUDTestCase(TestCase):
         response = self.client.post('/api/task/',post_data,content_type='application/json')
         self.assertEqual(response.status_code,200)
         deserialized_content = json.loads(response.content.decode('utf-8'))
+
+class TaskVersionTestCase(TestCase):
+    def setUp(self):
+        self.task_factory = TaskFactory()
+
+    def tearDown(self):
+        del self.task_factory
+
+    def test_task_version_adds_record_on_save(self):
+        new_task_version = Task()
+        new_task_version.save()
 
