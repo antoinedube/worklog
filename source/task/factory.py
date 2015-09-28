@@ -1,9 +1,9 @@
 from django.utils import timezone, dateparse
-from task.models import Task
+from task.models import Task, TaskVersion
 
 class TaskFactory:
-    def create(self,type,data):
-        if type=='Fixe':
+    def create(self,data):
+        if data['type']=='Fixe':
             new_task = Task(
                 name = data['name'],
                 created_at = timezone.now(),
@@ -12,7 +12,7 @@ class TaskFactory:
                 deadline = None,
                 type = type
             )
-        elif type=='Assignée':
+        elif data['type']=='Assignée':
             new_task = Task(
                 name = data['name'],
                 created_at = timezone.now(),
@@ -21,7 +21,7 @@ class TaskFactory:
                 deadline = dateparse.parse_datetime(data['deadline']),
                 type = type
             )
-        elif type=='Non-assignée' and data['deadline'] is not None:
+        elif data['type']=='Non-assignée' and data['deadline'] is not None:
             new_task = Task(
                 name = data['name'],
                 created_at = timezone.now(),
@@ -42,5 +42,3 @@ class TaskFactory:
 
         return new_task
 
-    def create_version(self,task):
-        pass

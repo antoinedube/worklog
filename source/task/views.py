@@ -34,7 +34,7 @@ class TaskView(View):
             return JsonResponse({'message': 'Unauthorized'},status=401)
 
         data = json.loads(request.body.decode('utf-8'))
-        new_task = self.task_factory.create(data['type'],data)
+        new_task = self.task_factory.create(data)
         new_task.save()
 
         saved_item = self.task_serializer.query_to_json(Task.objects.get(pk=new_task.id))

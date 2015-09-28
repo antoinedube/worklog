@@ -100,11 +100,21 @@ class CRUDTestCase(TestCase):
 class TaskVersionTestCase(TestCase):
     def setUp(self):
         self.task_factory = TaskFactory()
+        new_task = Task(
+            name = 'Task for test',
+            created_at = timezone.now(),
+            begin_at = None,
+            end_at = None,
+            deadline = None,
+            type = 'Fixe'
+        )
+        new_task.save()
 
     def tearDown(self):
         del self.task_factory
 
     def test_task_version_adds_record_on_save(self):
-        new_task_version = Task()
+        task_to_version = Task.objects.get(pk=1)
+        new_task_version = self.task_factory.create_version(task_to_version)
         new_task_version.save()
 
