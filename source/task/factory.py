@@ -1,5 +1,5 @@
 from django.utils import timezone, dateparse
-from task.models import Task, TaskVersion
+from task.models import Task
 
 class TaskFactory:
     def create(self,data):
