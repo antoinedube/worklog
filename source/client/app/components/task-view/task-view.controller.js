@@ -10,7 +10,11 @@
       });
     }])
 
-    .controller('TaskViewCtrl', function($scope,$location,$routeParams,Task) {
+    .controller('TaskViewCtrl', TaskViewCtrl);
+    
+    TaskViewCtrl.$inject = ['$scope', '$location', '$routeParams', 'Task'];
+
+    function TaskViewCtrl($scope,$location,$routeParams,Task) {
         Task.get({task_id: $routeParams.task_id}).then(function(task) {
             $scope.task = task;
         });
@@ -18,5 +22,7 @@
         $scope.close = function() {
             $location.path('/tasks-list');
         };
-    });
+    }
+
 })();
+

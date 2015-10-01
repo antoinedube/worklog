@@ -3,9 +3,14 @@
 
     angular.module('TasksManager.task', ['ui.bootstrap', 'ngRoute', 'TasksManager.base-resource'])
 
-    .factory('Task', ['$modal', 'BaseResource', function($modal,BaseResource) {
+    .factory('Task', Task);
+
+    Task.$inject = ['$modal', 'BaseResource'];
+
+    function Task($modal,BaseResource) {
         var task_resource = new BaseResource('/api/task/:task_id');
-        var Task = {
+
+        var factory = {
             all: function() {
                 return task_resource.query().$promise;
             },
@@ -25,6 +30,7 @@
             }
         };
 
-        return Task;
-    }]);
+        return factory;
+    }
 })();
+

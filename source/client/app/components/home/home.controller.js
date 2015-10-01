@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.home', ['ngRoute'])
+    angular.module('TasksManager.home', ['ngRoute', 'TasksManager.tm-forms'])
 
     .config(['$routeProvider', function($routeProvider) {
       $routeProvider.when('/home', {
