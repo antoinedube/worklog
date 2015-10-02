@@ -94,20 +94,21 @@ div.tasks-list-header {
 #app-header {
     position: fixed;
     width: 100%;
-    height: 75px;
-    padding: 20px 20px 20px 20px;
+    height: 65px;
+    padding: 15px;
     color: #F5F5F5;
     background: #4b4f55;
+    box-shadow: 1px 0px 2px #4b4f55;
 }
 
 #app-header > div.app-title {
     width: 90%;
-    height: 35px;
+    height: 25px;
     float: left;
-    text-align: center;
+    padding-left: 75px;
 }
 
-#app-header > div.app-title > h2 {
+#app-header > div.app-title > h3 {
     margin: auto;
 }
 
@@ -115,14 +116,14 @@ div.tasks-list-header {
     width: 10%;
     height: 35px;
     float: left;
-    border: 1px solid white;
+    border: 1px solid #EEEEEE;
     text-align: center;
     padding: 5px;
     cursor: pointer;
 }
 
-#app-header > div.logout:hover > span {
-    display: none;
+#app-header > div.logout:after {
+    content: 'Menu';
 }
 
 #app-header > div.logout:hover:after {
@@ -144,13 +145,13 @@ div#main-view {
 }
 
 #main-view > .header {
-    height: 90px;
+    height: 80px;
 }
 
-#main-view > .header > h3 {
+#main-view > .header > h4 {
     float: left;
     padding: 10px;
-    margin: 20px;
+    margin: 10px;
 }
 
 #main-view > .header > button {

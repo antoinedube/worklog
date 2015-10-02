@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="bower_modules/bootstrap-css-only/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_modules/bootstrap-css-only/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_modules/Bootflat/bootflat/css/bootflat.min.css">
     <link rel="stylesheet" href="bower_modules/fontawesome/css/font-awesome.css">
     <link rel="stylesheet" href="task_manager/app.css">
     {% csrf_token %}
@@ -20,9 +20,9 @@
     <!-- Move to a directive -->
     <div id="app-header" ng-controller="HeaderCtrl as vm">
         <div class="app-title">
-            <h2>Organisateur de tâches</h2>
+            <h3>Organisateur de tâches</h3>
         </div>
-        <div class="logout" ng-click="vm.logout()"><span>Menu</span></div>
+        <div class="logout" ng-click="vm.logout()"></div>
     </div>
 
     <!-- Move to a directive -->

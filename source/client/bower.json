@@ -12,6 +12,7 @@
     "angular-mocks": "latest",
     "angular-resource": "latest",
     "angular-i18n": "latest",
+    "Bootflat": "latest",
     "bootstrap-css-only": "latest",
     "fontawesome": "latest",
     "angular-bootstrap": "latest",

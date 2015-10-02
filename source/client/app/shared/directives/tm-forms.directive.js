@@ -7,10 +7,10 @@
 
     function tmForms() {
         var directive =  {
+            controller: TmFormsController,
             bindToController: true,
-            controller: angular.noop(),
             controllerAs: 'vm',
-            link: TmFormsLink,
+            link: angular.noop,
             replace: true,
             restrict: 'EA',
             scope: {
@@ -22,10 +22,10 @@
         return directive;
     }
 
-    function TmFormsLink(scope,element,attrs,ctrl) {
-        var vm = scope.vm;
+    function TmFormsController() {
+        var vm = this;
 
-        vm.some_value = 5;
+        vm.some_value = 25;
     }
 
 })();

@@ -1,5 +1,5 @@
 <div class="header">
-    <h3>Tâches</h3>
+    <h4>Tâches</h4>
     <button class="btn btn-primary" ng-click="create_new()">Créer une tâche</button>
 </div>
 
@@ -7,7 +7,7 @@
     <div class="row">
         <div class="fixed-tasks tasks col-md-3">
             <div class="tasks-list-header">
-                <h4>Fixes</h4>
+                <h5>Fixes</h5>
             </div>
             <ul>
                 <li class="listitem" ng-repeat="task in tasks_list | filter:{type:'Fixe'}">
@@ -18,7 +18,7 @@
 
         <div class="assigned-tasks tasks col-md-3">
             <div class="tasks-list-header">
-                <h4>Assignées</h4>
+                <h5>Assignées</h5>
             </div>
             <ul>
                 <li class="listitem" ng-repeat="task in tasks_list | filter:{type: 'Assignée'}:true">
@@ -29,8 +29,8 @@
 
         <div class="unassigned-tasks tasks col-md-3">
             <div class="tasks-list-header">
-                <h4>Non-assignées</h4>
-                <h5>avec date limite</h5>
+                <h5>Non-assignées</h5>
+                <h6>avec date limite</h6>
             </div>
             <ul>
                 <li class="listitem" ng-repeat="task in tasks_list | filter:{type: 'Non-assignée'} | filter:{deadline: ''}">
@@ -41,8 +41,8 @@
 
         <div class="unassigned-nodate-tasks tasks col-md-3">
             <div class="tasks-list-header">
-                <h4>Non-assignées</h4>
-                <h5>sans date limite</h5>
+                <h5>Non-assignées</h5>
+                <h6>sans date limite</h6>
             </div>
             <ul>
                 <li class="listitem" ng-repeat="task in tasks_list | filter:{type: 'Non-assignée'} | filter:{deadline: null}:true">
