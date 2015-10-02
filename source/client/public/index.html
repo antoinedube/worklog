@@ -17,13 +17,7 @@
     {% csrf_token %}
 </head>
 <body>
-    <!-- Move to a directive -->
-    <div id="app-header" ng-controller="HeaderCtrl as vm">
-        <div class="app-title">
-            <h3>Organisateur de tâches</h3>
-        </div>
-        <div class="logout" ng-click="vm.logout()"></div>
-    </div>
+    <header></header>
 
     <!-- Move to a directive -->
     <div id="nav-menu" class="tm-leftmenu" ng-controller="LeftMenuCtrl"></div>
@@ -37,7 +31,7 @@
     <script src="bower_modules/angular-i18n/angular-locale_fr-ca.js" defer></script>
 
     <script src="task_manager/app.js" defer></script>
-    <script src="task_manager/components/header/header.controller.js" defer></script>
+    <script src="task_manager/components/header/header.directive.js" defer></script>
     <script src="task_manager/components/left-menu/left-menu.controller.js" defer></script>
     <script src="task_manager/components/home/home.controller.js" defer></script>
     <script src="task_manager/components/tasks-list/tasks-list.controller.js" defer></script>
