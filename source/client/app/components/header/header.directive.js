@@ -23,10 +23,22 @@
 
     function HeaderController(User) {
         var vm = this;
+        vm.status = {
+            isopen: false
+        };
+
         vm.logout = logout;
+        vm.toggleDropdown = toggleDropdown;
 
         function logout() {
             User.logout();
         }
+
+        function toggleDropdown($event) {
+           $event.preventDefault();
+           $event.stopPropagation();
+           vm.status.isopen = !vm.status.isopen;
+        }
     }
 })();
+

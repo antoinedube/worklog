@@ -6,7 +6,7 @@ body {
 
 a {
     text-decoration: none !important;
-    color: #4b4f55 !important;
+/*    color: #4b4f55 !important; */
 }
 
 select {
@@ -110,24 +110,6 @@ div.tasks-list-header {
 
 #app-header > div.app-title > h3 {
     margin: auto;
-}
-
-#app-header > div.logout {
-    width: 10%;
-    height: 35px;
-    float: left;
-    border: 1px solid #EEEEEE;
-    text-align: center;
-    padding: 5px;
-    cursor: pointer;
-}
-
-#app-header > div.logout:after {
-    content: 'Menu';
-}
-
-#app-header > div.logout:hover:after {
-    content: 'Logout';
 }
 
 #nav-menu {
