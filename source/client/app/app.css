@@ -6,7 +6,7 @@ body {
 
 a {
     text-decoration: none !important;
-/*    color: #4b4f55 !important; */
+    color: #4b4f55 !important;
 }
 
 select {
@@ -110,6 +110,19 @@ div.tasks-list-header {
 
 #app-header > div.app-title > h3 {
     margin: auto;
+}
+
+#app-header a#simple-dropdown {
+    color: #F5F5F5 !important;
+    padding: 5px;
+}
+
+ul.dropdown-menu {
+
+}
+
+ul.dropdown-menu > li {
+
 }
 
 #nav-menu {

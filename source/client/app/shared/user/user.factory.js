@@ -8,10 +8,17 @@
     User.$inject = ['$modal', 'BaseResource'];
 
     function User($modal,BaseResource) {
+        var first_name;
+        var last_name;
+
+        get_profile();
+
         var factory = {
             login: login,
             logout: logout,
-            get_profile: get_profile
+            first_name: first_name,
+            last_name: last_name,
+            full_name: full_name,
         };
 
         return factory;
@@ -33,7 +40,15 @@
         }
 
         function get_profile() {
-            return new BaseResource('/profile',{}).get().$promise;
+            BaseResource('/profile',{}).get().$promise.then(function(profile) {
+                console.log('User profile: ', profile.first_name);
+                first_name = profile.first_name;
+                last_name = profile.last_name;
+            });
+        }
+
+        function full_name() {
+            return first_name + ' ' + last_name;
         }
     }
 })();

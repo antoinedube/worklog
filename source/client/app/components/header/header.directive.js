@@ -3,9 +3,9 @@
 
     angular.module('TasksManager.header', ['TasksManager.user'])
 
-    .directive('header', tmForms);
+    .directive('header', tmHeader);
 
-    function tmForms() {
+    function tmHeader() {
         var directive =  {
             controller: HeaderController,
             bindToController: true,
@@ -26,6 +26,8 @@
         vm.status = {
             isopen: false
         };
+
+        vm.username = User.full_name();
 
         vm.logout = logout;
         vm.toggleDropdown = toggleDropdown;

@@ -15,6 +15,8 @@ class ProfileView(View):
 
         user = User.objects.get(username=request.user)
         item_set = {
+            'first_name': user.first_name,
+            'last_name': user.last_name,
             'language': user.profile.language,
             'timezone': user.profile.timezone,
             'UTC-offset': datetime.datetime.now(pytz.timezone(user.profile.timezone)).strftime('%z')

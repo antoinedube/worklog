@@ -25,6 +25,7 @@
                     backdropClass: 'fade in',
                     windowClass: 'dropdown-menu-right'
                 }).result.then(function(task) {
+                    console.log('task promise after create' + task);
                     return task_resource.save(task).$promise;
                 });
             }

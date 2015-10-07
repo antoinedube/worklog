@@ -15,7 +15,6 @@
                     var $route = $injector.get('$route');
 
                     User.login().then(function(user) {
-                        console.log(user);
                         $route.reload();
                     });
                 }
