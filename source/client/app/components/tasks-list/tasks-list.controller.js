@@ -17,7 +17,7 @@
 
         $scope.create_new = function() {
             Task.create().then(function(task) {
-                console.log('create new, received: ' + task.name + ' ' + task.type);
+                console.log('create new, received: ', task);
                 $scope.tasks_list.push(task);
             });
         };

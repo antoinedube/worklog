@@ -10,7 +10,7 @@ class TaskFactory:
                 begin_at = dateparse.parse_datetime(data['begin_date']),
                 end_at = dateparse.parse_datetime(data['end_date']),
                 deadline = None,
-                type = type
+                type = 'Fixe'
             )
         elif data['type']=='Assignée':
             new_task = Task(
@@ -19,7 +19,7 @@ class TaskFactory:
                 begin_at = dateparse.parse_datetime(data['begin_date']),
                 end_at = dateparse.parse_datetime(data['end_date']),
                 deadline = dateparse.parse_datetime(data['deadline']),
-                type = type
+                type = 'Assignée'
             )
         elif data['type']=='Non-assignée' and data['deadline'] is not None:
             new_task = Task(
@@ -28,7 +28,7 @@ class TaskFactory:
                 begin_at = None,
                 end_at = None,
                 deadline = dateparse.parse_datetime(data['deadline']),
-                type = type
+                type = 'Non-assignée'
             )
         else:
             new_task = Task(
@@ -37,7 +37,7 @@ class TaskFactory:
                 begin_at = None,
                 end_at = None,
                 deadline = None,
-                type = type
+                type = 'Non-assignée'
             )
 
         return new_task

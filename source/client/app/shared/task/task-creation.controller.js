@@ -80,6 +80,8 @@ angular.module('TasksManager.task')
             new_task.deadline = null;
         }
 
+        console.log('on modal close: ', new_task);
+
         $modalInstance.close(new_task);
     };
 
