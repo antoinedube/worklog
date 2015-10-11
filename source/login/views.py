@@ -5,7 +5,7 @@ from django.views.generic import View
 
 import json
 
-class LoginView(View):
+class UserLogin(View):
     def get(self,request):
         return JsonResponse({'message': 'You should not do a GET at /login'})
 
@@ -24,7 +24,7 @@ class LoginView(View):
             return JsonResponse({'message': 'Invalid login'})
 
 
-class LogoutView(View):
+class UserLogout(View):
     def post(self,request):
         logout(request)
         return JsonResponse({'message': 'Logout successful'})

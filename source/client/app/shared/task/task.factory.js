@@ -1,21 +1,30 @@
-(function() {
+(function () {
     'use strict';
 
-    angular.module('TasksManager.task')
+    angular.module('TasksManager.task', ['ui.bootstrap', 'ngRoute', 'TasksManager.base-resource'])
 
-    .factory('TaskFactory', TaskFactory);
+    .factory('Task', Task);
 
-    TaskFactory.$inject = ['$modal', 'Task'];
+    Task.$inject = ['$modal', 'BaseResource'];
 
-    function TaskFactory($modal, Task) {
+    function Task($modal,BaseResource) {
+        var task_resource = new BaseResource('/api/task/:task_id');
 
-        var TaskFactory = {
-            create: create,
+        var factory = {
+            all: all,
+            get: get,
+            create: create
         };
 
-        return TaskFactory;
+        return factory;
 
-        /* ---------- */
+        function all() {
+            return task_resource.query().$promise;
+        }
+
+        function get(task_id) {
+            return task_resource.get(task_id).$promise;
+        }
 
         function create() {
             return $modal.open({
@@ -25,16 +34,9 @@
                 backdropClass: 'fade in',
                 windowClass: 'dropdown-menu-right'
             }).result.then(function(task) {
-                console.log('in TaskFactory.create(): ', task);
-                return new Task({
-                    'name': task.name,
-                    'begin_at': task.begin_date,
-                    'end_at': task.end_date,
-                    'deadline': null,
-                    'duration': task.end_date.getTime - task.begin_date.getTime(),
-                    'type': task.type
-                }).$save();
+                return task_resource.save(task).$promise;
             });
         }
     }
 })();
+

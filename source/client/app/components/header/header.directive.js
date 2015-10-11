@@ -27,7 +27,7 @@
             isopen: false
         };
 
-//        vm.username = User.full_name();
+        vm.username = User.full_name();
 
         vm.logout = logout;
         vm.toggleDropdown = toggleDropdown;
