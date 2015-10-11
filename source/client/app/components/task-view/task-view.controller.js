@@ -15,7 +15,7 @@
     TaskViewCtrl.$inject = ['$scope', '$location', '$routeParams', 'Task'];
 
     function TaskViewCtrl($scope,$location,$routeParams,Task) {
-        Task.get({task_id: $routeParams.task_id}).then(function(task) {
+        Task.fetchOne($routeParams.task_id).then(function(task) {
             $scope.task = task;
         });
 

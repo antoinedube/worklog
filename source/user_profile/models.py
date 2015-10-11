@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-class Profile(models.Model):
+class UserProfile(models.Model):
     user = models.OneToOneField(User)
     language = models.CharField(max_length=256)
     timezone = models.CharField(max_length=256)

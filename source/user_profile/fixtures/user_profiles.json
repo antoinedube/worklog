@@ -1,5 +1,5 @@
 [{
-    "model": "profile.profile",
+    "model": "user_profile.userprofile",
     "pk": 1,
     "fields":
         {
