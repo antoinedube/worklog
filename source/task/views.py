@@ -5,6 +5,7 @@ from django.utils import timezone, dateparse
 
 import json
 
+from task.factory import TaskFactory
 from task.models import Task
 from task.serializer import TaskSerializer
 
@@ -12,6 +13,7 @@ from task.serializer import TaskSerializer
 class TaskView(View):
 
     def __init__(self):
+        self.task_factory = TaskFactory()
         self.task_serializer = TaskSerializer()
 
     def get(self,request,task_id):
@@ -29,12 +31,7 @@ class TaskView(View):
 
     def post(self,request,task_id):
         data = json.loads(request.body.decode('utf-8'))
-        new_task = Task(
-            name = data['name'],
-            created_at = timezone.now(),
-            end_date = dateparse.parse_datetime(data['end_date']),
-            type = data['type']
-        )
+        new_task = self.task_factory.create(data)
         new_task.save()
 
         saved_item = self.task_serializer.query_to_json(new_task)
@@ -53,7 +50,7 @@ class FilteredTaskView(View):
 
         if task_filter == 'today':
             # Include timezone consideration
-            task_query = Task.objects.exclude(end_date__lt=before).exclude(end_date__gt=after)
+            task_query = Task.objects.exclude(end_at__lt=before).exclude(end_at__gt=after)
 
             item_set = [self.task_serializer.query_to_json(item) for item in task_query]
 
