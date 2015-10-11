@@ -31,7 +31,7 @@
                     'begin_at': task.begin_date,
                     'end_at': task.end_date,
                     'deadline': null,
-                    'duration': task.end_date.getTime - task.begin_date.getTime(),
+                    'duration': task.end_date.getTime() - task.begin_date.getTime(),
                     'type': task.type
                 }).$save();
             });
