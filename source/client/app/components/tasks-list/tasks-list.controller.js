@@ -10,14 +10,13 @@
       });
     }])
 
-    .controller('TasksListCtrl', ['$scope', 'Task', function($scope,Task) {
-        Task.all().then(function(tasks) {
+    .controller('TasksListCtrl', ['$scope', 'Task', 'TaskFactory', function($scope, Task, TaskFactory) {
+        Task.fetchAll().then(function(tasks) {
             $scope.tasks_list = tasks;
         });
 
         $scope.create_new = function() {
-            Task.create().then(function(task) {
-                console.log('create new, received: ', task);
+            TaskFactory.create().then(function(task) {
                 $scope.tasks_list.push(task);
             });
         };
