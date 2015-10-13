@@ -27,13 +27,17 @@
             isopen: false
         };
 
-//        vm.username = User.full_name();
+        User.fetchOne().then(function(user) {
+            vm.user = user;
+        });
+
+        // Cannot use "class" name, but "instance"
 
         vm.logout = logout;
         vm.toggleDropdown = toggleDropdown;
 
         function logout() {
-            User.logout();
+            vm.user.logout();
         }
 
         function toggleDropdown($event) {

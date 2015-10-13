@@ -7,21 +7,18 @@
 
     User.$inject = ['$modal', 'Base'];
 
-    function User($modal) {
-/*
-        var first_name;
-        var last_name;
+    function User($modal,Base) {
 
-        get_profile();
-*/
-        var User = {
+        var User = Base.extend({
  /*           login: login,
             logout: logout,
             first_name: first_name,
             last_name: last_name,*/
             $urlRoot: '/api/users',
-            full_name: full_name,
-        };
+            full_name: function() {
+                return 'Full name here';
+            }
+        });
 
         return User;
 /*
