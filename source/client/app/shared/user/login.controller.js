@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.user')
+    angular.module('TasksManager.user-authentication')
 
     .controller('LoginCtrl', ['$scope', '$modalInstance', function($scope,$modalInstance) {
         $scope.user = {

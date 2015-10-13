@@ -26,8 +26,14 @@ class LoginView(View):
 
 class LogoutView(View):
     def post(self,request):
+        if not request.user.is_authenticated():
+            return JsonResponse({'message': 'Unauthorized'}, status=401)
+
         logout(request)
         return JsonResponse({'message': 'Logout successful'})
 
     def get(self,request):
+        if not request.user.is_authenticated():
+            return JsonResponse({'message': 'Unauthorized'}, status=401)
+
         return JsonResponse({'message': 'Invalid action'})

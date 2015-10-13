@@ -17,6 +17,9 @@ class TaskView(View):
         self.task_serializer = TaskSerializer()
 
     def get(self,request,task_id):
+        if not request.user.is_authenticated():
+            return JsonResponse({'message': 'Unauthorized'}, status=401)
+
         if task_id == '':
             task_query = Task.objects.all()
             item_set = [self.task_serializer.query_to_json(item) for item in task_query]
@@ -30,6 +33,9 @@ class TaskView(View):
             return HttpResponse(json_item)
 
     def post(self,request,task_id):
+        if not request.user.is_authenticated():
+            return JsonResponse({'message': 'Unauthorized'}, status=401)
+
         data = json.loads(request.body.decode('utf-8'))
         new_task = self.task_factory.create(data)
         new_task.save()
@@ -45,6 +51,9 @@ class FilteredTaskView(View):
         self.task_serializer = TaskSerializer()
 
     def get(self,request,task_filter):
+        if not request.user.is_authenticated():
+            return JsonResponse({'message': 'Unauthorized'}, status=401)
+
         before = timezone.now().replace(hour=0,minute=0,second=0,microsecond=0)
         after = timezone.now().replace(hour=23,minute=59,second=59,microsecond=999)
 

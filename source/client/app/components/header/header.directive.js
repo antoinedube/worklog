@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.header', ['TasksManager.user'])
+    angular.module('TasksManager.header', ['TasksManager.user', 'TasksManager.user-authentication'])
 
     .directive('header', tmHeader);
 
@@ -19,9 +19,9 @@
         return directive;
     }
 
-    HeaderController.$inject = ['User'];
+    HeaderController.$inject = ['User', 'Logout'];
 
-    function HeaderController(User) {
+    function HeaderController(User, Logout) {
         var vm = this;
         vm.status = {
             isopen: false
@@ -31,13 +31,13 @@
             vm.user = user;
         });
 
-        // Cannot use "class" name, but "instance"
-
         vm.logout = logout;
         vm.toggleDropdown = toggleDropdown;
 
+        /* ---------- */
+
         function logout() {
-            vm.user.logout();
+            Logout.submit();
         }
 
         function toggleDropdown($event) {

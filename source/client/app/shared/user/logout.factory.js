@@ -1,12 +1,12 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.user')
+    angular.module('TasksManager.user-authentication')
 
-    .factory('Logout', ['BaseResource', function(BaseResource) {
+    .factory('Logout', ['$resource', function($resource) {
         return {
             submit: function() {
-                 return new BaseResource('/logout',{}).save(user).$promise;
+                 return $resource('/logout',{}).save().$promise;
             }
         };
     }]);

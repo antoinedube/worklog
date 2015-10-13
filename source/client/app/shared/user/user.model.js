@@ -1,41 +1,25 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.user', ['ui.bootstrap', 'TasksManager.base-model'])
+    angular.module('TasksManager.user', ['TasksManager.base-model'])
 
     .factory('User', User);
 
-    User.$inject = ['$modal', 'Base'];
+    User.$inject = ['Base'];
 
-    function User($modal,Base) {
+    function User(Base) {
 
         var User = Base.extend({
- /*           login: login,
-            logout: logout,
-            first_name: first_name,
-            last_name: last_name,*/
             $urlRoot: '/api/users',
-            full_name: function() {
-                return 'Full name here';
-            }
+            full_name: full_name
         });
 
         return User;
-/*
-        function login() {
-            return $modal.open({
-                    templateUrl: 'task_manager/shared/user/login.view.html',
-                    controller: 'LoginCtrl',
-                    backdrop: 'static',
-                    backdropClass: 'fade in',
-                    windowClass: 'dropdown-menu-right'
-                }).result.then(function(user) {
-                   return new BaseResource('/login',{}).save(user).$promise;
-            });
-        }
-*/
+
+        /* ---------- */
+
         function full_name() {
-            return 'full name here';
+            return this.first_name + ' ' + this.last_name;
         }
     }
 })();

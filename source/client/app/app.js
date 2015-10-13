@@ -9,8 +9,7 @@
         'TasksManager.home',
         'TasksManager.day-planner',
         'TasksManager.tasks-list',
-        'TasksManager.task-view',
-        'TasksManager.user'
+        'TasksManager.task-view'
     ]);
 
 
