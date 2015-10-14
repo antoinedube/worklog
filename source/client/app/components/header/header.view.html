@@ -4,11 +4,11 @@
     </div>
     <span dropdown>
         <a href id="simple-dropdown" dropdown-toggle>{{vm.user.first_name}}</a>
-        <ul class="dropdown-menu">
-            <li>First choice</li>
-            <li>Second choice</li>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">First choice</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Second choice</a></li>
             <li class="divider"</li>
-            <li ng-click="vm.logout()">Logout</li>
+            <li role="presentation" ng-click="vm.logout()"><a role="menuitem" tabindex="-1" href="#">Logout</a></li>
         </ul>
     </span>
 </div>

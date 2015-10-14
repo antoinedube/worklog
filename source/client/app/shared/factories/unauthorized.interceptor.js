@@ -1,11 +1,11 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.unauthorized', ['ngRoute', 'TasksManager.user-authentication'])
+    angular.module('TasksManager.user-authentication')
 
     .factory('UnauthorizedInterceptor', UnauthorizedInterceptor);
 
-    UnauthorizedInterceptor.$inject = ['$q', '$injector', 'Login'];
+    UnauthorizedInterceptor.$inject = ['$q', '$injector'];
 
     function UnauthorizedInterceptor($q,$injector) {
         return {
@@ -16,7 +16,8 @@
                     var $route = $injector.get('$route');
                     var Login = $injector.get('Login');
 
-                    Login.submit().then(function(user) {
+                    Login.submit().then(function() {
+                        console.log('Logged in');
                         $route.reload();
                     });
                 }

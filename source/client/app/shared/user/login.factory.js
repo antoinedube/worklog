@@ -1,9 +1,13 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.user-authentication', ['ui.bootstrap', 'ngResource'])
+    angular.module('TasksManager.user-authentication', ['ui.bootstrap', 'ngResource', 'ngRoute'])
 
-    .factory('Login', ['$resource', '$modal', function($resource,$modal) {
+    .factory('Login', Login);
+
+    Login.$inject = ['$resource', '$modal'];
+
+    function Login($resource,$modal) {
         return {
             submit: function() {
                 return $modal.open({
@@ -17,6 +21,6 @@
                 });
             }
         };
-    }]);
+    }
 
 })();
