@@ -5,10 +5,11 @@
 <div id="day-planner" class="container-fluid">
     <div class="row">
         <table>
-            <tr ng-repeat="hour in working_hours" class="single-event">
+            <tr ng-repeat="hour in vm.working_hours" class="single-event">
                 <td class="time-of-day" valign="top" align="right">{{hour}}</td>
                 <td class="event">Event at {{hour}}</td>
             </tr>
         </table>
     </div>
+    Working hours: {{vm.working_hours}}
 </div>

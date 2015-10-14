@@ -1,33 +1,33 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.user-authentication')
+    angular
+        .module('TasksManager.user-authentication')
+        .controller('LoginController', LoginController);
 
-    .controller('LoginCtrl', ['$scope', '$modalInstance', function($scope,$modalInstance) {
-        $scope.user = {
+    LoginController.$inject = ['$modalInstance'];
+    function LoginController($modalInstance) {
+        var vm = this;
+
+        vm.user = {
             username: '',
             password: ''
         };
 
-        $scope.is_form_complete = false;
+        vm.is_form_complete = false;
 
-        $scope.submit = function() {
+        vm.submit = function() {
             $modalInstance.close($scope.user);
         };
 
-        $scope.cancel = function() {
+        vm.cancel = function() {
             $modalInstance.dismiss();
         };
 
-        $scope.open = function($event) {
+        vm.open = function($event) {
             $event.preventDefault();
             $event.stopPropagation();
-            $scope.opened = true;
+            vm.opened = true;
         };
-
-        $scope.$watch('user.username', function(newValue,oldValue) {
-            $scope.is_form_complete = (newValue!=='') ? true:false;
-        });
-
-    }]);
+    }
 })();

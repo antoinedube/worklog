@@ -1,24 +1,22 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.tasks-list', ['ngRoute', 'TasksManager.task'])
+    angular
+        .module('TasksManager.tasks-list')
+        .controller('TasksListCtrl', TasksListController);
 
-    .config(['$routeProvider', function($routeProvider) {
-      $routeProvider.when('/tasks-list', {
-        templateUrl: 'task_manager/components/tasks-list/tasks-list.view.html',
-        controller: 'TasksListCtrl'
-      });
-    }])
+    TasksListController.$inject = ['Task', 'TaskFactory'];
+    function TasksListController(Task, TaskFactory) {
+        var vm = this;
 
-    .controller('TasksListCtrl', ['$scope', 'Task', 'TaskFactory', function($scope, Task, TaskFactory) {
         Task.fetchAll().then(function(tasks) {
-            $scope.tasks_list = tasks;
+            vm.tasks_list = tasks;
         });
 
-        $scope.create_new = function() {
+        vm.create_new = function() {
             TaskFactory.create().then(function(task) {
-                $scope.tasks_list.push(task);
+                vm.tasks_list.push(task);
             });
         };
-    }]);
+    }
 })();

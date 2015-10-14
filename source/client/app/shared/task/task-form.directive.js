@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.task')
-
-    .directive('taskForm', TaskForm);
+    angular
+       .module('TasksManager.task')
+       .directive('taskForm', TaskForm);
 
     function TaskForm() {
         var directive =  {
@@ -11,9 +11,12 @@
             bindToController: true,
             controllerAs: 'vm',
             link: TaskFormLink,
-            replace: true,
+            replace: false,
             restrict: 'EA',
-            scope: {},
+            scope: {
+                submit: "&",
+                cancel: "&"
+            },
             templateUrl: 'task_manager/shared/task/task-form.view.html'
         };
 
@@ -42,10 +45,30 @@
             $event.stopPropagation();
 
             vm.date_opened[type] = true;
-        }
+        };
     }
 
-    function TaskFormLink(scope, element, attrs, ctrl) {
+    function TaskFormLink(scope, element, attrs, vm) {
+        // Model fields validation
+        /*
+        $scope.$watch('task.type', function(newValue,oldValue) {
+            if (newValue===$scope.types[0]) {
+                $scope.is_start_date_required = true;
+                $scope.is_end_date_required = true;
+                $scope.is_deadline_required = false;
+            }
+            else if (newValue===$scope.types[1]) {
+                $scope.is_start_date_required = true;
+                $scope.is_end_date_required = true;
+                $scope.is_deadline_required = true;
+            }
+            else if (newValue===$scope.types[2]) {
+                $scope.is_start_date_required = false;
+                $scope.is_end_date_required = false;
+                $scope.is_deadline_required = true;
+            }
+        });
+        */
     }
 
 })();

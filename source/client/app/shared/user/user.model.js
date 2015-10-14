@@ -1,20 +1,18 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.user', ['TasksManager.base-model'])
-
-    .factory('User', User);
+    angular
+        .module('TasksManager.user', ['TasksManager.base-model'])
+        .factory('User', User);
 
     User.$inject = ['Base'];
-
     function User(Base) {
-
-        var User = Base.extend({
+        var factory = Base.extend({
             $urlRoot: '/api/users',
             full_name: full_name
         });
 
-        return User;
+        return factory;
 
         /* ---------- */
 

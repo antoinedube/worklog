@@ -1,15 +1,12 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.home', ['ngRoute', 'TasksManager.task'])
+    angular
+        .module('TasksManager.home')
+        .controller('HomeCtrl', HomeCtrl);
+    
+    HomeCtrl.$inject = [];
+    function HomeCtrl() {
+    }
 
-    .config(['$routeProvider', function($routeProvider) {
-      $routeProvider.when('/home', {
-        templateUrl: 'task_manager/components/home/home.view.html',
-        controller: 'HomeCtrl'
-      });
-    }])
-
-    .controller('HomeCtrl', ['$scope', function($scope) {
-    }]);
 })();

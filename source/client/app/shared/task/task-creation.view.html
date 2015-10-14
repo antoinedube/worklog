@@ -1,12 +1,2 @@
-<div class="modal-header">
-    <h4 class="modal-title">Nouvelle tâche</h4>
-</div>
+<task-form submit="vm.create(task)" cancel="vm.cancel()"></task-form>
 
-<div class="modal-body">
-    <task-form></task-form>
-</div>
-
-<div class="modal-footer">
-    <button class="btn btn-primary" ng-click="create()">Créer</button>
-    <button class="btn btn-warning" ng-click="cancel()">Annuler</button>
-</div>

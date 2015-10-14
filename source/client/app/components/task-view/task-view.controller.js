@@ -1,28 +1,22 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.task-view', ['ngRoute', 'TasksManager.task'])
+    angular
+        .module('TasksManager.task-view')
+        .controller('TaskViewController', TaskViewController);
 
-    .config(['$routeProvider', function($routeProvider) {
-      $routeProvider.when('/task-view/:task_id', {
-        templateUrl: 'task_manager/components/task-view/task-view.view.html',
-        controller: 'TaskViewCtrl'
-      });
-    }])
+    TaskViewController.$inject = ['$location', '$routeParams', 'Task'];
+    function TaskViewController($location,$routeParams,Task) {
+        var vm = this;
 
-    .controller('TaskViewCtrl', TaskViewCtrl);
-    
-    TaskViewCtrl.$inject = ['$scope', '$location', '$routeParams', 'Task'];
-
-    function TaskViewCtrl($scope,$location,$routeParams,Task) {
         Task.fetchOne($routeParams.task_id).then(function(task) {
-            $scope.task = task;
+            vm.task = task;
+            console.log('Task: ', vm.task);
         });
 
-        $scope.close = function() {
+        vm.close = function() {
             $location.path('/tasks-list');
         };
     }
-
 })();
 

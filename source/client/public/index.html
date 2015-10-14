@@ -19,8 +19,7 @@
 <body>
     <header></header>
 
-    <!-- Move to a directive -->
-    <div id="nav-menu" class="tm-leftmenu" ng-controller="LeftMenuCtrl"></div>
+    <left-menu></left-menu>
 
     <div id="main-view" ng-view></div>
 
@@ -33,10 +32,14 @@
 
     <script src="task_manager/app.js" defer></script>
     <script src="task_manager/components/header/header.directive.js" defer></script>
-    <script src="task_manager/components/left-menu/left-menu.controller.js" defer></script>
+    <script src="task_manager/components/left-menu/left-menu.directive.js" defer></script>
+    <script src="task_manager/components/home/home.config.js" defer></script>
     <script src="task_manager/components/home/home.controller.js" defer></script>
+    <script src="task_manager/components/tasks-list/tasks-list.config.js" defer></script>
     <script src="task_manager/components/tasks-list/tasks-list.controller.js" defer></script>
+    <script src="task_manager/components/task-view/task-view.config.js" defer></script>
     <script src="task_manager/components/task-view/task-view.controller.js" defer></script>
+    <script src="task_manager/components/day-planner/day-planner.config.js" defer></script>
     <script src="task_manager/components/day-planner/day-planner.controller.js" defer></script>
 
     <script src="task_manager/shared/models/base.model.js" defer></script>
@@ -46,8 +49,8 @@
     <script src="task_manager/shared/user/login.controller.js" defer></script>
     <script src="task_manager/shared/task/task.model.js" defer></script>
     <script src="task_manager/shared/task/task.factory.js" defer></script>
-    <script src="task_manager/shared/task/task-creation.controller.js" defer></script>
     <script src="task_manager/shared/task/task-form.directive.js" defer></script>
+    <script src="task_manager/shared/task/task-creation.controller.js" defer></script>
     <script src="task_manager/shared/factories/unauthorized.interceptor.js" defer></script>
 </body>
 </html>

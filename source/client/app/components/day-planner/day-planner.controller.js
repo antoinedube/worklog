@@ -1,19 +1,17 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.day-planner', ['ngRoute', 'TasksManager.task'])
+    angular
+        .module('TasksManager.day-planner')
+        .controller('DayPlannerCtrl', DayPlannerCtrl);
 
-    .config(['$routeProvider', function($routeProvider) {
-      $routeProvider.when('/today', {
-        templateUrl: 'task_manager/components/day-planner/day-planner.view.html',
-        controller: 'DayPlannerCtrl'
-      });
-    }])
+    DayPlannerCtrl.$inject = ['Task'];
+    function DayPlannerCtrl(Task) {
+        var vm = this;
 
-    .controller('DayPlannerCtrl', ['$scope', 'Task', function($scope,Task) {
-        var working_hours = [];
-        for (var hour = 5 ; hour<23 ; hour++) working_hours.push(String(hour) + 'h');
+        vm.working_hours = [];
+        for (var hour = 5 ; hour<23 ; hour++) vm.working_hours.push(String(hour) + 'h');
 
-        $scope.working_hours = working_hours;
-    }]);
+        console.log('Working hours: ', vm.working_hours);
+    }
 })();

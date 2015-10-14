@@ -1,14 +1,17 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.user-authentication')
+    angular
+        .module('TasksManager.user-authentication')
+        .factory('Logout', Logout);
 
-    .factory('Logout', ['$resource', function($resource) {
+    Logout.$inject = ['$resource'];
+    function Logout($resource) {
         return {
             submit: function() {
                  return $resource('/logout',{}).save().$promise;
             }
         };
-    }]);
+    }
 
 })();

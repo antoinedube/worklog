@@ -1,5 +1,9 @@
-<form class="task-creation">
-    <div class="container-fluid">
+<form class="task-creation" ng-submit="vm.submit({task: vm.task})">
+    <div class="modal-header">
+        <h4 class="modal-title">Nouvelle tâche</h4>
+    </div>
+
+    <div class="modal-body container-fluid">
         <div class="row">
             <div class="col-md-12">
                 Nom de la tâche: <input type="text" class="form-control" ng-model="vm.task.name">
@@ -72,6 +76,10 @@
                 <input type="time" class="form-control" ng-model="vm.task.duration" placeholder="hh:mm" min="00:00" max="24:00"></input>
             </div>
         </div>
+    </div>
 
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="vm.submit({task: vm.task})">Créer</button>
+        <button class="btn btn-warning" ng-click="vm.cancel()">Annuler</button>
     </div>
 </form>

@@ -1,6 +1,6 @@
 <div class="header">
     <h4>Tâches</h4>
-    <button class="btn btn-primary" ng-click="create_new()">Créer une tâche</button>
+    <button class="btn btn-primary" ng-click="vm.create_new()">Créer une tâche</button>
 </div>
 
 <div class="container-fluid">
@@ -10,7 +10,7 @@
                 <h5>Fixes</h5>
             </div>
             <ul>
-                <li class="listitem" ng-repeat="task in tasks_list | filter:{type:'Fixe'}">
+                <li class="listitem" ng-repeat="task in vm.tasks_list | filter:{type:'Fixe'}">
                     <a href="/#/task-view/{{task.id}}">{{task.name}}</a>
                 </li>
             </ul>
@@ -21,7 +21,7 @@
                 <h5>Assignées</h5>
             </div>
             <ul>
-                <li class="listitem" ng-repeat="task in tasks_list | filter:{type: 'Assignée'}:true">
+                <li class="listitem" ng-repeat="task in vm.tasks_list | filter:{type: 'Assignée'}:true">
                     <a href="/#/task-view/{{task.id}}">{{task.name}}</a>
                 </li>
             </ul>
@@ -33,7 +33,7 @@
                 <h6>avec date limite</h6>
             </div>
             <ul>
-                <li class="listitem" ng-repeat="task in tasks_list | filter:{type: 'Non-assignée'} | filter:{deadline: ''}">
+                <li class="listitem" ng-repeat="task in vm.tasks_list | filter:{type: 'Non-assignée'} | filter:{deadline: ''}">
                     <a href="/#/task-view/{{task.id}}">{{task.name}}</a>
                 </li>
             </ul>
@@ -45,7 +45,7 @@
                 <h6>sans date limite</h6>
             </div>
             <ul>
-                <li class="listitem" ng-repeat="task in tasks_list | filter:{type: 'Non-assignée'} | filter:{deadline: null}:true">
+                <li class="listitem" ng-repeat="task in vm.tasks_list | filter:{type: 'Non-assignée'} | filter:{deadline: null}:true">
                     <a href="/#/task-view/{{task.id}}">{{task.name}}</a>
                 </li>
             </ul>

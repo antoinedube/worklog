@@ -1,12 +1,11 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.user-authentication')
-
-    .factory('UnauthorizedInterceptor', UnauthorizedInterceptor);
+    angular
+        .module('TasksManager.user-authentication')
+        .factory('UnauthorizedInterceptor', UnauthorizedInterceptor);
 
     UnauthorizedInterceptor.$inject = ['$q', '$injector'];
-
     function UnauthorizedInterceptor($q,$injector) {
         return {
             responseError: function(response) {

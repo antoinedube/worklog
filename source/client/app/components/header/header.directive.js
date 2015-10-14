@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('TasksManager.header', ['TasksManager.user', 'TasksManager.user-authentication'])
-
-    .directive('header', tmHeader);
+    angular
+        .module('TasksManager.header', ['TasksManager.user', 'TasksManager.user-authentication'])
+        .directive('header', tmHeader);
 
     function tmHeader() {
         var directive =  {
@@ -20,13 +20,14 @@
     }
 
     HeaderController.$inject = ['User', 'Logout'];
-
     function HeaderController(User, Logout) {
         var vm = this;
         vm.status = {
             isopen: false
         };
 
+        // Should use a single service that regroups login, logout, and stores session information (user connected, ...).
+        // In Cognibox, the service is "Session"
         User.fetchOne().then(function(user) {
             vm.user = user;
         });
