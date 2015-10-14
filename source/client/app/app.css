@@ -119,7 +119,7 @@ div.tasks-list-header {
     font-weight: bold;
 }
 
-#app-header ul.dropdown-menu {
+#app-header ul.uib-dropdown-menu {
     color: #F5F5F5;
     background: #4B4F55;
     border: solid 1px #F5F5F5;

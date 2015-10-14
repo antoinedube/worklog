@@ -46,7 +46,6 @@
     }
 
     function TaskFormLink(scope, element, attrs, ctrl) {
-    
     }
 
 })();

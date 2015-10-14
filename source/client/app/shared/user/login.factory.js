@@ -5,12 +5,12 @@
 
     .factory('Login', Login);
 
-    Login.$inject = ['$resource', '$modal'];
+    Login.$inject = ['$resource', '$uibModal'];
 
-    function Login($resource,$modal) {
+    function Login($resource,$uibModal) {
         return {
             submit: function() {
-                return $modal.open({
+                return $uibModal.open({
                         templateUrl: 'task_manager/shared/user/login.view.html',
                         controller: 'LoginCtrl',
                         backdrop: 'static',

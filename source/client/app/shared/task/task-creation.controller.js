@@ -4,16 +4,16 @@
     angular.module('TasksManager.task')
 
     .controller('NewTaskCtrl', ['$scope', '$modalInstance', function($scope,$modalInstance) {
-        $scope.types = ['Fixe','Assignée','Non-assignée'];
+        // $scope.types = ['Fixe','Assignée','Non-assignée'];
 
-        $scope.task = {
-            name: '',
-            begin_date: new Date(),
-            end_date: new Date(),
-            deadline_date: new Date(),
-            type: $scope.types[0]
-        };
-        $scope.is_form_complete = false;
+        // $scope.task = {
+        //     name: '',
+        //     begin_date: new Date(),
+        //     end_date: new Date(),
+        //     deadline_date: new Date(),
+        //     type: $scope.types[0]
+        // };
+        // $scope.is_form_complete = false;
 
 
         // For items specific to the form, create a directive
@@ -69,6 +69,7 @@
 
 
         $scope.create = function() {
+            console.log('task-creation ctrl: ', $scope.task);
             $modalInstance.close($scope.task);
         };
 

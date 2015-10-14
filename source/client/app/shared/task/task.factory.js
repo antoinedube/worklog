@@ -5,9 +5,9 @@
 
     .factory('TaskFactory', TaskFactory);
 
-    TaskFactory.$inject = ['$modal', 'Task'];
+    TaskFactory.$inject = ['$uibModal', 'Task'];
 
-    function TaskFactory($modal, Task) {
+    function TaskFactory($uibModal, Task) {
 
         var TaskFactory = {
             create: create,
@@ -18,7 +18,7 @@
         /* ---------- */
 
         function create() {
-            return $modal.open({
+            return $uibModal.open({
                 templateUrl: 'task_manager/shared/task/task-creation.view.html',
                 controller: 'NewTaskCtrl',
                 backdrop: 'static',
@@ -68,6 +68,7 @@
                 default:
                     console.log('Undefined type: ', task.type);
             }
+            console.log('New task: ', new_task);
             return new_task;
         }
     }
