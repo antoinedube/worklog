@@ -6,8 +6,8 @@
   "repository": "",
   "license": "GPLv3",
   "devDependencies": {
-        "karma": "latest",
         "bower": "latest",
+        "karma": "latest",
         "jshint": "latest",
         "jasmine-core": "latest",
         "phantomjs": "latest",
@@ -17,6 +17,6 @@
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower install",
 
-    "test": "./node_modules/karma/bin/karma start karma.conf.js --single-run"
+    "test": "./node_modules/karma/bin/karma start karma.conf.js"
   }
 }
