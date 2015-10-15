@@ -8,6 +8,11 @@
   "devDependencies": {
         "bower": "latest",
         "karma": "latest",
+        "grunt": "latest",
+        "grunt-karma": "latest",
+        "grunt-contrib-jshint": "latest",
+        "grunt-contrib-concat": "latest",
+        "grunt-contrib-uglify": "latest",
         "jshint": "latest",
         "jasmine-core": "latest",
         "phantomjs": "latest",

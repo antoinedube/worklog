@@ -17,6 +17,7 @@
         /* ---------- */
 
         function full_name() {
+            /*jshint validthis:true */
             return this.first_name + ' ' + this.last_name;
         }
     }
