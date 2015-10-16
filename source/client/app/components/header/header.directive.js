@@ -38,7 +38,10 @@
         /* ---------- */
 
         function logout() {
-            Logout.submit();
+            console.log('Logging out');
+            Logout.submit().then(function(data) {
+                console.log('Logged out: ', data);
+            });
         }
 
         function toggleDropdown($event) {

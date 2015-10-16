@@ -17,7 +17,8 @@
         vm.is_form_complete = false;
 
         vm.submit = function() {
-            $modalInstance.close($scope.user);
+            // Wait for response before closing modal. If login is refused.
+            $modalInstance.close(vm.user);
         };
 
         vm.cancel = function() {
