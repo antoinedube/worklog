@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('TasksManager.user-authentication', ['ui.bootstrap', 'ngResource', 'ngRoute'])
+        .module('TasksManager.authentication', ['ui.bootstrap', 'ngResource', 'ngRoute'])
         .factory('Login', Login);
 
     Login.$inject = ['$resource', '$uibModal'];
@@ -10,7 +10,7 @@
         return {
             submit: function() {
                 return $uibModal.open({
-                        templateUrl: 'task_manager/shared/user/login.view.html',
+                        templateUrl: 'task_manager/shared/authentication/login.view.html',
                         controller: 'LoginController',
                         controllerAs: 'vm',
                         backdrop: 'static',

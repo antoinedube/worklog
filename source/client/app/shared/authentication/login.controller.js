@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('TasksManager.user-authentication')
+        .module('TasksManager.authentication')
         .controller('LoginController', LoginController);
 
     LoginController.$inject = ['$modalInstance'];

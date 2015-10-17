@@ -3,7 +3,6 @@
 
     angular.module('TasksManager', [
         'ngRoute',
-        'TasksManager.user-authentication',
         'TasksManager.header',
         'TasksManager.left-menu',
         'TasksManager.home',

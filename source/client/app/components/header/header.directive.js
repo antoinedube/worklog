@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('TasksManager.header', ['TasksManager.user', 'TasksManager.user-authentication'])
+        .module('TasksManager.header', ['TasksManager.user', 'TasksManager.authentication'])
         .directive('header', tmHeader);
 
     function tmHeader() {
