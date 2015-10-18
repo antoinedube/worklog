@@ -14,7 +14,6 @@
         /* ---------- */
 
         function create(task) {
-            console.log('task-creation ctrl: ', task);
             $modalInstance.close(task);
         }
 

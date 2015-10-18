@@ -2,38 +2,32 @@
     'use strict';
 
     angular
-        .module('TasksManager.header', ['TasksManager.user', 'TasksManager.authentication'])
-        .directive('header', tmHeader);
+        .module('TasksManager.header', ['TasksManager.session', 'TasksManager.authentication'])
+        .directive('header', Header);
 
-    function tmHeader() {
+    function Header() {
         var directive =  {
             controller: HeaderController,
             bindToController: true,
             controllerAs: 'vm',
-            link: angular.noop,
+            link: HeaderLink,
             replace: true,
             restrict: 'EA',
+            scope: {},
             templateUrl: 'task_manager/components/header/header.view.html'
         };
 
         return directive;
     }
 
-    HeaderController.$inject = ['User', 'Logout'];
-    function HeaderController(User, Logout) {
+    HeaderController.$inject = ['Session', 'Logout'];
+    function HeaderController(Session, Logout) {
+        console.log('Controller');
         var vm = this;
-        vm.status = {
-            isopen: false
-        };
 
-        // Should use a single service that regroups login, logout, and stores session information (user connected, ...).
-        // In Cognibox, the service is "Session"
-        User.fetchOne().then(function(user) {
-            vm.user = user;
-        });
+        vm.user = Session.current_user;
 
         vm.logout = logout;
-        vm.toggleDropdown = toggleDropdown;
 
         /* ---------- */
 
@@ -43,12 +37,10 @@
                 console.log('Logged out: ', data);
             });
         }
+    }
 
-        function toggleDropdown($event) {
-           $event.preventDefault();
-           $event.stopPropagation();
-           vm.status.isopen = !vm.status.isopen;
-        }
+    function HeaderLink(scope, element, attrs, vm) {
+        console.log('Link function');
     }
 })();
 

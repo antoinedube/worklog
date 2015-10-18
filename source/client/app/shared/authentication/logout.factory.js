@@ -9,7 +9,8 @@
     function Logout($resource) {
         return {
             submit: function() {
-                 return $resource('/logout',{}).save().$promise;
+                console.log('Logout.submit() has been called');
+                return $resource('/logout',{}).save().$promise;
             }
         };
     }

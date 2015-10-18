@@ -98,7 +98,6 @@ div.tasks-list-header {
     color: #F5F5F5;
     background: #4b4f55;
     box-shadow: 1px 0px 2px #4b4f55;
-    z-index: 1000;
 }
 
 #app-header > div.app-title {
@@ -112,17 +111,10 @@ div.tasks-list-header {
     margin: auto;
 }
 
-#app-header a#simple-dropdown {
-    font-size: 1.25em;
-    padding: 15px;
-    color: #F5F5F5;
-    font-weight: bold;
-}
-
-#app-header ul.uib-dropdown-menu {
-    color: #F5F5F5;
-    background: #4B4F55;
-    border: solid 1px #F5F5F5;
+div.header-menu {
+    float: right;
+    width: 150px;
+    height: 25px;
 }
 
 #nav-menu {

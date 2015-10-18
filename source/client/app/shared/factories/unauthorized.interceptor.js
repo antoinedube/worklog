@@ -11,12 +11,10 @@
             responseError: function(response) {
                 console.log('Response status: ', response.status);
                 if (response.status === 401) {
-                    var User = $injector.get('User');
                     var $route = $injector.get('$route');
                     var Login = $injector.get('Login');
 
                     Login.submit().then(function() {
-                        console.log('Logged in');
                         $route.reload();
                     });
                 }

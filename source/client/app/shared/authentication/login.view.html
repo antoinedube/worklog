@@ -8,7 +8,6 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <!-- <label> css bootstrap -->
                         <label for="username">Nom d'utilisateur</label>
                     </div>
                     <div class="col-md-8">
@@ -28,8 +27,9 @@
     </div>
 
     <div class="modal-footer">
-        <button class="btn btn-primary" type="submit" ng-click="vm.submit()">Connexion</button>
+        <button class="btn btn-primary" type="submit">Connexion</button>
         <button class="btn btn-warning" ng-click="vm.cancel()">Annuler</button>
+        <p class="error-message">{{vm.message}}</p>
     </div>
 
 </form>

@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.generic import View
 from django.utils import timezone, dateparse
@@ -11,7 +11,6 @@ from task.serializer import TaskSerializer
 
 
 class TaskView(View):
-
     def __init__(self):
         self.task_factory = TaskFactory()
         self.task_serializer = TaskSerializer()
@@ -23,14 +22,11 @@ class TaskView(View):
         if task_id == '':
             task_query = Task.objects.all()
             item_set = [self.task_serializer.query_to_json(item) for item in task_query]
-            json_item_set = json.dumps(item_set)
-            return HttpResponse(json_item_set)
-
+            return JsonResponse(item_set, safe=False)
         else:
             item_query = Task.objects.get(id=task_id)
             item_set = self.task_serializer.query_to_json(item_query)
-            json_item = json.dumps(item_set)
-            return HttpResponse(json_item)
+            return JsonResponse(item_set)
 
     def post(self,request,task_id):
         if not request.user.is_authenticated():
@@ -41,8 +37,7 @@ class TaskView(View):
         new_task.save()
 
         saved_item = self.task_serializer.query_to_json(new_task)
-
-        return HttpResponse(json.dumps(saved_item))
+        return JsonResponse(saved_item)
 
 
 class FilteredTaskView(View):
@@ -63,7 +58,7 @@ class FilteredTaskView(View):
 
             item_set = [self.task_serializer.query_to_json(item) for item in task_query]
 
-            return HttpResponse(json.dumps(item_set))
+            return JsonResponse(item_set, safe=False)
         else:
             print('not today query')
-            return HttpResponse(json.dumps(''))
+            return JsonResponse({})

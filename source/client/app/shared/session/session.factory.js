@@ -6,12 +6,22 @@
         .factory('Session', Session);
 
     Session.$inject = [];
-    var current_user;
-
     function Session() {
-        console.log('Session has been called!');
-        return {
+        var current_user;
+        // Make sure to collect user id
+
+        var factory = {
+            set_user: set_user
         };
+
+        return factory;
+
+        /* ---------- */
+
+        function set_user(user) {
+            console.log('Session.current_user has been set to: ', user);
+            current_user = user;
+        }
     }
 
 })();

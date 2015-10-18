@@ -5,8 +5,8 @@
         .module('TasksManager.authentication')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$modalInstance'];
-    function LoginController($modalInstance) {
+    LoginController.$inject = ['$modalInstance', '$resource', 'Session'];
+    function LoginController($modalInstance, $resource, Session) {
         var vm = this;
 
         vm.user = {
@@ -17,8 +17,21 @@
         vm.is_form_complete = false;
 
         vm.submit = function() {
-            // Wait for response before closing modal. If login is refused.
-            $modalInstance.close(vm.user);
+            $resource('/login',{}).save(vm.user)
+                .$promise
+                .then(
+                    function(data) {
+                        if (data.message === 'Invalid login') {
+                            console.log('Error: ', data);
+                            vm.message = 'Connexion refusée'; 
+                        }
+                        else {
+                            console.log('Success: ', data);
+                            Session.set_user(data); 
+                            $modalInstance.close();
+                        }
+                    }
+                );
         };
 
         vm.cancel = function() {

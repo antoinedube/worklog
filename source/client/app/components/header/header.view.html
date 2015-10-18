@@ -2,14 +2,9 @@
     <div class="app-title">
         <h3>Organisateur de tâches</h3>
     </div>
-    <span uib-dropdown>
-        <a href id="simple-dropdown" uib-dropdown-toggle>{{vm.user.first_name}}</a>
-        <ul class="uib-dropdown-menu" role="menu">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">First choice</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Second choice</a></li>
-            <li class="divider"</li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="vm.logout()">Logout</a></li>
-        </ul>
-    </span>
+
+    <div class="header-menu" ng-click="vm.logout()">
+        Username: {{vm.user.first_name}}
+    </div>
 </div>
 

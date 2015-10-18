@@ -10,6 +10,7 @@
         var vm = this;
 
         Task.fetchAll().then(function(tasks) {
+            console.log('Tasks list: ', tasks);
             vm.tasks_list = tasks;
         });
 

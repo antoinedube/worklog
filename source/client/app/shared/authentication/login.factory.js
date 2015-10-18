@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('TasksManager.authentication', ['ui.bootstrap', 'ngResource', 'ngRoute'])
+        .module('TasksManager.authentication', ['ui.bootstrap', 'ngResource', 'ngRoute', 'TasksManager.session'])
         .factory('Login', Login);
 
-    Login.$inject = ['$resource', '$uibModal'];
-    function Login($resource,$uibModal) {
+    Login.$inject = ['$uibModal'];
+    function Login($uibModal) {
         return {
             submit: function() {
                 return $uibModal.open({
@@ -16,8 +16,8 @@
                         backdrop: 'static',
                         backdropClass: 'fade in',
                         windowClass: 'dropdown-menu-right'
-                    }).result.then(function(user) {
-                       return $resource('/login',{}).save(user).$promise;
+                    }).result.then(function() {
+                        return; 
                 });
             }
         };
