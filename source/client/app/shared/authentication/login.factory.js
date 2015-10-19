@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('TasksManager.authentication', ['ui.bootstrap', 'ngResource', 'ngRoute', 'TasksManager.session'])
+        .module('TasksManager.authentication', ['ui.bootstrap', 'ngResource', 'ngRoute', 'TasksManager.session', 'TasksManager.user'])
         .factory('Login', Login);
 
     Login.$inject = ['$uibModal'];

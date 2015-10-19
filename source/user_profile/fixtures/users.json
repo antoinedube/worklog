@@ -7,13 +7,13 @@
             "user_permissions": [],
             "last_login": "2015-01-26T00:29:33.555Z",
             "date_joined": "2015-01-26T00:29:33.555Z",
-            "last_name": "",
+            "last_name": "Dubé",
             "groups": [],
             "is_superuser": false,
             "password": "pbkdf2_sha256$15000$Qjb1A0gVJcPx$1LXaCti6CdcyGTLrMDwp+vimoaqlwln8bZjA+EGCSss=",
             "username": "antoine",
             "is_staff": false,
-            "first_name": "",
+            "first_name": "Antoine",
             "is_active": true
         }
 }]

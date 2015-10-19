@@ -5,8 +5,8 @@
         .module('TasksManager.authentication')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$modalInstance', '$resource', 'Session'];
-    function LoginController($modalInstance, $resource, Session) {
+    LoginController.$inject = ['$modalInstance', '$resource', 'Session', 'User'];
+    function LoginController($modalInstance, $resource, Session, User) {
         var vm = this;
 
         vm.user = {
@@ -23,12 +23,14 @@
                     function(data) {
                         if (data.message === 'Invalid login') {
                             console.log('Error: ', data);
-                            vm.message = 'Connexion refusée'; 
+                            vm.message = 'Connexion refusée';
                         }
                         else {
                             console.log('Success: ', data);
-                            Session.set_user(data); 
-                            $modalInstance.close();
+                            User.fetchOne(data.user_id).then(function(user) {
+                                Session.set_user(user);
+                                $modalInstance.close();
+                            });
                         }
                     }
                 );

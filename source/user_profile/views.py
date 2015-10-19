@@ -10,11 +10,11 @@ from user_profile.models import UserProfile
 
 
 class UserProfileView(View):
-    def get(self, request):
+    def get(self, request, user_id):
         if not request.user.is_authenticated():
             return JsonResponse({'message': 'Unauthorized'}, status=401)
 
-        user = User.objects.get(username=request.user)
+        user = User.objects.get(pk=user_id)
         item_set = {
             'first_name': user.first_name,
             'last_name': user.last_name,

@@ -8,7 +8,6 @@
     Session.$inject = [];
     function Session() {
         var current_user;
-        // Make sure to collect user id
 
         var factory = {
             set_user: set_user
@@ -19,7 +18,6 @@
         /* ---------- */
 
         function set_user(user) {
-            console.log('Session.current_user has been set to: ', user);
             current_user = user;
         }
     }

@@ -28,5 +28,6 @@ class UserProfileTestCase(TestCase):
 
         response = client.get('/api/users/1')
         deserialized_content = json.loads(response.content.decode('utf-8'))
+        print(deserialized_content)
         self.assertEqual(deserialized_content['UTC-offset'],'-0400')
 

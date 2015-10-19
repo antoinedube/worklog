@@ -22,17 +22,18 @@
 
     HeaderController.$inject = ['Session', 'Logout'];
     function HeaderController(Session, Logout) {
-        console.log('Controller');
         var vm = this;
 
+        // When calling Session, the login has not been done yet.
+        // On login, maybe broadcast an event to all application. on this event, reload data?
         vm.user = Session.current_user;
+        console.log('Header session.user: ', vm.user);
 
         vm.logout = logout;
 
         /* ---------- */
 
         function logout() {
-            console.log('Logging out');
             Logout.submit().then(function(data) {
                 console.log('Logged out: ', data);
             });
@@ -40,7 +41,6 @@
     }
 
     function HeaderLink(scope, element, attrs, vm) {
-        console.log('Link function');
     }
 })();
 

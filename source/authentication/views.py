@@ -17,11 +17,11 @@ class LoginView(View):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return JsonResponse({'message': 'Login successful'})
+                return JsonResponse({'message': 'Login successful', 'user_id': user.id})
             else:
-                return JsonResponse({'message': 'Disabled account'})
+                return JsonResponse({'message': 'Disabled account'}, status=401)
         else:
-            return JsonResponse({'message': 'Invalid login'})
+            return JsonResponse({'message': 'Invalid login'}, status=401)
 
 
 class LogoutView(View):
