@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="TasksManager" ng-strict-di class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="TasksManager" ng-strict-di class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="TasksManager" ng-strict-di class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="TasksManagerLogin" ng-strict-di class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Organisateur de tâches - Connexion</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="bower_modules/bootstrap-css-only/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_modules/Bootflat/bootflat/css/bootflat.min.css">
+    <link rel="stylesheet" href="bower_modules/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="task_manager/app.css">
+    {% csrf_token %}
+</head>
+<body>
+
+    <h2 class="text-center">Connexion</h2>
+    <div id="login-page" class="container" ng-controller="LoginController as vm">
+        <form ng-submit="vm.submit()">
+            <div class="form-group">
+                <input type="email" class="form-control" id="login-email" placeholder="Courriel" ng-model="vm.user.email">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="login-password" placeholder="Mot de passe" ng-model="vm.user.password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+        </form>
+    </div>
+
+    <script src="bower_modules/angular/angular.js" defer></script>
+    <script src="bower_modules/angular-route/angular-route.js" defer></script>
+    <script src="bower_modules/angular-resource/angular-resource.js" defer></script>
+    <script src="bower_modules/angular-bootstrap/ui-bootstrap-tpls.js" defer></script>
+    <script src="bower_modules/angular-i18n/angular-locale_fr-ca.js" defer></script>
+
+    <script src="task_manager/login.js" defer></script>
+</body>
+

@@ -18,6 +18,10 @@ div.container-fluid > div.row {
     margin: 10px 0px 15px 0px;
 }
 
+div#login-page {
+    max-width: 500px;
+}
+
 form.login > div.container-fluid > div.row > div > label {
     margin: 5px;
 }
