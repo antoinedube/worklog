@@ -26,6 +26,10 @@ form.login > div.container-fluid > div.row > div > label {
     margin: 5px;
 }
 
+p#login-message {
+    height: 25px;
+}
+
 div#login-form.center-block {
     display: block;
     max-width: 500px;

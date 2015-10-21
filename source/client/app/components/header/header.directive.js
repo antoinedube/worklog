@@ -34,9 +34,7 @@
         /* ---------- */
 
         function logout() {
-            Logout.submit().then(function(data) {
-                console.log('Logged out: ', data);
-            });
+            Logout.submit();
         }
     }
 
