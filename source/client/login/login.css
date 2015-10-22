@@ -1,1 +1,22 @@
+div#login-page {
+    margin-top: 100px;
+    max-width: 500px;
+}
 
+div#login-page > form > button {
+    width: 250px;
+    margin-left: 115px;
+}
+
+div#login-message {
+    margin-top: 10px;
+    font-weight: 900;
+}
+
+div#login-message.success {
+    color: #8CC152;
+}
+
+div#login-message.error {
+    color: #DA4453;
+}

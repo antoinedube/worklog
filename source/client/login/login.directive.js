@@ -24,7 +24,8 @@
     function FrontPageLoginController($resource, $window) {
         var vm = this;
         vm.user = {};
-        vm.login_message = 'Message initial';
+        vm.login_message = '';
+        vm.login_message_class = '';
 
         vm.submit = submit;
 
@@ -37,10 +38,12 @@
                 .then(function(data) {
                     console.log('Success: ', data);
                     vm.login_message = 'Connexion réussie';
+                    vm.login_message_class = 'success';
                     $window.location.reload();
                 }, function(data) {
-                    console.log('Error: ', data);
-                    vm.login_message = 'Connexion refusée'
+                    console.log('Error status: ', data.status);
+                    vm.login_message = 'Connexion refusée';
+                    vm.login_message_class = 'error';
                     console.log('login message: ', vm.login_message);
                 });
         }
