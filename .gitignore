@@ -1,6 +1,7 @@
 # Project specific
 bower_components
 node_modules
+source/client/vendor
 source/client/public/*.js
 
 # Byte-compiled / optimized / DLL files
