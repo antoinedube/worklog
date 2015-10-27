@@ -24,11 +24,7 @@
     function HeaderController(Session, Logout) {
         var vm = this;
 
-        // When calling Session, the login has not been done yet.
-        // On login, maybe broadcast an event to all application. on this event, reload data?
-        vm.user = Session.current_user;
-        console.log('Header session.user: ', vm.user);
-
+        vm.current_user = Session.get_user;
         vm.logout = logout;
 
         /* ---------- */

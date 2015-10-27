@@ -5,8 +5,8 @@
         .module('TasksManager.task')
         .controller('NewTaskCtrl', NewTaskCtrl);
 
-    NewTaskCtrl.$inject = ['$modalInstance'];
-    function NewTaskCtrl($modalInstance) {
+    NewTaskCtrl.$inject = ['$uibModalInstance'];
+    function NewTaskCtrl($uibModalInstance) {
         var vm = this;
         vm.create = create;
         vm.cancel = cancel;
@@ -14,11 +14,11 @@
         /* ---------- */
 
         function create(task) {
-            $modalInstance.close(task);
+            $uibModalInstance.close(task);
         }
 
         function cancel() {
-            $modalInstance.dismiss();
+            $uibModalInstance.dismiss();
         }
 
     }
