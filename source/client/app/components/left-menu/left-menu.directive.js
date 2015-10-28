@@ -33,7 +33,6 @@
     }
 
     function LeftMenuLink(scope, element, attrs, vm) {
-    
     }
 
 })();

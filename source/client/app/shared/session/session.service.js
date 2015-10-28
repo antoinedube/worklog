@@ -10,7 +10,8 @@
     var session = {
       get_user: get_user,
       set_user: set_user,
-      delete_user: delete_user
+      delete_user: delete_user,
+      user_full_name: user_full_name
     };
 
     return session;
@@ -20,17 +21,25 @@
     function set_user(user_id) {
       User.fetchOne(user_id).then(function(user) {
         $cookies.putObject('user', user);
-        console.log('Cookie user: ', user);
       });
     }
 
     function get_user() {
-      console.log('Stored cookie user: ', $cookies.getObject('user'));
       return $cookies.getObject('user');
     }
 
     function delete_user() {
       $cookies.remove('user');
+    }
+
+    function user_full_name() {
+      var user = $cookies.getObject('user');
+      if (!user) {
+        return '';
+      }
+      else {
+        return user.first_name + ' ' + user.last_name;
+      }
     }
   }
 

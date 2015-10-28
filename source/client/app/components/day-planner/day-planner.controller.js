@@ -8,6 +8,7 @@
     DayPlannerCtrl.$inject = ['Task'];
     function DayPlannerCtrl(Task) {
         var vm = this;
+        vm.duration = 3;
 
         vm.working_hours = [];
         for (var hour = 5 ; hour<23 ; hour++) vm.working_hours.push(String(hour) + 'h');

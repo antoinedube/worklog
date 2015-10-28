@@ -24,7 +24,8 @@
     function HeaderController(Session, Logout) {
         var vm = this;
 
-        vm.current_user = Session.get_user;
+//        vm.current_user = Session.get_user;
+        vm.session = Session;
         vm.logout = logout;
 
         /* ---------- */
