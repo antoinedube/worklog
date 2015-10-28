@@ -26,7 +26,7 @@
             }).result.then(function(task) {
                 console.log('in TaskFactory.create(): ', task);
                 var new_task = create_from_type(task);
-                return new_task.$save();
+                return Task.save(new_task);
             });
         }
 

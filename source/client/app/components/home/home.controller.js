@@ -1,12 +1,12 @@
 (function () {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('TasksManager.home')
-        .controller('HomeCtrl', HomeCtrl);
-    
-    HomeCtrl.$inject = [];
-    function HomeCtrl() {
-    }
+  angular
+    .module('TasksManager.home')
+    .controller('HomeCtrl', HomeCtrl);
+  
+  HomeCtrl.$inject = [];
+  function HomeCtrl() {
+  }
 
 })();
