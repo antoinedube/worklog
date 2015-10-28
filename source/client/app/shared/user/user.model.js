@@ -7,7 +7,7 @@
 
   User.$inject = ['$resource'];
   function User($resource) {
-    return $resource('/api/users');
+    return $resource('/api/users/:user_id');
   }
 })();
 

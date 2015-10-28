@@ -9,7 +9,7 @@
   function TasksListController(Task, TaskFactory) {
     var vm = this;
 
-    Task.query()
+    Task.query().$promise
       .then(function(tasks) {
         vm.tasks_list = tasks;
       });

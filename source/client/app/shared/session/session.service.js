@@ -19,7 +19,7 @@
     /* ---------- */
 
     function set_user(user_id) {
-      User.fetchOne(user_id).then(function(user) {
+      User.get({user_id:user_id}).$promise.then(function(user) {
         $cookies.putObject('user', user);
       });
     }
