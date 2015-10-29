@@ -5,10 +5,14 @@
     .module('TasksManager.day-planner')
     .controller('DayPlannerCtrl', DayPlannerCtrl);
 
-  DayPlannerCtrl.$inject = ['Task'];
-  function DayPlannerCtrl(Task) {
+  DayPlannerCtrl.$inject = ['FilteredTask'];
+  function DayPlannerCtrl(FilteredTask) {
     var vm = this;
     vm.duration = 3;
+
+    FilteredTask.query().$promise.then(function(tasks) {
+      console.log('Today tasks: ', tasks);
+    });
 
     vm.working_hours = [];
     for (var hour = 5 ; hour<23 ; hour++) vm.working_hours.push(String(hour) + 'h');
