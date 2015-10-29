@@ -9,14 +9,9 @@
     function UnauthorizedInterceptor($q,$injector) {
         return {
             responseError: function(response) {
-                console.log('Response status: ', response.status);
                 if (response.status === 401) {
-                    var $route = $injector.get('$route');
                     var Login = $injector.get('Login');
-
-                    Login.submit().then(function() {
-                        $route.reload();
-                    });
+                    Login.submit();
                 }
                 return $q.reject(response);
             }

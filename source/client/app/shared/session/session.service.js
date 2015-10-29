@@ -2,11 +2,11 @@
   'use strict';
 
   angular
-    .module('TasksManager.session', ['ngRoute', 'ngCookies', 'TasksManager.user', 'TasksManager.login'])
+    .module('TasksManager.session', ['ngRoute', 'ngCookies', 'TasksManager.user'])
     .service('Session', Session);
 
-  Session.$inject = ['$route', '$cookies', 'User', 'Login'];
-  function Session($route,$cookies,User,Login) {
+  Session.$inject = ['$route', '$cookies', 'User'];
+  function Session($route,$cookies,User) {
     var session = {
       get_user: get_user,
       set_user: set_user,
@@ -25,13 +25,7 @@
     }
 
     function get_user() {
-      var user = $cookies.getObject('user');
-      if (!user) {
-        Login.submit().then(function() {
-          $route.reload();
-        });
-      }
-      return user;
+      return $cookies.getObject('user');
     }
 
     function delete_user() {
@@ -40,7 +34,9 @@
 
     function user_full_name() {
       var user = get_user();
-      return user.first_name + ' ' + user.last_name;
+      if (user) {
+        return user.first_name + ' ' + user.last_name;
+      }
     }
   }
 

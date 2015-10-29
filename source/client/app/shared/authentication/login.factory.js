@@ -16,9 +16,7 @@
                         backdrop: 'static',
                         backdropClass: 'fade in',
                         windowClass: 'dropdown-menu-right'
-                    }).result.then(function() {
-                        return; 
-                });
+                    });
             }
         };
     }
