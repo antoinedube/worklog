@@ -10,13 +10,21 @@
     var vm = this;
     vm.duration = 3;
 
-    FilteredTask.query().$promise.then(function(tasks) {
-      console.log('Today tasks: ', tasks);
+    FilteredTask.query({filter:'end_today'}).$promise.then(function(tasks) {
+      var this_start_time = new Date(tasks[0].begin_at);
+      console.log('Today tasks: ', this_start_time.getHours());
+      console.log('Today tasks: ', this_start_time);
+
+      vm.todays_tasks = tasks;
     });
 
-    vm.working_hours = [];
-    for (var hour = 5 ; hour<23 ; hour++) vm.working_hours.push(String(hour) + 'h');
+    vm.is_task_at = function(hour) {
+    }
 
-    console.log('Working hours: ', vm.working_hours);
+    vm.task_at = function(hour) {
+    }
+
+    vm.working_hours = [];
+    for (var hour = 5 ; hour<23 ; hour++) vm.working_hours.push(hour);
   }
 })();

@@ -3,13 +3,14 @@
 </div>
 
 <div id="day-planner" class="container-fluid">
+    {{vm.todays_tasks}}
     <div class="row">
         <table>
             <tr ng-repeat="hour in vm.working_hours" class="single-event">
-                <td class="time-of-day" valign="top" align="right">{{hour}}</td>
-                <td class="event" rowspan={{vm.duration}}>Event at {{hour}}</td>
+                <td class="time-of-day" valign="top" align="right">{{hour}}h</td>
+                <!-- Include td.event if begin_at corresponds to time. -->
+                <td class="event" ng-if="vm.is_task_at(hour)">{{vm.task_at(hour)}}</td>
             </tr>
         </table>
     </div>
-    Working hours: {{vm.working_hours}}
 </div>

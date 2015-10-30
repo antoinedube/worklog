@@ -17,6 +17,7 @@
     "bootstrap-css-only": "latest",
     "fontawesome": "latest",
     "angular-bootstrap": "latest",
-    "normalize.css": "latest"
+    "normalize.css": "latest",
+    "lodash": "latest"
   }
 }

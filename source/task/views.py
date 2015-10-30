@@ -49,13 +49,13 @@ class FilteredTaskView(View):
         if not request.user.is_authenticated():
             return JsonResponse({'message': 'Unauthorized'}, status=401)
 
-        before = timezone.now().replace(hour=0,minute=0,second=0,microsecond=0)
-        after = timezone.now().replace(hour=23,minute=59,second=59,microsecond=999)
-
-        if task_filter == 'today':
-            # Include timezone consideration
+        if task_filter == 'end_today':
+            task = Task.objects.get(pk=1);
+            task.end_at = timezone.now();
+            task.save();
+            before = timezone.now().replace(hour=0,minute=0,second=0,microsecond=0)
+            after = timezone.now().replace(hour=23,minute=59,second=59,microsecond=999)
             task_query = Task.objects.exclude(end_at__lt=before).exclude(end_at__gt=after)
-
             item_set = [self.task_serializer.query_to_json(item) for item in task_query]
 
             return JsonResponse(item_set, safe=False)
