@@ -2,6 +2,7 @@ from django.utils import timezone, dateparse
 from task.models import Task
 
 
+# Use a "day-planner" algorithm to fill in the missing date/time information
 class TaskFactory:
 
     def create(self, data):
