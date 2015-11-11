@@ -11,10 +11,6 @@
     vm.duration = 3;
 
     FilteredTask.query({filter:'end_today'}).$promise.then(function(tasks) {
-      var this_start_time = new Date(tasks[0].begin_at);
-      console.log('Today tasks: ', this_start_time.getHours());
-      console.log('Today tasks: ', this_start_time);
-
       vm.todays_tasks = tasks;
     });
 

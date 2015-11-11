@@ -12,7 +12,6 @@
     Task.get({task_id: $routeParams.task_id}).$promise
       .then(function(task) {
         vm.task = task;
-        console.log('Task: ', vm.task);
       });
 
     vm.close = function() {

@@ -49,26 +49,23 @@
     }
 
     function TaskFormLink(scope, element, attrs, vm) {
-        // Model fields validation
-        /*
-        $scope.$watch('task.type', function(newValue,oldValue) {
-            if (newValue===$scope.types[0]) {
-                $scope.is_start_date_required = true;
-                $scope.is_end_date_required = true;
-                $scope.is_deadline_required = false;
+        scope.$watch('vm.task.type', function(newValue,oldValue) {
+            if (newValue===vm.types[0]) {
+                vm.is_start_date_required = true;
+                vm.is_end_date_required = true;
+                vm.is_deadline_required = false;
             }
-            else if (newValue===$scope.types[1]) {
-                $scope.is_start_date_required = true;
-                $scope.is_end_date_required = true;
-                $scope.is_deadline_required = true;
+            else if (newValue===vm.types[1]) {
+                vm.is_start_date_required = true;
+                vm.is_end_date_required = true;
+                vm.is_deadline_required = true;
             }
-            else if (newValue===$scope.types[2]) {
-                $scope.is_start_date_required = false;
-                $scope.is_end_date_required = false;
-                $scope.is_deadline_required = true;
+            else if (newValue===vm.types[2]) {
+                vm.is_start_date_required = false;
+                vm.is_end_date_required = false;
+                vm.is_deadline_required = true;
             }
         });
-        */
     }
 
 })();

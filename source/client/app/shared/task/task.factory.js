@@ -24,7 +24,6 @@
                 backdropClass: 'fade in',
                 windowClass: 'dropdown-menu-right'
             }).result.then(function(task) {
-                console.log('in TaskFactory.create(): ', task);
                 var new_task = create_from_type(task);
                 return Task.save(new_task).$promise;
             });
@@ -67,7 +66,6 @@
                 default:
                     console.log('Undefined type: ', task.type);
             }
-            console.log('New task: ', new_task);
             return new_task;
         }
     }
