@@ -23,3 +23,4 @@ class Task(models.Model):
     # status: personal/professional
     #  professional: Service a la collectivite, Recherche, Enseignement
     # requirement_level
+

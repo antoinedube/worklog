@@ -11,7 +11,12 @@
             responseError: function(response) {
                 if (response.status === 401) {
                     var Login = $injector.get('Login');
-                    Login.submit();
+                    var $route = $injector.get('$route');
+                    Login.submit()
+                      .result
+                      .then(function() {
+                        $route.reload();
+                      });
                 }
                 return $q.reject(response);
             }

@@ -3,14 +3,15 @@
 
   angular
     .module('TasksManager.scheduler', ['TasksManager.task-model'])
-    .service('Scheduler', Scheduler);
+    .factory('Scheduler', Scheduler);
 
   Scheduler.$inject = ['Task'];
   function Scheduler(Task) {
-    var session = {
+    var upcoming_task = Task.get_upcoming_tasks();
+    var factory = {
     };
 
-    return session;
+    return factory;
 
     /* ---------- */
 
