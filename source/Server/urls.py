@@ -6,13 +6,9 @@ from django.views.static import serve
 
 from Server.views import FaviconView
 from authentication.views import LoginView, LogoutView
-from front_page.views import FrontPageView
 
 urlpatterns = patterns('',
-    #url(r'^$', TemplateView.as_view(template_name="index.html")),
-
-    # In a view, check if logged in or not, and display login page or enter app
-    url(r'^$', FrontPageView.as_view()),
+    url(r'^$', TemplateView.as_view(template_name="application.html")),
 
     url(r'^login', LoginView.as_view()),
     url(r'^logout', LogoutView.as_view()),
@@ -23,7 +19,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^task_manager/(?P<path>.*)$', serve, {'document_root': 'client/app',}),
-    url(r'^task_manager_login/(?P<path>.*)$', serve, {'document_root': 'client/login',}),
     url(r'^bower_modules/(?P<path>.*)$', serve, {'document_root': 'client/vendor',}),
     url(r'^favicon.ico', FaviconView.as_view()),
 )

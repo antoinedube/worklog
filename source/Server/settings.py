@@ -23,7 +23,6 @@ INSTALLED_APPS = (
 #    'django.contrib.staticfiles',
     'task',
     'user_profile',
-    'front_page',
     'authentication'
 )
 
