@@ -43,7 +43,6 @@ class CRUDTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
         deserialized_content = json.loads(response.content.decode('utf-8'))
-        print(deserialized_content)
         self.assertEqual(deserialized_content[0]['id'], test_task_id)
 
     def test_fixed_task_creation_through_post(self):

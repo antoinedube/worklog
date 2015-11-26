@@ -63,5 +63,4 @@ class FilteredTaskView(View):
             return JsonResponse(item_set, safe=False)
 
         else:
-            print('Something else')
-            return JsonResponse({})
+            return JsonResponse({'message': 'Something else'})
