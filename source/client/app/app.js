@@ -6,6 +6,7 @@
         'TasksManager.header',
         'TasksManager.left-menu',
         'TasksManager.home',
+        'TasksManager.login-page',
         'TasksManager.day-planner',
         'TasksManager.tasks-list',
         'TasksManager.task-view'

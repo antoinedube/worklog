@@ -2,13 +2,14 @@
   'use strict';
 
   angular
-    .module('TasksManager.session', ['ngRoute', 'ngCookies', 'TasksManager.user'])
+    .module('TasksManager.session', ['ngCookies', 'TasksManager.user'])
     .service('Session', Session);
 
-  Session.$inject = ['$route', '$cookies', 'User'];
-  function Session($route,$cookies,User) {
+  Session.$inject = ['$location', '$cookies', 'User'];
+  function Session($location,$cookies,User) {
     var session = {
       get_user: get_user,
+      is_user_logged_in: is_user_logged_in,
       set_user: set_user,
       delete_user: delete_user,
       user_full_name: user_full_name
@@ -24,8 +25,26 @@
       });
     }
 
+    function is_user_logged_in() {
+      console.log('Checking user logged in...');
+      if ($cookies.getObject('user')) {
+        console.log('Found user');
+        return true;
+      }
+      else {
+        console.log('No user found');
+        return false;
+      }
+    }
+
     function get_user() {
-      return $cookies.getObject('user');
+      var current_user = $cookies.getObject('user');
+      if (!current_user) {
+        $location.path('/login-page');
+      }
+      else {
+        return current_user;
+      }
     }
 
     function delete_user() {

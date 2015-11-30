@@ -12,6 +12,7 @@
                 if (response.status === 401) {
                     var Login = $injector.get('Login');
                     var $route = $injector.get('$route');
+                    console.log('Interceptor route: ', $route);
                     Login.submit()
                       .result
                       .then(function() {
