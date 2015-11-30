@@ -6,7 +6,7 @@
     .config(['$routeProvider', function($routeProvider) {
      $routeProvider.when('/tasks-list', {
       templateUrl: 'task_manager/components/tasks-list/tasks-list.view.html',
-      controller: 'TasksListCtrl',
+      controller: 'TasksListController',
       controllerAs: 'vm'
      });
     }]);

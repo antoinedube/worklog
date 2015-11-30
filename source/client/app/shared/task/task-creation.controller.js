@@ -3,7 +3,7 @@
 
     angular
         .module('TasksManager.task')
-        .controller('NewTaskCtrl', NewTaskCtrl);
+        .controller('NewTaskController', NewTaskCtrl);
 
     NewTaskCtrl.$inject = ['$uibModalInstance'];
     function NewTaskCtrl($uibModalInstance) {

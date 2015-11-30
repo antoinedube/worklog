@@ -10,7 +10,7 @@
 
     beforeEach(inject(function($rootScope,$controller) {
       $scope = $rootScope.$new();
-      task_view_ctrl = $controller('TaskViewCtrl',{$scope: $scope});
+      task_view_ctrl = $controller('TaskViewController',{$scope: $scope});
     }));
 
     it('should be defined on controller creation', function() {

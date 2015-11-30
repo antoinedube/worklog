@@ -3,7 +3,7 @@
 
   angular
     .module('TasksManager.tasks-list')
-    .controller('TasksListCtrl', TasksListController);
+    .controller('TasksListController', TasksListController);
 
   TasksListController.$inject = ['Task', 'TaskFactory'];
   function TasksListController(Task, TaskFactory) {

@@ -2,23 +2,35 @@
   'use strict';
 
   angular
-    .module('TasksManager.scheduler', ['TasksManager.task-model'])
+    .module('TasksManager.task')
     .factory('Scheduler', Scheduler);
 
   Scheduler.$inject = ['FilteredTask'];
   function Scheduler(FilteredTask) {
-    var upcoming_task = FilteredTask.get({filter: 'upcoming'});
+    var fixed_tasks;
+    var assigned_tasks;
+    var unassigned_tasks;
+    FilteredTask.query({filter: 'upcoming'})
+      .$promise
+      .then(function(tasks) {
+        fixed_tasks = _.filter(tasks,{'type': 'Fixe'});
+        assigned_tasks = _.filter(tasks, {'type': 'Assignée'});
+        unassigned_tasks = _.filter(tasks, {'type': 'Non-assignée'});
+      });
 
     var factory = {
-      new_task: new_task
+      schedule: schedule
     };
 
     return factory;
 
     /* ---------- */
 
-    function new_task(task) {
+    function schedule(task) {
       console.log('Task to schedule: ', task);
+
+
+      // return Task.save(new_task).$promise;
     }
 
   }

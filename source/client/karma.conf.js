@@ -4,12 +4,12 @@ module.exports = function(config){
     basePath : './',
 
     files : [
-      'public/bower_components/angular/angular.js',
-      'public/bower_components/angular-activerecord/src/angular-activerecord.js',
-      'public/bower_components/angular-resource/angular-resource.js',
-      'public/bower_components/angular-route/angular-route.js',
-      'public/bower_components/angular-mocks/angular-mocks.js',
-      'public/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'vendor/angular/angular.js',
+      'vendor/angular-activerecord/src/angular-activerecord.js',
+      'vendor/angular-resource/angular-resource.js',
+      'vendor/angular-route/angular-route.js',
+      'vendor/angular-mocks/angular-mocks.js',
+      'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
       'app/**/**/*.model.js',
       'app/**/**/*.factory.js',
       'app/**/**/*.config.js',

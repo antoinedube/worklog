@@ -5,8 +5,8 @@
     .module('TasksManager.task')
     .factory('TaskFactory', TaskFactory);
 
-  TaskFactory.$inject = ['$uibModal', 'Task'];
-  function TaskFactory($uibModal, Task) {
+  TaskFactory.$inject = ['$uibModal', 'Scheduler'];
+  function TaskFactory($uibModal, Scheduler) {
     var factory = {
       create: create,
     };
@@ -18,18 +18,21 @@
     function create() {
       return $uibModal.open({
         templateUrl: 'task_manager/shared/task/task-creation.view.html',
-        controller: 'NewTaskCtrl',
+        controller: 'NewTaskController',
         controllerAs: 'vm',
         backdrop: 'static',
         backdropClass: 'fade in',
         windowClass: 'dropdown-menu-right'
       }).result.then(function(task) {
-        var new_task = create_from_type(task);
+        // var new_task = create_from_type(task);
+        // return Task.save(new_task).$promise;
+
         // Instead of create_from_type, we need to call the scheduler to fill in missing date/time fields
-        return Task.save(new_task).$promise;
+        return Scheduler.schedule(task);
       });
     }
 
+    /*
     function create_from_type(task) {
       var new_task = {};
       switch (task.type) {
@@ -69,5 +72,6 @@
       }
       return new_task;
     }
+    */
   }
 })();
