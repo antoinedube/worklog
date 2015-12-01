@@ -14,30 +14,6 @@ select {
     appearance: None;
 }
 
-div.container-fluid > div.row {
-    margin: 10px 0px 15px 0px;
-}
-
-div#login-page {
-    max-width: 500px;
-}
-
-form.login > div.container-fluid > div.row > div > label {
-    margin: 5px;
-}
-
-p#login-message {
-    height: 25px;
-}
-
-div#login-form.center-block {
-    display: block;
-    max-width: 500px;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 form.task-creation input.ng-invalid {
     border: 2px solid red;
 }
@@ -76,20 +52,22 @@ li.listitem {
     padding: 10px 10px 10px 10px;
     min-height: 50px;
     list-style-type: None;
-    border-bottom: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0 !important;
     overflow: hidden;
+    color: #4B4F55;
 }
 
 div.tasks {
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     border-left: solid 1px #E0E0E0;
 }
 
-div.tasks li.listitem:hover {
+li.listitem:hover {
+    cursor: pointer;
     background-color: #F0F0F0;
 }
 
-div.tasks li.listitem:last-child {
+li.listitem:last-child {
     border-bottom: 0px;
 }
 
@@ -119,15 +97,23 @@ div.tasks-list-header {
     margin: auto;
 }
 
-div.header-menu {
+.header-menu {
+    cursor: pointer;
     float: right;
     width: 150px;
-    height: 25px;
+    height: 35px;
+    padding: 5px 0 5px 0;
+    transition: color 0.5s, background 0.5s;
+}
+
+.header-menu:hover {
+    background: #F5F5F5;
+    color: #4b4f55;
 }
 
 #nav-menu {
     float: left;
-    padding: 75px 0px 0px 0px;
+    padding-top: 75px;
     position: fixed;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -135,7 +121,8 @@ div.header-menu {
 }
 
 div#main-view {
-    margin: 0px 0px 0px 165px;
+    margin-left: 165px;
+    padding: 5px;
 }
 
 #main-view > .header {
@@ -151,6 +138,25 @@ div#main-view {
 #main-view > .header > button {
     float: right;
     margin: 5px;
+}
+
+#main-view > form.login {
+    margin-left: -165px;
+    margin-top: 25px;
+    padding: 0 35% 0 35%;
+    background-color: #fafafa;
+}
+
+button.login-submit {
+    width: 100%;
+}
+
+.container-fluid > .row {
+    margin: 20px;
+}
+
+p#login-message {
+    height: 25px;
 }
 
 tr.single-event > td {

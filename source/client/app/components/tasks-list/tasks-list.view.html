@@ -1,55 +1,55 @@
 <div class="header">
-    <h4>Tâches</h4>
-    <button class="btn btn-primary" ng-click="vm.create_new()">Créer une tâche</button>
+  <h4>Tâches</h4>
+  <button class="btn btn-primary" ng-click="vm.create_new()">Créer une tâche</button>
 </div>
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="fixed-tasks tasks col-md-3">
-            <div class="tasks-list-header">
-                <h5>Fixes</h5>
-            </div>
-            <ul>
-                <li class="listitem" ng-repeat="task in vm.tasks_list | filter:{type:'Fixe'}">
-                    <a href="/#/task-view/{{task.id}}">{{task.name}}</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="assigned-tasks tasks col-md-3">
-            <div class="tasks-list-header">
-                <h5>Assignées</h5>
-            </div>
-            <ul>
-                <li class="listitem" ng-repeat="task in vm.tasks_list | filter:{type: 'Assignée'}:true">
-                    <a href="/#/task-view/{{task.id}}">{{task.name}}</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="unassigned-tasks tasks col-md-3">
-            <div class="tasks-list-header">
-                <h5>Non-assignées</h5>
-                <h6>avec date limite</h6>
-            </div>
-            <ul>
-                <li class="listitem" ng-repeat="task in vm.tasks_list | filter:{type: 'Non-assignée'} | filter:{deadline: ''}">
-                    <a href="/#/task-view/{{task.id}}">{{task.name}}</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="unassigned-nodate-tasks tasks col-md-3">
-            <div class="tasks-list-header">
-                <h5>Non-assignées</h5>
-                <h6>sans date limite</h6>
-            </div>
-            <ul>
-                <li class="listitem" ng-repeat="task in vm.tasks_list | filter:{type: 'Non-assignée'} | filter:{deadline: null}:true">
-                    <a href="/#/task-view/{{task.id}}">{{task.name}}</a>
-                </li>
-            </ul>
-        </div>
-
+  <div class="row">
+    <div class="fixed-tasks tasks col-md-3">
+      <div class="tasks-list-header">
+        <h5>Fixes</h5>
+      </div>
+      <ul>
+        <a href="/#/task-view/{{task.id}}" ng-repeat="task in vm.tasks_list | filter:{type:'Fixe'}">
+          <li class="listitem">{{task.name}}</li>
+        </a>
+      </ul>
     </div>
+
+    <div class="assigned-tasks tasks col-md-3">
+      <div class="tasks-list-header">
+        <h5>Assignées</h5>
+      </div>
+      <ul>
+        <a href="/#/task-view/{{task.id}}" ng-repeat="task in vm.tasks_list | filter:{type:'Assignée'}:true">
+          <li class="listitem">{{task.name}}</li>
+        </a>
+      </ul>
+    </div>
+
+    <div class="unassigned-tasks tasks col-md-3">
+      <div class="tasks-list-header">
+        <h5>Non-assignées</h5>
+        <h6>avec date limite</h6>
+      </div>
+      <ul>
+        <a href="/#/task-view/{{task.id}}" ng-repeat="task in vm.tasks_list | filter:{type: 'Non-assignée'} | filter:{deadline: ''}">
+          <li class="listitem">{{task.name}}</li>
+        </a>
+      </ul>
+    </div>
+
+    <div class="unassigned-nodate-tasks tasks col-md-3">
+      <div class="tasks-list-header">
+        <h5>Non-assignées</h5>
+        <h6>sans date limite</h6>
+      </div>
+      <ul>
+        <a href="/#/task-view/{{task.id}}" ng-repeat="task in vm.tasks_list | filter:{type: 'Non-assignée'} | filter:{deadline: null}:true">
+          <li class="listitem">{{task.name}}</li>
+        </a>
+      </ul>
+    </div>
+
+  </div>
 </div>

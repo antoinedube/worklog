@@ -14,19 +14,23 @@
       mock_task = {
         query: function() {}
       };
+
       spyOn(mock_task, 'query').and.returnValue({
           $promise: {
             then: function() {}
           }
       });
+
       $provide.value('Task', mock_task);
 
       mock_task_factory = {
         create: function() {},
-      }
+      };
+
       spyOn(mock_task_factory, 'create').and.returnValue({
         then: function() {}
       });
+
       $provide.value('TaskFactory', mock_task_factory);
     }));
 

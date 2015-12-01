@@ -1,5 +1,5 @@
-<div class="menu-items">
-    <div ng-repeat="item in vm.items" ng-class="{active: vm.isActive('{{item.route}}')}">
+<div class="menu-items" ng-show="vm.session.is_user_logged_in()">
+    <div ng-repeat="item in vm.items" ng-class="{active: vm.is_active('{{item.route}}')}">
         <a href="{{item.route}}">
             <div class="menu-entry">
                 <i class="fa {{item.icon}}"></i> &nbsp; {{item.name}}

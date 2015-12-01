@@ -15,10 +15,10 @@
     });
 
     vm.is_task_at = function(hour) {
-    }
+    };
 
     vm.task_at = function(hour) {
-    }
+    };
 
     vm.working_hours = [];
     for (var hour = 5 ; hour<23 ; hour++) vm.working_hours.push(hour);

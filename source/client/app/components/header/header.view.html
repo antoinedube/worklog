@@ -1,9 +1,9 @@
-<div id="app-header">
+<div id="app-header" ng-show="vm.session.is_user_logged_in()">
     <div class="app-title">
         <h3>Organisateur de tâches</h3>
     </div>
 
-    <div class="header-menu" ng-click="vm.logout()">
+    <div class="header-menu text-center" ng-click="vm.logout.submit()">
         {{vm.session.user_full_name()}}
     </div>
 </div>

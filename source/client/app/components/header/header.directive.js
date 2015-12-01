@@ -10,7 +10,6 @@
       controller: HeaderController,
       bindToController: true,
       controllerAs: 'vm',
-      link: HeaderLink,
       replace: true,
       restrict: 'EA',
       scope: {},
@@ -25,16 +24,7 @@
     var vm = this;
 
     vm.session = Session;
-    vm.logout = logout;
-
-    /* ---------- */
-
-    function logout() {
-      Logout.submit();
-    }
-  }
-
-  function HeaderLink(scope, element, attrs, vm) {
+    vm.logout = Logout;
   }
 })();
 

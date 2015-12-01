@@ -26,7 +26,6 @@
             }
             else {
               Session.set_user(data.user_id);
-              $location.path('/home');
             }
           }
         );

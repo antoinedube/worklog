@@ -22,17 +22,15 @@
     function set_user(user_id) {
       User.get({user_id:user_id}).$promise.then(function(user) {
         $cookies.putObject('user', user);
+        $location.path('/home');
       });
     }
 
     function is_user_logged_in() {
-      console.log('Checking user logged in...');
       if ($cookies.getObject('user')) {
-        console.log('Found user');
         return true;
       }
       else {
-        console.log('No user found');
         return false;
       }
     }
@@ -49,6 +47,7 @@
 
     function delete_user() {
       $cookies.remove('user');
+      $location.path('/login-page');
     }
 
     function user_full_name() {

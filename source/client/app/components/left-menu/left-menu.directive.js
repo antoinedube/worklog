@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('TasksManager.left-menu', [])
+    .module('TasksManager.left-menu', ['TasksManager.session'])
     .directive('leftMenu', LeftMenu);
 
   function LeftMenu() {
@@ -17,8 +17,8 @@
     };
   }
 
-  LeftMenuController.$inject = ['$location'];
-  function LeftMenuController($location) {
+  LeftMenuController.$inject = ['$location', 'Session'];
+  function LeftMenuController($location, Session) {
     var vm = this;
     vm.items = [
       {'name': 'Accueil', 'route': '#/home', 'icon': 'fa-home'},
@@ -27,9 +27,11 @@
       {'name': 'Tâches', 'route': '#/tasks-list', 'icon': 'fa-tasks'}
     ];
 
-    vm.isActive = function(viewLocation) {
+    vm.is_active = function(viewLocation) {
       return (viewLocation === '#'+$location.path());
     };
+
+    vm.session = Session;
   }
 
   function LeftMenuLink(scope, element, attrs, vm) {
