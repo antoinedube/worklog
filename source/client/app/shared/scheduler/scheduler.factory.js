@@ -29,8 +29,22 @@
 
     function schedule(task) {
       console.log('Task to schedule: ', task);
+      switch (task.type) {
+        case 'Fixe':
+          break;
+        case 'Assignée':
+          break;
+        case 'Non-assignée':
+          break;
+        default:
+          console.log('Undefined type: ', task.type);
+      }
 
       // return Task.save(new_task).$promise;
+    }
+
+    function insert_unassigned(task) {
+
     }
 
   }

@@ -21,12 +21,10 @@
         .$promise
         .then(
           function(data) {
-            if (data.message === 'Invalid login') {
-              vm.message = 'Connexion refusée';
-            }
-            else {
-              Session.set_user(data.user_id);
-            }
+            Session.set_user(data.user_id);
+          },
+          function(data) {
+            vm.message = 'Connexion refusée';
           }
         );
     };

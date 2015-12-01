@@ -107,7 +107,7 @@ div.tasks-list-header {
 }
 
 .header-menu:hover {
-    background: #F5F5F5;
+    background: #D5D5D5;
     color: #4b4f55;
 }
 
@@ -149,6 +149,10 @@ div#main-view {
 
 button.login-submit {
     width: 100%;
+}
+
+.error-message {
+    color: #EE1824;
 }
 
 .container-fluid > .row {
