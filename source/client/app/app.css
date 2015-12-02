@@ -14,6 +14,11 @@ select {
     appearance: None;
 }
 
+button.btn.btn-primary {
+    background-color: #4A89DC;
+    border-color: #4A89DC;
+}
+
 form.task-creation input.ng-invalid {
     border: 2px solid red;
 }
@@ -49,22 +54,23 @@ ul {
 
 li.listitem {
     display: block;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     min-height: 50px;
     list-style-type: None;
-    border-bottom: 1px solid #E0E0E0 !important;
+    border-bottom: 1px solid #E6E9ED !important;
     overflow: hidden;
-    color: #4B4F55;
+    color: #434A54;
 }
 
 div.tasks {
     padding: 0;
-    border-left: solid 1px #E0E0E0;
+    border-left: solid 1px #E6E9ED;
+    min-height: 400px;
 }
 
 li.listitem:hover {
     cursor: pointer;
-    background-color: #F0F0F0;
+    background-color: #F5F7FA;
 }
 
 li.listitem:last-child {
@@ -74,16 +80,16 @@ li.listitem:last-child {
 div.tasks-list-header {
     text-align: center;
     min-height: 75px;
-    border-bottom: solid 1px #E0E0E0;
+    border-bottom: solid 1px #E6E9ED;
 }
 
 #app-header {
     width: 100%;
     height: 65px;
     padding: 15px;
-    color: #F5F5F5;
-    background: #4b4f55;
-    box-shadow: 1px 0px 2px #4b4f55;
+    color: #E6E9ED;
+    background: #434A54;
+    box-shadow: 1px 0px 2px #AAB2BD;
 }
 
 #app-header > div.app-title {
@@ -107,8 +113,8 @@ div.tasks-list-header {
 }
 
 .header-menu:hover {
-    background: #D5D5D5;
-    color: #4b4f55;
+    background: #E6E9ED;
+    color: #434A54;
 }
 
 #nav-menu {
@@ -167,7 +173,7 @@ div.tasks-list-header {
     margin-left: -165px;
     margin-top: 25px;
     padding: 0 35% 0 35%;
-    background-color: #fafafa;
+    background-color: #89C4F4;
 }
 
 button.login-submit {
