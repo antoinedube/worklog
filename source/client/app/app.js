@@ -3,6 +3,7 @@
 
     angular.module('TasksManager', [
         'ngRoute',
+        'ngAnimate',
         'TasksManager.header',
         'TasksManager.left-menu',
         'TasksManager.home',

@@ -28,6 +28,7 @@
         // return Task.save(new_task).$promise;
 
         // Instead of create_from_type, we need to call the scheduler to fill in missing date/time fields
+        // Must consider case where the task cannot be set.
         return Scheduler.schedule(task);
       });
     }

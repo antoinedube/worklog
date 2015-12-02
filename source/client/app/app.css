@@ -120,9 +120,32 @@ div.tasks-list-header {
     -ms-user-select: none;
 }
 
-div#main-view {
+#main-view {
     margin-left: 165px;
     padding: 5px;
+    position: absolute;
+    width: 90%;
+}
+
+#main-view.ng-enter, #main-view.ng-leave {
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+#main-view.ng-enter {
+    opacity: 0.0;
+}
+
+#main-view.ng-enter-active {
+    opacity: 1.0;
+}
+
+#main-view.ng-leave {
+    opacity: 1.0;
+}
+
+#main-view.ng-leave-active {
+    opacity: 0.0;
 }
 
 #main-view > .header {
