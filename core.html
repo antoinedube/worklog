@@ -1,0 +1,81 @@
+<head>
+  <title>Worklog</title>
+</head>
+
+<body>
+  {{> header}}
+  <div class="container">
+
+    {{> table_header}}
+
+    {{> tasks_list}}
+
+    {{> new_task}}
+  </div>
+</body>
+
+<template name="header">
+  <nav class="indigo lighten-1">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Worklog</a>
+    </div>
+  </nav>
+</template>
+
+<template name="table_header">
+  <div class="row valign-wrapper">
+    <div class="col s3 center-align valign">
+      <button class="btn waves-effect waves-light light-blue lighten-2"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;&nbsp;Yesterday</button>
+    </div>
+    <div class="col s6 center-align">
+      <h4>Today</h4>
+    </div>
+    <div class="col s3 center-align valign">
+      <button class="btn waves-effect waves-light light-blue lighten-2">Tomorrow&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></button>
+    </div>
+  </div>
+</template>
+
+<template name="tasks_list">
+  <ul class="collection">
+  {{#each tasks}}
+    {{> task}}
+  {{/each}}
+  </ul>
+</template>
+
+<template name="task">
+  <li class="collection-item">
+    <div class="row valign-wrapper">
+      <div class="col s4 center-align valign">
+        <span>{{issue}}</span>
+      </div>
+      <div class="col s4 center-align valign">
+        <span>{{begin_time}}</span>
+      </div>
+      <div class="col s4 center-align valign">
+        <span>{{end_time}}</span>
+      </div>
+    </div>
+  </li>
+</template>
+
+<template name="new_task">
+  <form id="new-task">
+    <div class="row valign-wrapper">
+      <div class="col s3 center-align valign">
+        <input placeholder="Issue" name="issue" type="text" class="validate">
+      </div>
+      <div class="col s3 center-align valign">
+        <input placeholder="From" name="begin_time" type="time" class="validate">
+      </div>
+      <div class="col s3 center-align valign">
+        <input placeholder="To" name="end_time" type="time" class="validate">
+      </div>
+      <div class="col s3 center-align valign">
+        <button class="btn waves-effect waves-light light-blue" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</template>
+
