@@ -1,3 +1,3 @@
-Router.route('/', {
-  template: 'tasks'
+Router.route('/tasks_list', {
+  template: 'tasks_list'
 });

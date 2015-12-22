@@ -11,15 +11,19 @@ Package.onUse(function(api) {
   api.use([
       'ecmascript',
       'iron:router',
-      'templating'
+      'templating',
+      'fourseven:scss'
   ]);
+
   api.addFiles([
+      'templates/core.html',
       'scripts/routes.js',
-      'templates/core.html'
+      'scripts/core.js',
+      'stylesheets/core.scss'
   ]);
 });
 
 Package.onTest(function(api) {
   api.use(['ecmascript', 'tinytest', 'worklog:core']);
-  api.addFiles('tests/core-tests.js');
+  api.addFiles('tests/core_tests.js');
 });

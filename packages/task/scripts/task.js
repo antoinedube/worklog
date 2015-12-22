@@ -1,6 +1,5 @@
 if (Meteor.isClient) {
 
-/*
   function parse_time(time) {
     var datetime = new Date();
     var hours = time.split(":")[0];
@@ -9,7 +8,7 @@ if (Meteor.isClient) {
     return datetime;
   }
 
-  Template.newTask.events({
+  Template.new_task.events({
     'submit #new-task': function (event) {
       event.preventDefault();
       if (event.target.issue.value === "") return;
@@ -31,6 +30,9 @@ if (Meteor.isClient) {
       return Tasks.find({}, {sort: {begin_time: +1}});
     }
   });
-  */
+
+  Template.registerHelper('format_time', function(time) {
+    return moment(time).format('HH:mm');
+  });
 }
 

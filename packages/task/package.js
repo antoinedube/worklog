@@ -9,20 +9,33 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use([
+      'worklog:core',
       'ecmascript',
       'mongo',
       'aldeed:simple-schema',
-      'iron:router',
-      'templating'
+      'iron:router'
   ]);
+
   api.addFiles([
-      'scripts/task.js',
-      'scripts/routes.js',
-      'schemas/task-schema.js',
-      'templates/tasks-list.html',
-      'templates/task-view.html',
-      'templates/new-task.html'
+      'schemas/task_schema.js',
+      'scripts/routes.js'
   ]);
+
+  api.use([
+      'templating',
+      'fourseven:scss',
+      'momentjs:moment'
+  ], 'client');
+
+  api.addFiles([
+      'templates/task_view.html',
+      'templates/new_task.html',
+      'templates/tasks_list.html',
+      'stylesheets/task_view.scss',
+      'stylesheets/new_task.scss',
+      'stylesheets/tasks_list.scss',
+      'scripts/task.js'
+  ], 'client');
 });
 
 Package.onTest(function(api) {
@@ -32,7 +45,7 @@ Package.onTest(function(api) {
       'worklog:task'
   ]);
   api.addFiles([
-      'tests/task-tests.js',
-      'tests/schema-tests.js'
+      'tests/task_tests.js',
+      'tests/schema_tests.js'
   ]);
 });
