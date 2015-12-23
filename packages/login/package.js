@@ -10,18 +10,16 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use([
       'ecmascript',
+      'templating',
       'iron:router',
-      'aldeed:simple-schema',
-      'accounts-password'
+      'worklog:core'
   ]);
-
-  api.use('templating', 'client');
 
   api.addFiles([
       'templates/login.html',
       'scripts/login.js',
       'scripts/routes.js'
-  ], 'client');
+  ]);
 });
 
 Package.onTest(function(api) {

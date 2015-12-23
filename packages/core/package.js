@@ -14,7 +14,8 @@ Package.onUse(function(api) {
       'templating',
       'fourseven:scss',
       'accounts-password',
-      'aldeed:collection2'
+      'aldeed:collection2',
+      'mongo'
   ]);
 
   api.addFiles([

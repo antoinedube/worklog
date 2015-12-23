@@ -8,9 +8,17 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
-  api.use(['ecmascript', 'mongo', 'aldeed:simple-schema']);
-  api.addFiles('scripts/workday.js');
-  api.addFiles('schemas/workday-schema.js');
+  api.use([
+      'ecmascript',
+      'worklog:core',
+      'mongo',
+      'aldeed:simple-schema'
+  ]);
+
+  api.addFiles([
+      'scripts/workday.js',
+      'schemas/workday-schema.js'
+  ]);
 });
 
 Package.onTest(function(api) {

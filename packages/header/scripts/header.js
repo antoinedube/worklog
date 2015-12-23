@@ -1,8 +1,10 @@
-Template.header.events({
-  'click .logout': function(event) {
-    event.preventDefault();
+if (Meteor.isClient) {
+  Template.header.events({
+    'click .logout': function(event) {
+      event.preventDefault();
 
-    Meteor.logout();
-    Router.go('/login');
-  }
-});
+      Meteor.logout();
+      Router.go('/login');
+    }
+  });
+}
