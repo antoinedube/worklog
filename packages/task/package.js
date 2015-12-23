@@ -27,7 +27,7 @@ Package.onUse(function(api) {
       'stylesheets/new_task.scss',
       'stylesheets/tasks_list.scss',
       'scripts/task.js',
-      'schemas/task_schema.js',
+      'models/schema.js',
       'scripts/routes.js'
   ]);
 });
