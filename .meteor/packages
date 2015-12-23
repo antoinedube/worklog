@@ -33,3 +33,4 @@ materialize:materialize@=0.97.0
 templating
 momentjs:moment
 accounts-password
+aldeed:simple-schema

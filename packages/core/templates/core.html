@@ -1,5 +1,7 @@
 <template name="core">
-  {{> header}}
+  {{#if currentUser}}
+    {{> header}}
+  {{/if}}
   <div id="main-view" class="container">
     {{> yield}}
   </div>

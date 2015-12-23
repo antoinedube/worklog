@@ -17,12 +17,10 @@ Package.onUse(function(api) {
       'templates/header.html',
       'stylesheets/header.scss',
       'scripts/header.js'
-  ]);
+  ], 'client');
 });
 
 Package.onTest(function(api) {
-  api.use('ecmascript');
-  api.use('tinytest');
-  api.use('worklog:header');
+  api.use(['ecmascript', 'tinytest', 'worklog:header']);
   api.addFiles('header-tests.js');
 });

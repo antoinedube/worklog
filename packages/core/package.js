@@ -12,10 +12,13 @@ Package.onUse(function(api) {
       'ecmascript',
       'iron:router',
       'templating',
-      'fourseven:scss'
+      'fourseven:scss',
+      'accounts-password',
+      'aldeed:collection2'
   ]);
 
   api.addFiles([
+      'models/schema.js',
       'templates/core.html',
       'scripts/routes.js',
       'scripts/core.js',

@@ -10,10 +10,13 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use([
       'ecmascript',
-      'iron:router'
+      'iron:router',
+      'aldeed:simple-schema',
+      'accounts-password'
   ]);
 
   api.use('templating', 'client');
+
   api.addFiles([
       'templates/login.html',
       'scripts/login.js',
