@@ -1,11 +1,9 @@
 if (Meteor.isClient) {
 
   function parse_time(time) {
-    var datetime = new Date();
     var hours = time.split(":")[0];
     var minutes = time.split(":")[1];
-    datetime.setHours(hours,minutes,0,0);
-    return datetime;
+    return moment({hour: hours, minute: minutes}).toDate();
   }
 
   Template.new_task.events({
@@ -25,14 +23,33 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.tasks_list.helpers({
-    tasks: function() {
-      return Tasks.find({}, {sort: {begin_time: +1}});
+  Template.tasks_list_header.events({
+    'click a.day-before': function(event) {
+      event.preventDefault();
+      Router.go('/tasks_list/' + moment(this.date).subtract(1, 'days').format('YYYY-MM-DD'));
+    },
+    'click a.day-after': function(event) {
+      event.preventDefault();
+      Router.go('/tasks_list/' + moment(this.date).add(1, 'days').format('YYYY-MM-DD'));
     }
   });
 
-  Template.registerHelper('format_time', function(time) {
-    return moment(time).format('HH:mm');
+  Template.tasks_list.helpers({
+    tasks: function() {
+      return Tasks.find(
+          {
+            begin_time: {
+              "$gte": moment(this.date).startOf('day').toDate(),
+              "$lt": moment(this.date).add(1, 'days').startOf('day').toDate()
+            }
+          },
+          {
+            sort: {
+              begin_time: +1
+            }
+          }
+        );
+    }
   });
 }
 

@@ -1,6 +1,14 @@
 Router.route('/tasks_list/:date', {
   template: 'tasks_list',
   data: function() {
-    return moment(date).format('YYYY-MM-DD');
+    date = moment(this.params.date);
+    return {
+      date: date
+    }
   }
+});
+
+Router.route('/tasks_list', function() {
+  var date = moment().format('YYYY-MM-DD');
+  Router.go('/tasks_list/' + date);
 });
