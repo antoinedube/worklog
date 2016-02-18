@@ -1,13 +1,20 @@
 <template name="new_task">
   <form id="new-task">
     <div class="row valign-wrapper">
-      <div class="col s3 center-align valign">
-        <input placeholder="Issue" name="issue" type="text" class="validate">
+      <div class="input-field col s3 center-align valign">
+        <select>
+          <option value="1">100 - Analysis</option>
+          <option value="2">101 - Development</option>
+          <option value="3">102 - Quality Assurance</option>
+          <option value="4">104 - Planning/Scrum</option>
+          <option value="5">107 - Training/Coaching</option>
+          <option value="6">COG/Formation</option>
+        </select>
       </div>
-      <div class="col s3 center-align valign">
+      <div class="input-field col s3 center-align valign">
         <input placeholder="From" name="begin_time" type="time" class="validate">
       </div>
-      <div class="col s3 center-align valign">
+      <div class="input-field col s3 center-align valign">
         <input placeholder="To" name="end_time" type="time" class="validate">
       </div>
       <div class="col s3 center-align valign">
