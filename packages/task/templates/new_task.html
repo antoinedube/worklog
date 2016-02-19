@@ -2,7 +2,7 @@
   <form id="new-task">
     <div class="row valign-wrapper">
       <div class="input-field col s3 center-align valign">
-        <select>
+        <select id="task_type">
           <option value="1">100 - Analysis</option>
           <option value="2">101 - Development</option>
           <option value="3">102 - Quality Assurance</option>
@@ -22,4 +22,11 @@
       </div>
     </div>
   </form>
+
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+  </script>
 </template>
+

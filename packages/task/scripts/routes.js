@@ -1,5 +1,5 @@
-Router.route('/tasks_list/:date', {
-  template: 'tasks_list',
+Router.route('/workday/:date', {
+  template: 'workday',
   data: function() {
     date = moment(this.params.date).format('YYYY-MM-DD');
     return {
@@ -8,7 +8,7 @@ Router.route('/tasks_list/:date', {
   }
 });
 
-Router.route('/tasks_list', function() {
+Router.route('/workday', function() {
   var date = moment().format('YYYY-MM-DD');
-  Router.go('/tasks_list/' + date);
+  Router.go('/workday/' + date);
 });

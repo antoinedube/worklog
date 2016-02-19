@@ -1,0 +1,24 @@
+<template name="workday">
+  <div class="row">
+    <div class="col s6 offset-s3">
+      <ul class="tabs">
+        <li class="tab col s6"><a href="#full_workday">Workday</a></li>
+        <li class="tab col s6"><a href="#summary_workday">Summary</a></li>
+      </ul>
+    </div>
+    <div id="full_workday" class="col s12 tab-content">
+      {{ > tasks_list_header }}
+      {{ > tasks_list }}
+      {{ > new_task }}
+    </div>
+    <div id="summary_workday" class="col s12 tab-content">
+      <h5>Workday summary</h5>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $('ul.tabs').tabs();
+    });
+  </script>
+</template>

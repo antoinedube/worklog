@@ -7,7 +7,10 @@ if (Meteor.isServer) {
     end_time: {
       type: Date
     },
-    issue: {
+    duration: {
+      type: Number
+    },
+    type: {
       type: String
     }
   }));

@@ -23,10 +23,15 @@ Package.onUse(function(api) {
       'templates/task_view.html',
       'templates/new_task.html',
       'templates/tasks_list.html',
+      'templates/tasks_list_header.html',
+      'templates/workday.html',
       'stylesheets/task_view.scss',
       'stylesheets/new_task.scss',
       'stylesheets/tasks_list.scss',
-      'scripts/task.js',
+      'stylesheets/workday.scss',
+      'scripts/new_task.js',
+      'scripts/tasks_list.js',
+      'scripts/tasks_list_header.js',
       'models/schema.js',
       'scripts/routes.js'
   ]);

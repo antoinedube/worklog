@@ -28,7 +28,6 @@ worklog:dashboard
 worklog:header
 worklog:login
 worklog:task
-worklog:workday
 materialize:materialize@=0.97.0
 templating
 momentjs:moment

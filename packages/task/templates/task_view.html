@@ -1,14 +1,17 @@
 <template name="task_view">
   <li class="collection-item">
     <div class="row valign-wrapper">
-      <div class="col s4 center-align valign">
-        <span>{{issue}}</span>
+      <div class="col s3 center-align valign">
+        <span>{{type}}</span>
       </div>
-      <div class="col s4 center-align valign">
+      <div class="col s3 center-align valign">
         <span>{{format_time begin_time}}</span>
       </div>
-      <div class="col s4 center-align valign">
+      <div class="col s3 center-align valign">
         <span>{{format_time end_time}}</span>
+      </div>
+      <div class="col s3 center-align valign">
+        <span>{{show_duration duration}}</span>
       </div>
     </div>
   </li>
