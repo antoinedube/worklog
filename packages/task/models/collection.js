@@ -1,19 +1,5 @@
 if (Meteor.isServer) {
   Tasks = new Mongo.Collection('tasks');
-  Tasks.attachSchema(new SimpleSchema({
-    begin_time: {
-      type: Date
-    },
-    end_time: {
-      type: Date
-    },
-    duration: {
-      type: Number
-    },
-    type: {
-      type: String
-    }
-  }));
 
   Meteor.publish('tasks', function() {
     return Tasks.find();

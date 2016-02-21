@@ -11,7 +11,7 @@ if (Meteor.isClient) {
           console.log('Login error: ', error);
         }
         else {
-          Router.go('/tasks-list');
+          Router.go('/workday');
         }
       });
     },
@@ -30,7 +30,7 @@ if (Meteor.isClient) {
           console.log('Registration rror: ', error);
         }
         else {
-          Router.go('/tasks-list');
+          Router.go('/workday');
         }
       });
     }

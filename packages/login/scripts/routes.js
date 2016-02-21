@@ -10,7 +10,7 @@ Router.onBeforeAction(is_signed_in, {except: ['login']});
 
 var redirect_after_login = function () {
   if (Meteor.user()) {
-    Router.go('/tasks_list');
+    Router.go('/workday');
   } else {
     this.next();
   }

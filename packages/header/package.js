@@ -25,5 +25,5 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
   api.use(['ecmascript', 'tinytest', 'worklog:header']);
-  api.addFiles('header-tests.js');
+  api.addFiles('tests/header-tests.js');
 });

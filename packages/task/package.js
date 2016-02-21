@@ -12,7 +12,6 @@ Package.onUse(function(api) {
       'ecmascript',
       'worklog:core',
       'mongo',
-      'aldeed:simple-schema',
       'iron:router',
       'templating',
       'fourseven:scss',
@@ -32,7 +31,7 @@ Package.onUse(function(api) {
       'scripts/new_task.js',
       'scripts/tasks_list.js',
       'scripts/tasks_list_header.js',
-      'models/schema.js',
+      'models/collection.js',
       'scripts/routes.js'
   ]);
 });
@@ -44,7 +43,9 @@ Package.onTest(function(api) {
       'worklog:task'
   ]);
   api.addFiles([
-      'tests/task_tests.js',
-      'tests/schema_tests.js'
+      'tests/new_task_tests.js',
+      'tests/collection_tests.js',
+      'tests/tasks_list_header_tests.js',
+      'tests/tasks_list_tests.js'
   ]);
 });

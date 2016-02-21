@@ -14,12 +14,10 @@ Package.onUse(function(api) {
       'templating',
       'fourseven:scss',
       'accounts-password',
-      'aldeed:collection2',
       'mongo'
   ]);
 
   api.addFiles([
-      'models/schema.js',
       'templates/core.html',
       'scripts/routes.js',
       'scripts/core.js',
