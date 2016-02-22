@@ -33,3 +33,4 @@ momentjs:moment
 accounts-password
 aldeed:simple-schema
 d3js:d3
+stevezhu:lodash

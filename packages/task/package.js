@@ -21,6 +21,7 @@ Package.onUse(function(api) {
   api.addFiles([
       'templates/task_view.html',
       'templates/new_task.html',
+      'templates/summary.html',
       'templates/tasks_list.html',
       'templates/tasks_list_header.html',
       'templates/workday.html',
@@ -31,6 +32,7 @@ Package.onUse(function(api) {
       'scripts/new_task.js',
       'scripts/tasks_list.js',
       'scripts/tasks_list_header.js',
+      'scripts/summary.js',
       'models/collection.js',
       'scripts/routes.js'
   ]);
