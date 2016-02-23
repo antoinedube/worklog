@@ -1,3 +1,24 @@
 <template name="summary">
-  {{workday_summary}}
+  <ul class="collection with-header">
+    <li class="collection-item">
+      <div class="row valign-wrapper">
+        <div class="col s6 center-align valign">
+          <span>100 - Analysis</span>
+        </div>
+        <div class="col s6 center-align valign">
+          <span>{{show_duration analysis_count}}</span>
+        </div>
+      </div>
+    </li>
+    <li class="collection-item">
+      <div class="row valign-wrapper">
+        <div class="col s6 center-align valign">
+          <span>104 - Planning/Scrum</span>
+        </div>
+        <div class="col s6 center-align valign">
+          <span>{{show_duration planning_count}}</span>
+        </div>
+      </div>
+    </li>
+  </ul>
 </template>
