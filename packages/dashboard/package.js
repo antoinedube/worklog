@@ -11,10 +11,15 @@ Package.onUse(function(api) {
 
   api.use([
       'ecmascript',
+      'iron:router',
+      'templating',
       'worklog:core'
   ]);
 
-  api.addFiles('dashboard.js');
+  api.addFiles([
+      'dashboard.js',
+      'dashboard.html'
+  ]);
 });
 
 Package.onTest(function(api) {
