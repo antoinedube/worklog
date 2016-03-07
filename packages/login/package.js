@@ -12,13 +12,15 @@ Package.onUse(function(api) {
       'ecmascript',
       'templating',
       'iron:router',
+      'fourseven:scss',
       'worklog:core'
   ]);
 
   api.addFiles([
       'templates/login.html',
       'scripts/login.js',
-      'scripts/routes.js'
+      'scripts/routes.js',
+      'stylesheets/login.scss'
   ]);
 });
 
