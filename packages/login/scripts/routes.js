@@ -6,7 +6,7 @@ var is_signed_in = function () {
   }
 };
 
-Router.onBeforeAction(is_signed_in, {except: ['login']});
+Router.onBeforeAction(is_signed_in, {except: ['login', 'register']});
 
 var redirect_after_login = function () {
   if (Meteor.user()) {
@@ -16,7 +16,7 @@ var redirect_after_login = function () {
   }
 };
 
-Router.onBeforeAction(redirect_after_login, {only: ['login']});
+Router.onBeforeAction(redirect_after_login, {only: ['login', 'register']});
 
 Router.route('/login', {
   template: 'login'

@@ -11,12 +11,16 @@ Package.onUse(function(api) {
   api.use([
     'ecmascript',
     'templating',
+    'iron:router',
     'fourseven:scss',
-    'accounts-password'
+    'accounts-password',
+    'chrismbeckett:toastr'
   ]);
   api.addFiles([
-    'registration.js',
-    'registration.html'
+    'stylesheets/registration.scss',
+    'templates/registration.html',
+    'scripts/routes.js',
+    'scripts/registration.js'
   ]);
 });
 

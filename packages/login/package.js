@@ -9,18 +9,17 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use([
-      'ecmascript',
-      'templating',
-      'iron:router',
-      'fourseven:scss',
-      'worklog:core'
+    'ecmascript',
+    'templating',
+    'iron:router',
+    'fourseven:scss',
+    'worklog:core'
   ]);
-
   api.addFiles([
-      'templates/login.html',
-      'scripts/login.js',
-      'scripts/routes.js',
-      'stylesheets/login.scss'
+    'templates/login.html',
+    'scripts/login.js',
+    'scripts/routes.js',
+    'stylesheets/login.scss'
   ]);
 });
 
