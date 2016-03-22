@@ -8,7 +8,8 @@ if (Meteor.isClient) {
 
       Meteor.loginWithPassword(email, password, function(error) {
         if (error) {
-          console.log('Login error: ', error);
+          toastr.error(error.reason, 'Error');
+          event.target.reset();
         }
         else {
           Router.go('/workday');
