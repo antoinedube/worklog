@@ -7,7 +7,6 @@
 insecure
 fourseven:scss
 fortawesome:fontawesome
-standard-minifiers
 meteor-base
 mobile-experience
 mongo
@@ -36,3 +35,5 @@ d3js:d3
 stevezhu:lodash
 worklog:registration
 chrismbeckett:toastr
+standard-minifier-css
+standard-minifier-js
