@@ -28,6 +28,13 @@ if (Meteor.isClient) {
       var tasks = Tasks.find(search_criteria).fetch();
 
       return sum_duration(tasks);
+    },
+
+    total_count: function() {
+      var search_criteria = { begin_time: criteria_today(this.date) };
+      var tasks = Tasks.find(search_criteria).fetch();
+
+      return sum_duration(tasks);
     }
   });
 }
