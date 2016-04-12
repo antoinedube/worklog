@@ -31,7 +31,7 @@ ejson@1.0.10
 email@1.0.11
 fastclick@1.0.10
 fortawesome:fontawesome@4.5.0
-fourseven:scss@3.4.1
+fourseven:scss@3.4.2
 geojson-utils@1.0.7
 hot-code-push@1.0.3
 html-tools@1.0.8
@@ -72,7 +72,7 @@ observe-sequence@1.0.10
 ordered-dict@1.0.6
 practicalmeteor:chai@2.1.0_1
 practicalmeteor:loglevel@1.2.0_2
-practicalmeteor:mocha@2.1.0_8
+practicalmeteor:mocha@2.4.5_1
 practicalmeteor:mocha-core@0.1.4
 practicalmeteor:sinon@1.14.1_2
 promise@0.6.6
