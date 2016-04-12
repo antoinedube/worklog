@@ -13,6 +13,11 @@ if (Meteor.isClient) {
     if (!duration) return '--';
     var hours = parseInt(duration/3600000);
     var minutes = parseInt(duration/60000) - hours*60;
+
+    // var formatted_duration = '';
+    // formatted_duration += hours > 0 ? hours + 'h' : '';
+    // formatted_duration += minutes > 0 ? minutes + 'm' : '';
+
     return hours + 'h' + ' ' + minutes + 'm';
   });
 }
