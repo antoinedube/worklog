@@ -9,9 +9,18 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.3');
   api.use([
+    'mongo',
+    'worklog:core',
     'ecmascript',
+    'fourseven:scss',
     'iron:router',
     'templating'
+  ]);
+  api.addFiles([
+      'models/collection.js',
+      'templates/user-settings.html',
+      'scripts/user-settings.js',
+      'scripts/routes.js'
   ]);
   api.mainModule('scripts/user-settings.js');
 });
