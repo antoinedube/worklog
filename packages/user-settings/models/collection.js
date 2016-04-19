@@ -1,10 +1,10 @@
-UserSettings = new Mongo.Collection('user-settings');
+WorkCategories = new Mongo.Collection('work-categories');
 
 if (Meteor.isServer) {
-  Meteor.publish('user-settings', function() {
-    return UserSettings.find({ created_by: this.userId });
+  Meteor.publish('work-categories', function() {
+    return WorkCategories.find({ created_by: this.userId });
   });
 }
 else if (Meteor.isClient) {
-  Meteor.subscribe('user-settings');
+  Meteor.subscribe('work-categories');
 }

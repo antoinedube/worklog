@@ -19,7 +19,9 @@ Package.onUse(function(api) {
   api.addFiles([
       'models/collection.js',
       'templates/user-settings.html',
+      'templates/work-categories.html',
       'scripts/user-settings.js',
+      'scripts/work-categories.js',
       'scripts/routes.js'
   ]);
   api.mainModule('scripts/user-settings.js');
