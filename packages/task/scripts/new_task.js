@@ -6,6 +6,12 @@ if (Meteor.isClient) {
     return moment({hour: hours, minute: minutes});
   }
 
+  Template.new_task.helpers({
+    work_categories: function() {
+      return WorkCategories.find({});
+    }
+  })
+
   Template.new_task.events({
     'submit #new-task': function (event) {
       event.preventDefault();

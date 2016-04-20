@@ -11,6 +11,7 @@ Package.onUse(function(api) {
   api.use([
       'ecmascript',
       'worklog:core',
+      'worklog:user-settings',
       'mongo',
       'iron:router',
       'templating',

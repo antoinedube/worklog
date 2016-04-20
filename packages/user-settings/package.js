@@ -17,7 +17,7 @@ Package.onUse(function(api) {
     'templating'
   ]);
   api.addFiles([
-      'models/collection.js',
+      'models/work-categories.js',
       'templates/user-settings.html',
       'templates/work-categories.html',
       'scripts/user-settings.js',
