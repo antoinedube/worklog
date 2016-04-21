@@ -8,7 +8,7 @@ if (Meteor.isClient) {
 
   Template.new_task.helpers({
     work_categories: function() {
-      return WorkCategories.find({});
+      return UserSettings.find({});
     }
   })
 

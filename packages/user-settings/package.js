@@ -17,7 +17,7 @@ Package.onUse(function(api) {
     'templating'
   ]);
   api.addFiles([
-      'models/work-categories.js',
+      'models/user-settings-collection.js',
       'templates/user-settings.html',
       'templates/work-categories.html',
       'scripts/user-settings.js',
@@ -25,6 +25,7 @@ Package.onUse(function(api) {
       'scripts/routes.js'
   ]);
   api.mainModule('scripts/user-settings.js');
+  api.export('UserSettings');
 });
 
 Package.onTest(function(api) {
