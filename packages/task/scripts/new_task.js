@@ -11,6 +11,7 @@ if (Meteor.isClient) {
       event.preventDefault();
       var type_id = event.target.task_type.value - 1;
       var type_text = event.target.task_type[type_id].text;
+      // date should be the route's date. The time should be the event's value.
       var begin_time = parse_time(event.target.begin_time.value);
       var end_time = parse_time(event.target.end_time.value);
 
