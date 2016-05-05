@@ -1,4 +1,14 @@
-<template name="user-settings">
-  {{> work_categories }}
+<template name="user_settings">
+  <form id="new-work-category">
+    <div class="row valign-wrapper">
+      <div class="input-field col s12 center-align valign">
+        <input placeholder="Name" name="work_category" type="text" class="validate" autofocus>
+      </div>
+    </div>
+  </form>
+  User settings stuff
+  {{#each work_categories}}
+    {{> name}}
+  {{/each}}
 </template>
 
