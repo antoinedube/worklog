@@ -1,4 +1,15 @@
 <template name="user_settings">
+  <div class="row">
+    <div class="col s4 offset-s4 center-align valign">
+      <h5>Work categories</h5>
+    </div>
+  </div>
+
+  <ul class="collection with-header">
+    {{#each work_categories}}
+    <li class="collection-item"><span>{{ name }}</span><span class="badge remove-item"><i class="fa fa-trash-o"></i></span></li>
+    {{/each}}
+  </ul>
   <form id="new-work-category">
     <div class="row valign-wrapper">
       <div class="input-field col s12 center-align valign">
@@ -6,9 +17,5 @@
       </div>
     </div>
   </form>
-  User settings stuff
-  {{#each work_categories}}
-    {{> name}}
-  {{/each}}
 </template>
 

@@ -3,12 +3,16 @@
     <div class="row valign-wrapper">
       <div class="input-field col s3 center-align valign">
         <select id="task_type">
-          <option value="1">100 - Analysis</option>
-          <option value="2">101 - Development</option>
-          <option value="3">102 - Quality Assurance</option>
-          <option value="4">104 - Planning/Scrum</option>
-          <option value="5">107 - Training/Coaching</option>
-          <option value="6">COG/Formation</option>
+          {{#if work_categories}}
+            {{#each work_categories}}
+            <option>{{name}}</option>
+            {{/each}}
+            <script>
+              $(document).ready(function() {
+                $('select').material_select();
+              });
+            </script>
+          {{/if}}
         </select>
       </div>
       <div class="input-field col s3 center-align valign">
@@ -22,14 +26,6 @@
       </div>
     </div>
   </form>
-  {{#each work_categories}}
-    {{name}}
-  {{/each}}
 
-  <script>
-    $(document).ready(function() {
-      $('select').material_select();
-    });
-  </script>
 </template>
 

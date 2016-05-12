@@ -3,7 +3,10 @@ export const name = 'scripts/user-settings';
 if (Meteor.isClient) {
   Template.user_settings.helpers({
     work_categories: function() {
-      return UserSettings.findOne({}, { work_categories: 1 }); // eslint-disable-line no-undef
+      var user_settings = UserSettings.findOne({});
+      if (user_settings) {
+        return user_settings.work_categories;
+      }
     }
   });
 
@@ -14,18 +17,33 @@ if (Meteor.isClient) {
 
       if (category_name === '') return;
 
-      var settings_id = UserSettings.findOne({}, { _id: 1 });
-      console.log('id: ', settings_id);
-      /*
-      UserSettings.update( // eslint-disable-line no-undef
-        {},
+      var settings = UserSettings.findOne({});
+      var id = settings._id;
+      UserSettings.update(
+        { _id: id },
         {
           $push: {
-            work_categories: category_name
+            work_categories: {
+              'name': category_name
+            }
           }
         }
       );
-      */
+
+      event.target.reset();
+    },
+    'click .remove-item': function(event) {
+      event.preventDefault();
+      var settings = UserSettings.findOne({});
+      var id = settings._id;
+      UserSettings.update(
+        { _id: id },
+        {
+          $pull: {
+            work_categories: { name: this.name }
+          }
+        }
+      )
     }
   });
 }

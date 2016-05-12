@@ -8,15 +8,17 @@ if (Meteor.isClient) {
 
   Template.new_task.helpers({
     work_categories: function() {
-      return UserSettings.find({});
+      var user_settings = UserSettings.findOne({});
+      if (user_settings) {
+        return user_settings.work_categories;
+      }
     }
   })
 
   Template.new_task.events({
     'submit #new-task': function (event) {
       event.preventDefault();
-      var type_id = event.target.task_type.value - 1;
-      var type_text = event.target.task_type[type_id].text;
+      var type_text = event.target.task_type.value;
       var begin_time = parse_time(event.target.begin_time.value);
       var end_time = parse_time(event.target.end_time.value);
 

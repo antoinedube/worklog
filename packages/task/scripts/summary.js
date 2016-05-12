@@ -35,6 +35,10 @@ if (Meteor.isClient) {
       var tasks = Tasks.find(search_criteria).fetch();
 
       return sum_duration(tasks);
+    },
+
+    count: function(type) {
+      console.log('type: ', type);
     }
   });
 }
