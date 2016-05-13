@@ -20,7 +20,6 @@ Package.onUse(function(api) {
   api.addFiles([
       'templates/core.html',
       'scripts/routes.js',
-      'scripts/core.js',
       'stylesheets/core.scss'
   ]);
 });

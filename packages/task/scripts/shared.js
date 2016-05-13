@@ -14,10 +14,17 @@ if (Meteor.isClient) {
     var hours = parseInt(duration/3600000);
     var minutes = parseInt(duration/60000) - hours*60;
 
-    // var formatted_duration = '';
-    // formatted_duration += hours > 0 ? hours + 'h' : '';
-    // formatted_duration += minutes > 0 ? minutes + 'm' : '';
+    var formatted_duration = '';
+    formatted_duration += hours > 0 ? hours + 'h' : '';
+    formatted_duration += minutes > 0 ? minutes + 'm' : '';
 
-    return hours + 'h' + ' ' + minutes + 'm';
+    return formatted_duration;
+  });
+
+  Template.registerHelper('work_categories', function() {
+    var user_settings = UserSettings.findOne({});
+    if (user_settings && user_settings.work_categories) {
+      return user_settings.work_categories;
+    }
   });
 }

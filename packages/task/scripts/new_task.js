@@ -6,15 +6,6 @@ if (Meteor.isClient) {
     return moment({hour: hours, minute: minutes});
   }
 
-  Template.new_task.helpers({
-    work_categories: function() {
-      var user_settings = UserSettings.findOne({});
-      if (user_settings) {
-        return user_settings.work_categories;
-      }
-    }
-  })
-
   Template.new_task.events({
     'submit #new-task': function (event) {
       event.preventDefault();

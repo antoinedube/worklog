@@ -1,35 +1,30 @@
 <template name="summary">
   <ul class="collection with-header">
+    {{ #each work_categories}}
     <li class="collection-item">
       <div class="row valign-wrapper">
         <div class="col s6 left-align valign">
-          <span>100 - Analysis</span>
+          <span>{{ name }}</span>
         </div>
         <div class="col s6 center-align valign">
-          <span>{{show_duration analysis_count}}</span>
+          {{ #with count name }}
+          <span>{{ show_duration this }}</span>
+          {{ /with }}
         </div>
       </div>
     </li>
-    <li class="collection-item">
-      <div class="row valign-wrapper">
-        <div class="col s6 left-align valign">
-          <span>104 - Planning/Scrum</span>
-        </div>
-        <div class="col s6 center-align valign">
-          <span>{{show_duration planning_count}}</span>
-        </div>
-      </div>
-    </li>
+    {{ /each }}
     <li class="collection-item">
       <div class="row valign-wrapper">
         <div class="col s6 left-align valign">
           <span>Total</span>
         </div>
         <div class="col s6 center-align valign">
-          <span>{{show_duration total_count}}</span>
+          {{ #with count total }}
+          <span>{{ show_duration this }}</span>
+          {{ /with }}
         </div>
       </div>
     </li>
   </ul>
-  {{ count "Analysis" }}
 </template>

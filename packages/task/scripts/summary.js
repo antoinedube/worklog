@@ -16,29 +16,22 @@ if (Meteor.isClient) {
   }
 
   Template.summary.helpers({
-    analysis_count: function() {
-      var search_criteria = { begin_time: criteria_today(this.date), type: "100 - Analysis" };
-      var tasks = Tasks.find(search_criteria).fetch();
-
-      return sum_duration(tasks);
-    },
-
-    planning_count: function() {
-      var search_criteria = { begin_time: criteria_today(this.date), type: "104 - Planning/Scrum" };
-      var tasks = Tasks.find(search_criteria).fetch();
-
-      return sum_duration(tasks);
-    },
-
-    total_count: function() {
-      var search_criteria = { begin_time: criteria_today(this.date) };
-      var tasks = Tasks.find(search_criteria).fetch();
-
-      return sum_duration(tasks);
-    },
-
     count: function(type) {
-      console.log('type: ', type);
+      var search_criteria = {};
+      if (type === 'total') {
+        search_criteria = {
+          begin_time: criteria_today(this.date)
+        };
+      }
+      else {
+        search_criteria = {
+          begin_time: criteria_today(this.date),
+          type: type
+        };
+      }
+      var tasks = Tasks.find(search_criteria).fetch();
+
+      return sum_duration(tasks);
     }
   });
 }

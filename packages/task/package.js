@@ -35,7 +35,8 @@ Package.onUse(function(api) {
       'scripts/tasks_list_header.js',
       'scripts/summary.js',
       'models/collection.js',
-      'scripts/routes.js'
+      'scripts/routes.js',
+      'scripts/shared.js'
   ]);
 });
 
