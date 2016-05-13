@@ -7,8 +7,8 @@
           <span>{{ name }}</span>
         </div>
         <div class="col s6 center-align valign">
-          {{ #with count name }}
-          <span>{{ show_duration this }}</span>
+          {{ #with count_duration name}}
+          <span>{{ show_duration duration }}</span>
           {{ /with }}
         </div>
       </div>
@@ -20,8 +20,8 @@
           <span>Total</span>
         </div>
         <div class="col s6 center-align valign">
-          {{ #with count total }}
-          <span>{{ show_duration this }}</span>
+          {{ #with count_duration }}
+          <span>{{ show_duration duration }}</span>
           {{ /with }}
         </div>
       </div>

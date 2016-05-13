@@ -1,6 +1,6 @@
 if (Meteor.isClient) {
 
-  function criteria_today(date) {
+  function date_criteria(date) {
     return {
       "$gte": moment(date).startOf('day').toDate(),
       "$lt": moment(date).add(1, 'days').startOf('day').toDate()
@@ -16,22 +16,23 @@ if (Meteor.isClient) {
   }
 
   Template.summary.helpers({
-    count: function(type) {
+    count_duration: function(type) {
       var search_criteria = {};
       if (type === 'total') {
         search_criteria = {
-          begin_time: criteria_today(this.date)
+          begin_time: date_criteria(this.date)
         };
       }
       else {
         search_criteria = {
-          begin_time: criteria_today(this.date),
+          begin_time: date_criteria(this.date),
           type: type
         };
       }
+
       var tasks = Tasks.find(search_criteria).fetch();
 
-      return sum_duration(tasks);
+      return { 'duration': sum_duration(tasks) };
     }
   });
 }

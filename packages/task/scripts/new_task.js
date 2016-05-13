@@ -1,18 +1,18 @@
 if (Meteor.isClient) {
 
-  function parse_time(time) {
+  function parse_time(date, time) {
     var hours = time.split(":")[0];
     var minutes = time.split(":")[1];
-    return moment({hour: hours, minute: minutes});
+    var date_time = moment(date).set('hour', hours).set('minute', minutes);
+    return date_time;
   }
 
   Template.new_task.events({
     'submit #new-task': function (event) {
       event.preventDefault();
       var type_text = event.target.task_type.value;
-      // date should be the route's date. The time should be the event's value.
-      var begin_time = parse_time(event.target.begin_time.value);
-      var end_time = parse_time(event.target.end_time.value);
+      var begin_time = parse_time(this.date, event.target.begin_time.value);
+      var end_time = parse_time(this.date, event.target.end_time.value);
 
       if (type_text === "" || begin_time === "" || end_time === "") return;
 
