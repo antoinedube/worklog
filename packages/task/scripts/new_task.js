@@ -10,6 +10,7 @@ if (Meteor.isClient) {
     'submit #new-task': function (event) {
       event.preventDefault();
       var type_text = event.target.task_type.value;
+      // date should be the route's date. The time should be the event's value.
       var begin_time = parse_time(event.target.begin_time.value);
       var end_time = parse_time(event.target.end_time.value);
 
