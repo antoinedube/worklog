@@ -11,8 +11,8 @@ if (Meteor.isClient) {
     'submit #new-task': function (event) {
       event.preventDefault();
       var type_text = event.target.task_type.value;
-      var begin_time = parse_time(this.date, event.target.begin_time.value);
-      var end_time = parse_time(this.date, event.target.end_time.value);
+      var begin_time = parse_time(this.current_date, event.target.begin_time.value);
+      var end_time = parse_time(this.current_date, event.target.end_time.value);
 
       if (type_text === "" || begin_time === "" || end_time === "") return;
 

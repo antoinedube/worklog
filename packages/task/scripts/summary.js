@@ -15,17 +15,21 @@ if (Meteor.isClient) {
     return sum_duration;
   }
 
+  Template.summary.onCreated(function() {
+    this.current_date = new ReactiveVar(this.data.current_date);
+  });
+
   Template.summary.helpers({
-    count_duration: function(type) {
+    count_duration: function(type, date) {
       var search_criteria = {};
       if (type === 'total') {
         search_criteria = {
-          begin_time: date_criteria(this.date)
+          begin_time: date_criteria(date)
         };
       }
       else {
         search_criteria = {
-          begin_time: date_criteria(this.date),
+          begin_time: date_criteria(date),
           type: type
         };
       }

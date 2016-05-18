@@ -1,6 +1,7 @@
 export const name = 'scripts/user-settings';
 
 if (Meteor.isClient) {
+
   Template.user_settings.helpers({
     work_categories: function() {
       var user_settings = UserSettings.findOne({});
