@@ -1,5 +1,5 @@
 if (Meteor.isClient) {
-  Template.tasks_list_header.events({
+  Template.tasksListHeader.events({
     'click a.day-before': function(event) {
       event.preventDefault();
       Router.go('/workday/' + moment(this.current_date).subtract(1, 'days').format('YYYY-MM-DD'));

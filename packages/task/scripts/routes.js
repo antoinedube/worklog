@@ -1,10 +1,10 @@
 Router.route('/workday/:date', {
   template: 'workday',
   data: function() {
-    date = moment(this.params.date).format('YYYY-MM-DD');
+    var date = moment(this.params.date).format('YYYY-MM-DD');
     return {
       date: date
-    }
+    };
   }
 });
 

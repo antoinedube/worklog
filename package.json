@@ -1,0 +1,22 @@
+{
+  "name": "worklog",
+  "version": "1.0.0",
+  "description": "Simple worklog using Meteor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoinedube/worklog.git"
+  },
+  "author": "Antoine Dubé",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/antoinedube/worklog/issues"
+  },
+  "homepage": "https://github.com/antoinedube/worklog#readme",
+  "dependencies": {
+    "eslint": "^2.11.1",
+    "eslint-plugin-meteor": "^3.6.0"
+  }
+}

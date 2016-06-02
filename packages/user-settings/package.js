@@ -17,10 +17,10 @@ Package.onUse(function(api) {
     'templating'
   ]);
   api.addFiles([
-      'models/user-settings-collection.js',
-      'templates/user-settings.html',
-      'scripts/user-settings.js',
-      'scripts/routes.js'
+    'models/user-settings-collection.js',
+    'templates/user-settings.html',
+    'scripts/user-settings.js',
+    'scripts/routes.js'
   ]);
   api.mainModule('scripts/user-settings.js');
   api.export('UserSettings');

@@ -1,17 +1,31 @@
 {
     "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
         "meteor": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+      "eslint:recommended",
+      "plugin:meteor/recommended"
+    ],
+    "plugins": [
+      "meteor"
+    ],
     "rules": {
         "indent": ["error", 2],
         "linebreak-style": ["error", "unix"],
         "quotes": ["error", "single"],
         "semi": ["error", "always"],
-        "no-console": ["warning"]
+        "no-console": ["warn"]
     },
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module"
+    },
+    "globals": {
+      "console": true,
+      "d3": true,
+      "moment": true
     }
 }

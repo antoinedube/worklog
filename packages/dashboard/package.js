@@ -10,15 +10,16 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
 
   api.use([
-      'ecmascript',
-      'iron:router',
-      'templating',
-      'worklog:core'
+    'd3js:d3',
+    'ecmascript',
+    'iron:router',
+    'templating',
+    'worklog:core'
   ]);
 
   api.addFiles([
-      'dashboard.js',
-      'dashboard.html'
+    'dashboard.html',
+    'dashboard.js'
   ]);
 });
 

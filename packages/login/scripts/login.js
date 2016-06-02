@@ -15,6 +15,6 @@ if (Meteor.isClient) {
           Router.go('/workday');
         }
       });
-    },
+    }
   });
 }

@@ -1,6 +1,6 @@
 <template name="workday">
   <div class="row">
-    {{ > tasks_list_header current_date=date}}
+    {{ > tasksListHeader current_date=date}}
     <div class="col s8 offset-s2">
       <ul class="tabs">
         <li class="tab col s6"><a href="#full_workday">Workday</a></li>
@@ -8,8 +8,8 @@
       </ul>
     </div>
     <div id="full_workday" class="col s12 tab-content">
-      {{ > tasks_list }}
-      {{ > new_task current_date=date }}
+      {{ > tasksList }}
+      {{ > newTask current_date=date }}
     </div>
     <div id="summary_workday" class="col s12 tab-content">
       {{ > summary current_date=date}}
