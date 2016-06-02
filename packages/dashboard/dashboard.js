@@ -5,9 +5,8 @@ Router.route('/dashboard', {
 function draw() {
   var tasks = Tasks.find().fetch();
 
-  _(tasks).forEach(function(task) {
-    console.log('task: ', task.begin_time, task.duration);
-  });
+  var xScale = d3.time.scale().domain([tasks[0], tasks[tasks.length -1]]).range([0,500]);
+  var xAxis = d3.svg.axis().orient('bottom').scale(xScale);
 
   var line = d3.svg
                .line()
@@ -19,7 +18,8 @@ function draw() {
     .append('path')
     .datum(tasks)
     .attr('class', 'line')
-    .attr('d', line);
+    .attr('d', line)
+    .call(xAxis);
 
 }
 
