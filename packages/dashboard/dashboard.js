@@ -15,6 +15,7 @@ function formatDuration(duration) {
 }
 
 function draw() {
+
   var minDate = new Date();
   minDate.setMonth(minDate.getMonth()-1);
   var maxDate = new Date();
@@ -32,25 +33,25 @@ function draw() {
   maxDuration *= 1.1;
 
   var margin = {top: 100, right: 100, bottom: 100, left: 100};
-  var width = 960 - margin.left - margin.right;
+  var width = 1300 - margin.left - margin.right;
   var height = 500 - margin.top - margin.bottom;
 
-  var x = d3.time.scale().domain([minDate, maxDate]).range([0,width]);
-  var y = d3.scale.linear().domain([minDuration, maxDuration]).range([height,0]);
+  var x = d3.time.scale()
+                 .domain([minDate, maxDate])
+                 .range([0,width]);
+
+  var y = d3.scale.linear()
+                  .domain([minDuration, maxDuration])
+                  .range([height,0]);
 
   var xAxis = d3.svg.axis()
-      .scale(x)
-      .orient('bottom');
+                .scale(x)
+                .orient('bottom');
 
   var yAxis = d3.svg.axis()
-      .scale(y)
-      .orient('left')
-      .tickFormat(function (d) { return formatDuration(d); });
-
-  var line = d3.svg
-               .line()
-               .x(function (d) { return x(d.begin_time); })
-               .y(function (d) { return y(d.duration); });
+                .scale(y)
+                .orient('left')
+                .tickFormat(function (d) { return formatDuration(d); });
 
   var graph = d3.select('#time-series')
                 .attr('width', width + margin.left + margin.right)
@@ -68,6 +69,16 @@ function draw() {
   graph.append('g')
        .attr('class', 'y axis')
        .call(yAxis);
+
+  // Draw a line for each type
+  // Filter each type in a different "line"
+  // append to graph for each type
+  var categories = UserSettings.findOne().work_categories;
+
+  var line = d3.svg
+               .line()
+               .x(function (d) { return x(d.begin_time); })
+               .y(function (d) { return y(d.duration); });
 
   graph.append('path')
        .datum(tasks)
