@@ -12,13 +12,16 @@ Package.onUse(function(api) {
   api.use([
     'd3js:d3',
     'ecmascript',
+    'fourseven:scss',
     'iron:router',
     'templating',
+    'stevezhu:lodash',
     'worklog:core'
   ]);
 
   api.addFiles([
     'dashboard.html',
+    'dashboard.scss',
     'dashboard.js'
   ]);
 });
