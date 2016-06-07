@@ -46,7 +46,10 @@ function draw() {
 
   var xAxis = d3.svg.axis()
                 .scale(x)
-                .orient('bottom');
+                .orient('bottom')
+                .tickFormat(function(d) {
+                  return d3.time.format('%b %d')(d);
+                });
 
   var yAxis = d3.svg.axis()
                 .scale(y)
@@ -70,20 +73,31 @@ function draw() {
        .attr('class', 'y axis')
        .call(yAxis);
 
-  // Draw a line for each type
-  // Filter each type in a different "line"
-  // append to graph for each type
-  var categories = UserSettings.findOne().work_categories;
-
   var line = d3.svg
                .line()
                .x(function (d) { return x(d.begin_time); })
                .y(function (d) { return y(d.duration); });
 
-  graph.append('path')
-       .datum(tasks)
-       .attr('class', 'line')
-       .attr('d', line);
+  var lineColors = ['#f44336', '#3f51b5', '#4caf50', '#ff9800', '#607d8b'];
+  var categories = UserSettings.findOne().work_categories;
+  var index = 0;
+  _(categories).forEach(function(category) {
+    var filteredTasks = _.orderBy(
+                          _.filter(tasks, function(task) {
+                            return task.type === category.name;
+                          }),
+                          'begin_time'
+                        );
+
+    graph.append('path')
+         .datum(filteredTasks)
+         .attr('class', 'line')
+         .attr('d', line)
+         .attr('stroke', lineColors[index]);
+
+    index++;
+  });
+
 }
 
 if (Meteor.isClient) {
